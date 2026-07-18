@@ -1,57 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio cá nhân của Đinh Thị Thanh Mai - Sinh viên ngành Tiếng Việt và Văn hóa Việt Nam" />
-  <title>Portfolio - Đinh Thị Thanh Mai</title>
-  
-  <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Đinh Thị Thanh Mai</title>
+    <style>
+        :root {
+            --primary: #AEC6CF; /* Xanh dương pastel */
+            --accent: #FFF700;  /* Vàng chanh */
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            font-size: 18px; /* Tăng kích thước chữ cho dễ nhìn */
+            color: var(--text);
+            background: linear-gradient(135deg, #f4f7f6, #e9ecef);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container { max-width: 900px; margin: auto; background: white; padding: 50px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        h1, h2 { color: #2c3e50; text-transform: uppercase; }
+        
+        .highlight { background-color: var(--accent); padding: 2px 5px; font-weight: bold; }
+        
+        .card { 
+            background: var(--primary); 
+            padding: 30px; 
+            border-radius: 15px; 
+            margin: 20px 0; 
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        /* Hiệu ứng công nghệ */
+        .tech-bg { background: linear-gradient(45deg, var(--primary), var(--accent)); }
+    </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay">
-      <div class="container">
+
+<div class="container">
+    <header style="text-align: center;">
         <h1>Đinh Thị Thanh Mai</h1>
-        <p class="meta">Mã sinh viên: <strong>25040334</strong> • Ngành: <strong>Tiếng Việt và Văn hóa Việt Nam</strong></p>
-        <p class="hobbies">Sở thích: Xem phim, đọc sách, làm nghiên cứu.</p>
-        <nav class="nav">
-          <a href="index.html" class="active">Trang chủ</a>
-          <a href="projects.html">Dự án</a>
-          <a href="summary.html">Tổng kết</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+        <p><strong>MSV:</strong> 25040334</p>
+        <p><strong>Ngành:</strong> Tiếng Việt và Văn hóa Việt Nam</p>
+    </header>
 
-  <main class="container content">
-    <section>
-      <h2>Chia sẻ mục tiêu học tập và định hướng cá nhân</h2>
-      <p><strong>Mục tiêu học tập:</strong> Nắm vững kiến thức cơ bản về công nghệ số, rèn luyện kỹ năng sử dụng các công cụ số để hỗ trợ học tập và công việc.</p>
-      <p><strong>Định hướng cá nhân:</strong> Trở thành giáo viên; ứng dụng công nghệ vào giảng dạy để nâng cao chất lượng bài học và tạo môi trường học tập tích cực.</p>
+    <section class="card">
+        <h2>Mục tiêu học tập & Định hướng</h2>
+        <p>Mục tiêu học tập của em là nắm vững những kiến thức cơ bản về công nghệ số, rèn luyện kỹ năng sử dụng các công cụ số một cách hiệu quả để hỗ trợ học tập và công việc sau này. Em định hướng trở thành giáo viên, vì vậy em mong muốn ứng dụng công nghệ vào giảng dạy nhằm nâng cao chất lượng bài học và tạo môi trường học tập tích cực cho học sinh.</p>
     </section>
 
-    <section>
-      <h2>Mục tiêu của Portfolio</h2>
-      <p>Portfolio này thể hiện kiến thức và kỹ năng đã học, lưu trữ và chia sẻ các dự án cá nhân, giúp theo dõi sự phát triển và giới thiệu năng lực học tập, nghề nghiệp.</p>
+    <section class="card tech-bg">
+        <h2>Mục tiêu của Portfolio</h2>
+        <p>Portfolio được xây dựng nhằm thể hiện những kiến thức và kỹ năng em đã học được trong quá trình học tập, đồng thời là nơi lưu trữ và chia sẻ các dự án cá nhân một cách dễ dàng, khoa học và chủ động. Đây cũng là công cụ giúp em theo dõi sự phát triển của bản thân và giới thiệu năng lực trong học tập cũng như công việc sau này.</p>
     </section>
+</div>
 
-    <section class="quick-score">
-      <h2>Điểm tổng kết</h2>
-      <div id="scoreCard" class="score-card">
-        <!-- Nội dung này sẽ được hiển thị bởi main.js -->
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Đinh Thị Thanh Mai • Mã SV 25040334</p>
-    </div>
-  </footer>
-
-  <!-- JS script với defer giúp trang tải mượt hơn -->
-  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
