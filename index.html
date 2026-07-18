@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Trần Văn A</title>
+    <title>Portfolio | Đinh Thị Thanh Mai</title>
     <!-- Import font Quicksand giống hệt bản gốc -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,14 +11,14 @@
     <style>
         /* --- BẢNG MÀU VÀNG (PASTEL YELLOW THEME) --- */
         :root {
-            --bg-body: #FFFEFA; /* Màu nền trắng hơi ngả vàng rất nhẹ */
-            --primary: #F4D03F; /* Vàng pastel chủ đạo */
-            --primary-light: #FEF9E7; /* Vàng rất nhạt cho nền các thẻ con */
-            --primary-dark: #D4AC0D; /* Vàng đậm cho text nhấn */
-            --text-main: #3E3C36; /* Đen xám cho chữ để đỡ chói */
-            --text-muted: #8A877E; /* Xám nhạt cho chữ phụ */
+            --bg-body: #FFFEFA; 
+            --primary: #F4D03F; 
+            --primary-light: #FEF9E7; 
+            --primary-dark: #D4AC0D; 
+            --text-main: #3E3C36; 
+            --text-muted: #8A877E; 
             --white: #FFFFFF;
-            --shadow: 0 8px 30px rgba(244, 208, 63, 0.08); /* Đổ bóng hơi ngả vàng */
+            --shadow: 0 8px 30px rgba(244, 208, 63, 0.08); 
             --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.03);
             
             --font-main: 'Quicksand', sans-serif;
@@ -98,21 +98,22 @@
         .greeting-icon { color: var(--primary); font-size: 24px; }
         
         .hero-title {
-            font-size: 3.5rem; font-weight: 700; color: var(--primary-dark);
+            font-size: 3.2rem; font-weight: 700; color: var(--primary-dark);
             margin: 10px 0; line-height: 1.2;
         }
         
         .hero-sub { color: var(--text-muted); font-size: 15px; font-weight: 500; margin-bottom: 40px; }
         
         .hero-info-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px;
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 40px;
         }
         .hero-info-card {
-            background: var(--white); padding: 20px; border-radius: 20px;
+            background: var(--white); padding: 15px; border-radius: 20px;
             box-shadow: var(--shadow-sm); text-align: center;
+            display: flex; flex-direction: column; justify-content: center;
         }
-        .hero-info-card p:first-child { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-        .hero-info-card p:last-child { font-size: 15px; font-weight: 600; color: var(--text-main); }
+        .hero-info-card p:first-child { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .hero-info-card p:last-child { font-size: 14px; font-weight: 600; color: var(--text-main); }
         
         .btn-primary {
             display: inline-flex; align-items: center; gap: 10px;
@@ -143,20 +144,13 @@
         .about-card {
             background: var(--white); padding: 50px; border-radius: 30px;
             box-shadow: var(--shadow-sm); border-left: 5px solid var(--primary);
-            font-size: 17px; color: var(--text-muted);
+            font-size: 16px; color: var(--text-muted); line-height: 1.8;
         }
-        .about-card strong { color: var(--text-main); }
-        .about-tags { display: flex; gap: 15px; margin: 30px 0; flex-wrap: wrap; }
-        .about-tag-item {
-            background: var(--bg-body); border: 1px solid #EAE8E1;
-            padding: 8px 20px; border-radius: 50px;
-            font-size: 14px; font-weight: 600; color: var(--text-main);
+        .about-card h3 {
+            color: var(--primary-dark); font-size: 1.2rem; margin-bottom: 15px; margin-top: 25px;
         }
-        .about-quote {
-            border-left: 3px solid var(--primary-dark);
-            padding-left: 20px; margin-top: 30px; font-style: italic;
-            color: var(--text-main);
-        }
+        .about-card h3:first-child { margin-top: 0; }
+        .about-card p { margin-bottom: 15px; }
 
         /* --- PHẦN BÀI TẬP (DỰ ÁN) --- */
         .filters { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
@@ -179,7 +173,7 @@
         .project-icon {
             width: 60px; height: 60px; border-radius: 18px;
             background: var(--primary-light); display: flex;
-            align-items: center; justify-content: center; font-size: 28px;
+            align-items: center; justify-content: center; font-size: 28px; min-width: 60px;
         }
         .project-info h3 { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 5px; }
         .project-info p { font-size: 14px; color: var(--text-muted); font-weight: 500; }
@@ -187,34 +181,31 @@
         .project-right { display: flex; align-items: center; gap: 15px; }
         .status-pill {
             background: var(--primary-light); color: var(--primary-dark);
-            padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700;
+            padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; white-space: nowrap;
         }
         .arrow-down { color: var(--primary); font-size: 20px; }
 
-        /* --- PHẦN TỔNG KẾT --- */
-        .summary-quote {
-            background: rgba(244, 208, 63, 0.1); border-left: 4px solid var(--primary);
-            padding: 30px 40px; border-radius: 0 20px 20px 0;
-            font-style: italic; color: var(--text-main); font-size: 16px; margin-bottom: 60px;
+        /* --- PHẦN TỔNG KẾT (Grid Thẻ) --- */
+        .reflection-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
         }
-
-        .skills-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px; text-align: center; margin-top: 30px;
+        .reflection-card {
+            background: var(--white); padding: 40px; border-radius: 25px;
+            box-shadow: var(--shadow-sm); border-top: 5px solid var(--primary);
+            transition: 0.3s;
         }
-        .skill-item { display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .skill-circle {
-            width: 100px; height: 100px; border-radius: 50%;
-            border: 6px solid var(--primary-light); border-top-color: var(--primary);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 20px; color: var(--text-main); position: relative;
+        .reflection-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .reflection-card h3 {
+            font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
         }
-        .skill-circle span { font-size: 24px; margin-bottom: -5px; }
-        .skill-name { font-weight: 600; font-size: 15px; color: var(--text-muted); }
+        .reflection-card p {
+            font-size: 15.5px; color: var(--text-muted); line-height: 1.7;
+        }
 
         /* --- FOOTER --- */
         footer {
-            margin-top: 100px; padding: 40px 0; border-top: 1px solid #EAE8E1;
+            margin-top: 80px; padding: 40px 0; border-top: 1px solid #EAE8E1;
             display: flex; justify-content: space-between; align-items: center;
             color: var(--text-muted); font-size: 14px;
         }
@@ -223,9 +214,12 @@
         .footer-right h4 { color: var(--text-muted); font-size: 14px; font-weight: 500; margin-bottom: 5px; }
 
         /* --- RESPONSIVE --- */
+        @media (max-width: 991px) {
+            .hero-info-grid { grid-template-columns: 1fr; }
+            .reflection-grid { grid-template-columns: 1fr; }
+        }
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; padding: 30px 0; }
-            .hero-info-grid { grid-template-columns: 1fr; }
             .hero-right { margin-top: 30px; }
             .hero-circle { width: 280px; height: 280px; }
             .project-item { flex-direction: column; text-align: center; gap: 20px; }
@@ -249,6 +243,7 @@
     <header>
         <nav>
             <a href="#trang-chu" class="active">Trang chủ</a>
+            <a href="#gioi-thieu">Giới thiệu</a>
             <a href="#du-an">Dự án</a>
             <a href="#tong-ket">Tổng kết</a>
         </nav>
@@ -262,18 +257,21 @@
                 <div class="greeting">
                     <span class="greeting-icon">✨</span> Xin chào! Mình là
                 </div>
-                <!-- Bạn có thể sửa tên ở đây -->
-                <h1 class="hero-title">Trần Văn A</h1>
-                <p class="hero-sub">MSSV: 25040303 · Lớp: E252055</p>
+                <h1 class="hero-title">Đinh Thị Thanh Mai</h1>
+                <p class="hero-sub">MSSV: 25040334</p>
                 
                 <div class="hero-info-grid">
                     <div class="hero-info-card">
                         <p>Trường</p>
-                        <p>Đại học Ngoại ngữ — ĐHQGHN</p>
+                        <p>Đại học Ngoại ngữ - ĐHQGHN</p>
                     </div>
                     <div class="hero-info-card">
                         <p>Khoa</p>
-                        <p>Ngôn ngữ Anh</p>
+                        <p>Tiếng Việt & VH VN và ĐNÁ</p>
+                    </div>
+                    <div class="hero-info-card">
+                        <p>Sở thích</p>
+                        <p>Xem phim, đọc sách</p>
                     </div>
                 </div>
                 
@@ -282,7 +280,7 @@
             
             <div class="hero-right">
                 <div class="hero-circle">
-                    <!-- Icon bông hoa hướng dương lớn ở giữa -->
+                    <!-- Icon bông hoa hướng dương -->
                 </div>
             </div>
         </section>
@@ -293,19 +291,11 @@
             <h2 class="section-title">Về mình & Portfolio này</h2>
             
             <div class="about-card">
-                <p>Mình là sinh viên đam mê <strong>Ngôn ngữ Anh</strong> tại Đại học Ngoại ngữ — ĐHQGHN. Được học môn Kỹ năng Số và Trí tuệ Nhân tạo, mình dần nhận ra rằng ngôn ngữ và công nghệ có thể hỗ trợ lẫn nhau rất nhiều trên hành trình học tập.</p>
-                <br>
-                <p>Portfolio này tập hợp <strong>nội dung và hình ảnh minh chứng</strong> của các bài tập trong học kỳ. Mỗi bài tập được trình bày đầy đủ — bao gồm mục tiêu, quy trình thực hiện, kết quả và suy ngẫm cá nhân.</p>
+                <h3>Chia sẻ mục tiêu học tập và định hướng cá nhân</h3>
+                <p>Mục tiêu học tập của em là nắm vững những kiến thức cơ bản về công nghệ số, rèn luyện kỹ năng sử dụng các công cụ số một cách hiệu quả để hỗ trợ học tập và công việc sau này. Em định hướng trở thành giáo viên, vì vậy em mong muốn ứng dụng công nghệ vào giảng dạy nhằm nâng cao chất lượng bài học và tạo môi trường học tập tích cực cho học sinh.</p>
                 
-                <div class="about-tags">
-                    <span class="about-tag-item">6 bài tập</span>
-                    <span class="about-tag-item">AI & Trí tuệ nhân tạo</span>
-                    <span class="about-tag-item">Kỹ năng số</span>
-                </div>
-                
-                <div class="about-quote">
-                    Với mình, trở thành người sử dụng công nghệ có trách nhiệm không phải là đích đến mà là hành trình liên tục.
-                </div>
+                <h3>Mục tiêu của Portfolio</h3>
+                <p>Portfolio được xây dựng nhằm thể hiện những kiến thức và kỹ năng em đã học được trong quá trình học tập, đồng thời là nơi lưu trữ và chia sẻ các dự án cá nhân một cách dễ dàng, khoa học và chủ động. Đây cũng là công cụ giúp em theo dõi sự phát triển của bản thân và giới thiệu năng lực trong học tập cũng như công việc sau này.</p>
             </div>
         </section>
 
@@ -376,7 +366,7 @@
                     <div class="project-left">
                         <div class="project-icon">🤝</div>
                         <div class="project-info">
-                            <h3>Sử dụng công cụ hợp tác trực tuyến cho dự án</h3>
+                            <h3>Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h3>
                             <p>Bài tập 4 · Giao tiếp & Hợp tác số</p>
                         </div>
                     </div>
@@ -406,7 +396,7 @@
                     <div class="project-left">
                         <div class="project-icon">🛡️</div>
                         <div class="project-info">
-                            <h3>Sử dụng AI có trách nhiệm trong học tập</h3>
+                            <h3>Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
                             <p>Bài tập 6 · Đạo đức & An toàn số</p>
                         </div>
                     </div>
@@ -421,32 +411,31 @@
         <!-- PHẦN TỔNG KẾT -->
         <section id="tong-ket" class="section-wrapper">
             <span class="section-tag">Tổng kết</span>
-            <h2 class="section-title">Tổng kết hành trình</h2>
-            <p style="color: var(--text-muted); margin-top: -30px; margin-bottom: 30px;">6 bài tập, 6 kỹ năng — từ một sinh viên bỡ ngỡ đến một người biết cách sử dụng AI có trách nhiệm.</p>
+            <h2 class="section-title">Nhìn lại hành trình</h2>
             
-            <div class="summary-quote">
-                "Hành trình từ những thao tác cơ bản nhất với Finder đến việc hiểu được giá trị của trí tuệ nhân tạo trong học tập — đó là một chặng đường mình sẽ không bao giờ quên. Mình học được rằng công nghệ chỉ thực sự có ý nghĩa khi được sử dụng bằng tư duy phản biện và trách nhiệm."
-            </div>
-
-            <span class="section-tag">Kỹ năng phát triển</span>
-            <h2 class="section-title">Kỹ năng phát triển</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-circle"><span>📁</span><div style="font-size:14px; margin-top:5px;">75%</div></div>
-                    <span class="skill-name">Quản lý dữ liệu</span>
+            <div class="reflection-grid">
+                <!-- Thẻ 1 -->
+                <div class="reflection-card">
+                    <h3><span>💭</span> Cảm nhận và trải nghiệm</h3>
+                    <p>Quá trình xây dựng Portfolio là cơ hội để em hệ thống hóa những kiến thức đã học và vận dụng vào việc tạo ra một sản phẩm mang tính thực tiễn. Thông qua hoạt động này, em nhận thức rõ hơn về tầm quan trọng của việc ứng dụng công nghệ số trong học tập, đồng thời rèn luyện tính chủ động và tinh thần học hỏi trong quá trình hoàn thiện sản phẩm.</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-circle"><span>🔍</span><div style="font-size:14px; margin-top:5px;">78%</div></div>
-                    <span class="skill-name">Tìm kiếm học thuật</span>
+                
+                <!-- Thẻ 2 -->
+                <div class="reflection-card">
+                    <h3><span>💡</span> Kiến thức và kỹ năng đạt được</h3>
+                    <p>Việc thực hiện Portfolio giúp em củng cố các kiến thức nền tảng về công nghệ số, đồng thời phát triển các kỹ năng như tổ chức và trình bày nội dung, quản lý thông tin, thiết kế bố cục hợp lý, tìm kiếm và xử lý dữ liệu, cũng như nâng cao khả năng tự học và giải quyết vấn đề. Đây là những kỹ năng cần thiết cho quá trình học tập và công việc trong tương lai.</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-circle"><span>✨</span><div style="font-size:14px; margin-top:5px;">85%</div></div>
-                    <span class="skill-name">Prompt Engineering</span>
+                
+                <!-- Thẻ 3 -->
+                <div class="reflection-card">
+                    <h3><span>❤️</span> Điều tâm đắc</h3>
+                    <p>Điều em tâm đắc nhất là có thể xây dựng một Portfolio mang dấu ấn cá nhân, phản ánh quá trình học tập và sự tiến bộ của bản thân một cách hệ thống và trực quan. Đây không chỉ là nơi lưu giữ các kết quả học tập mà còn là động lực để em tiếp tục hoàn thiện kiến thức, kỹ năng và phát triển bản thân trong thời gian tới.</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-circle"><span>🛡️</span><div style="font-size:14px; margin-top:5px;">90%</div></div>
-                    <span class="skill-name">Sử dụng AI an toàn</span>
+                
+                <!-- Thẻ 4 -->
+                <div class="reflection-card">
+                    <h3><span>🧗‍♀️</span> Thách thức</h3>
+                    <p>Trong quá trình thực hiện Portfolio, em gặp một số khó khăn như lựa chọn nội dung phù hợp, sắp xếp bố cục khoa học và đảm bảo tính thống nhất trong cách trình bày. Tuy nhiên, những thách thức này đã giúp em rèn luyện tư duy logic, tính kiên trì và khả năng thích ứng khi giải quyết các vấn đề phát sinh trong quá trình thực hiện.</p>
                 </div>
             </div>
         </section>
@@ -454,12 +443,12 @@
         <!-- CHÂN TRANG (FOOTER) -->
         <footer>
             <div class="footer-left">
-                <h4>Trần Văn A</h4>
-                <p>SV Ngôn ngữ Anh — MSSV: 25040303</p>
+                <h4>Đinh Thị Thanh Mai</h4>
+                <p>Khoa Tiếng Việt và VH VN & ĐNÁ — MSSV: 25040334</p>
             </div>
             <div class="footer-right">
                 <h4>Đại học Ngoại ngữ — ĐHQGHN</h4>
-                <p>Kỹ năng Số & Trí tuệ Nhân tạo — 2025-2026</p>
+                <p>Kỹ năng Số & Trí tuệ Nhân tạo</p>
             </div>
         </footer>
 
