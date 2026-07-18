@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trịnh Mai Loan - Personal Portfolio</title>
+    <!-- Sử dụng bộ thư viện Tailwind CSS để giao diện tự động đẹp -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#F4EBE1] text-[#2C2520] font-sans antialiased">
+
+  <!-- THANH ĐIỀU HƯỚNG (NAVIGATION BAR) -->
+  <header class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center bg-white/70 backdrop-blur-md rounded-full mt-4 sticky top-4 z-50 shadow-sm">
+      <div class="flex items-center gap-3">
+          <!-- Logo chữ M tròn bọc viền vàng kiểu Ả Rập -->
+          <div class="w-10 h-10 bg-[#0F3A20] rounded-full flex items-center justify-center text-white font-bold border border-[#C86A37]">M</div>
+          <div>
+              <h1 class="text-sm font-bold tracking-wide">Trịnh Mai Loan</h1>
+              <p class="text-xs text-gray-500">Mã SV: 25042688 • ULIS</p>
+          </div>
+      </div>
+      <!-- Các mục lục để người xem bấm di chuyển nhanh -->
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+          <a href="#gioi-thieu" class="hover:text-[#0F3A20] transition">Giới thiệu</a>
+          <a href="#vai-tro" class="hover:text-[#0F3A20] transition">Vai trò</a>
+          <a href="#san-pham" class="hover:text-[#0F3A20] transition">Sản phẩm học tập</a>
+          <a href="#muc-tieu" class="hover:text-[#0F3A20] transition">Mục tiêu</a>
+      </nav>
+  </header>
+
+  <!-- PHẦN CHÍNH (HERO SECTION) -->
+  <main class="max-w-6xl mx-auto px-4 py-12 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      <!-- CỘT BÊN TRÁI: THÔNG TIN CÁ NHÂN -->
+      <div class="space-y-6">
+          <span class="text-xs font-semibold tracking-widest text-[#C86A37] uppercase bg-[#C86A37]/10 px-3 py-1 rounded-full">
+              Không gian học tập số • 2026
+          </span>
+          
+          <h2 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-[#2C2520]">
+              Trịnh Mai Loan <br>
+              <span class="text-[#C86A37] text-4xl md:text-5xl font-mono">MSV: 25042688</span>
+          </h2>
+          
+          <p class="text-base text-gray-600 leading-relaxed max-w-md">
+              Chào mừng bạn đến với trang portfolio cá nhân của mình! Đây là nơi mình lưu trữ, hệ thống hóa các kiến thức, kỹ năng số và những sản phẩm thực tế trong học phần <strong class="text-[#0F3A20]">Nhập môn Công nghệ số & Ứng dụng AI</strong>. Đồng thời, đây cũng là không gian ghi lại hành trình học tập, phát triển bản thân của mình tại trường Đại học.
+          </p>
+
+          <!-- Nút tương tác nhanh -->
+          <div class="flex flex-wrap gap-4 pt-2">
+              <a href="#san-pham" class="bg-[#0F3A20] text-white px-6 py-3 rounded-xl font-medium shadow-md hover:bg-opacity-90 transition inline-block">
+                  Xem bài tập & AI dự án
+              </a>
+              <a href="#gioi-thieu" class="bg-white text-[#2C2520] border border-gray-200 px-6 py-3 rounded-xl font-medium shadow-sm hover:bg-gray-50 transition inline-block">
+                  Khám phá bản thân
+              </a>
+          </div>
+      </div>
+
+      <!-- CỘT BÊN PHẢI: KHUNG ĐỒ HỌA SÁNG TẠO -->
+      <div class="relative flex justify-center items-center h-[480px]">
+          
+          <!-- Khung vòm kiến trúc Ả Rập trung tâm -->
+          <div class="w-[320px] h-[440px] bg-[#0E351D] rounded-t-full relative overflow-hidden flex flex-col justify-center items-center border-4 border-[#C86A37]/30 shadow-2xl">
+              <!-- Họa tiết chìm nghệ thuật -->
+              <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none"></div>
+              
+              <!-- Biểu tượng chữ M cách điệu tỏa sáng -->
+              <div class="w-20 h-20 border-2 border-[#E6C687] rounded-full flex items-center justify-center text-white text-3xl font-serif mb-6 shadow-inner bg-[#0A2916]">
+                  M
+              </div>
+              
+              <!-- Chữ tiếng Ả Rập chuẩn nét -->
+              <div class="text-4xl font-bold text-[#E6C687] tracking-wide font-serif mb-2 selection:bg-amber-200">
+                  اللغة العربية
+              </div>
+              <p class="text-xs text-[#E6C687]/80 uppercase tracking-widest font-medium">Ngôn ngữ & Văn hóa Ả Rập</p>
+          </div>
+
+          <!-- THẺ BAY 1: THÔNG TIN TRƯỜNG (Góc trên bên phải) -->
+          <div class="absolute top-8 -right-2 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-gray-100 max-w-[160px] transform rotate-3 hover:rotate-0 hover:scale-105 transition duration-300">
+              <span class="text-[10px] uppercase text-[#C86A37] font-bold block mb-1">Học tập tại</span>
+              <span class="text-sm font-extrabold text-[#0F3A20] block">ULIS - ĐHQGHN</span>
+          </div>
+
+          <!-- THẺ BAY 2: VAI TRÒ ĐẠI SỨ (Góc giữa bên trái) -->
+          <div class="absolute top-1/3 -left-6 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-gray-100 max-w-[180px] transform -rotate-3 hover:rotate-0 hover:scale-105 transition duration-300">
+              <div class="flex items-center gap-2 mb-1">
+                  <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                  <span class="text-[10px] uppercase text-gray-400 font-bold">Đại sứ sinh viên</span>
+              </div>
+              <span class="text-xs text-[#2C2520] font-medium block">Đại diện hình ảnh & kết nối cộng đồng ULIS</span>
+          </div>
+
+          <!-- THẺ BAY 3: VAI TRÒ TRỢ GIẢNG (Góc dưới bên phải) -->
+          <div class="absolute bottom-12 -right-4 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-gray-100 max-w-[180px] transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300">
+              <div class="flex items-center gap-2 mb-1">
+                  <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                  <span class="text-[10px] uppercase text-gray-400 font-bold">Teaching Assistant</span>
+              </div>
+              <span class="text-xs text-[#2C2520] font-medium block">Hỗ trợ giảng dạy & Phát triển học liệu học phần</span>
+          </div>
+
+      </div>
+
+  </main>
+
+  <!-- ĐOẠN KHUNG DƯỚI ĐỂ CHUẨN BỊ CHO BÀI TẬP (Có thể mở rộng sau) -->
+  <section id="san-pham" class="max-w-6xl mx-auto px-4 py-12 border-t border-gray-200/50">
+      <h3 class="text-2xl font-bold text-[#0F3A20] mb-6">Sản phẩm môn học nổi bật</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Ô bài tập 1 -->
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+              <span class="text-xs font-semibold text-[#C86A37]">Bài tập số 01</span>
+              <h4 class="text-lg font-bold mt-1 text-[#2C2520]">Phân tích Tư duy Phản biện & 5W1H</h4>
+              <p class="text-sm text-gray-500 mt-2">Ứng dụng mô hình 5W1H để mổ xẻ nội dung truyền thông và xây dựng luận điểm lập luận logic.</p>
+          </div>
+          <!-- Ô bài tập 2 -->
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+              <span class="text-xs font-semibold text-[#C86A37]">Bài tập số 02</span>
+              <h4 class="text-lg font-bold mt-1 text-[#2C2520]">Ứng dụng AI sáng tạo nội dung</h4>
+              <p class="text-sm text-gray-500 mt-2">Sử dụng các công cụ Trí tuệ nhân tạo thế hệ mới để tối ưu hóa hiệu suất thiết kế học liệu số.</p>
+          </div>
+          <!-- Ô bài tập 3 -->
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+              <span class="text-xs font-semibold text-[#C86A37]">Tầm nhìn</span>
+              <h4 class="text-lg font-bold mt-1 text-[#2C2520]">Mục tiêu sau Tốt nghiệp</h4>
+              <p class="text-sm text-gray-500 mt-2">Tích lũy trải nghiệm, trau dồi ngôn ngữ để chuẩn bị hành trang bước ra môi trường quốc tế.</p>
+          </div>
+      </div>
+  </section>
+
+</body>
+</html>
