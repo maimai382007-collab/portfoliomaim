@@ -23,6 +23,7 @@
             --shadow-md: 0 12px 35px rgba(212, 172, 13, 0.08); 
             --shadow-lg: 0 20px 50px rgba(212, 172, 13, 0.12);
             --font-main: 'Plus Jakarta Sans', 'Quicksand', sans-serif;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* --- CÀI ĐẶT CHUNG --- */
@@ -47,22 +48,22 @@
             padding: 0 24px;
         }
 
-        /* --- ĐỒ HỌA ĐA CHIỀU (BACKDROP GLOWS) --- */
+        /* --- ĐỒ HỌA ĐA CHIỀU TRANG TRÍ NỀN (GLOWS & PARTICLES) --- */
         .bg-glow-1 {
             position: fixed; top: -10%; left: -10%; width: 50vw; height: 50vw;
-            background: radial-gradient(circle, rgba(244,208,63,0.12) 0%, rgba(255,255,255,0) 70%);
+            background: radial-gradient(circle, rgba(244,208,63,0.15) 0%, rgba(255,255,255,0) 70%);
             z-index: -2; pointer-events: none; filter: blur(40px);
         }
         .bg-glow-2 {
             position: fixed; bottom: -10%; right: -10%; width: 60vw; height: 60vw;
-            background: radial-gradient(circle, rgba(253,235,208,0.15) 0%, rgba(255,255,255,0) 70%);
+            background: radial-gradient(circle, rgba(253,235,208,0.18) 0%, rgba(255,255,255,0) 70%);
             z-index: -2; pointer-events: none; filter: blur(50px);
         }
         .bg-particles {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; pointer-events: none; overflow: hidden;
         }
-        .particle { position: absolute; font-size: 1.5rem; opacity: 0.25; animation: floatingPoints 8s ease-in-out infinite; }
+        .particle { position: absolute; font-size: 1.5rem; opacity: 0.3; animation: floatingPoints 8s ease-in-out infinite; }
         .p1 { top: 15%; left: 8%; animation-delay: 0s; }
         .p2 { top: 25%; right: 12%; animation-delay: 2s; font-size: 1.1rem; }
         .p3 { bottom: 20%; left: 6%; animation-delay: 4s; font-size: 1.8rem; }
@@ -70,7 +71,7 @@
 
         @keyframes floatingPoints {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(10deg); }
+            50% { transform: translateY(-15px) rotate(15deg); }
         }
 
         /* --- FLOATING NAV --- */
@@ -91,7 +92,7 @@
         nav a {
             padding: 10px 24px; border-radius: 50px;
             font-weight: 600; font-size: 14px;
-            color: var(--text-muted); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text-muted); transition: var(--transition-smooth);
         }
         nav a:hover { color: var(--text-main); background-color: rgba(244, 208, 63, 0.1); }
         nav a.active { background-color: var(--primary); color: var(--text-main); box-shadow: 0 4px 15px rgba(244, 208, 63, 0.25); }
@@ -109,7 +110,7 @@
         /* --- HERO SECTION --- */
         .hero {
             display: flex; align-items: center; justify-content: space-between;
-            min-height: 85vh; padding: 40px 0; gap: 40px;
+            min-height: 80vh; padding: 40px 0; gap: 40px;
         }
         .hero-left { flex: 1.2; }
         .greeting { font-weight: 600; color: var(--text-muted); font-size: 16px; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
@@ -128,67 +129,58 @@
             background: var(--white); padding: 20px 15px; border-radius: 20px;
             box-shadow: var(--shadow-sm); text-align: center;
             border: 1px solid rgba(244, 208, 63, 0.05);
-            transition: transform 0.3s;
+            transition: var(--transition-smooth);
         }
-        .hero-info-card:hover { transform: translateY(-3px); }
+        .hero-info-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: rgba(244, 208, 63, 0.3); }
         .hero-info-card p:first-child { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
         .hero-info-card p:last-child { font-size: 14px; font-weight: 600; color: var(--text-main); }
         
-        /* Chỉnh sửa style nút PDF để nổi bật và đồng bộ hơn */
         .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
         .btn-primary {
             display: inline-flex; align-items: center; gap: 12px;
             background-color: var(--primary); color: var(--text-main);
             padding: 16px 36px; border-radius: 50px;
-            font-weight: 700; font-size: 15px; transition: all 0.3s;
-            box-shadow: 0 10px 25px rgba(244, 208, 63, 0.35);
+            font-weight: 700; font-size: 15px; transition: var(--transition-smooth);
+            box-shadow: 0 10px 25px rgba(244, 208, 63, 0.3);
         }
         .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(244, 208, 63, 0.45); }
-        
-        .btn-secondary {
-            display: inline-flex; align-items: center; gap: 12px;
-            background-color: var(--white); color: var(--text-main);
-            padding: 16px 36px; border-radius: 50px;
-            font-weight: 700; font-size: 15px; transition: all 0.3s;
-            border: 1px solid rgba(244, 208, 63, 0.4);
-            box-shadow: var(--shadow-sm);
-        }
-        .btn-secondary:hover { transform: translateY(-4px); background-color: var(--primary-light); box-shadow: var(--shadow-md); }
 
         .hero-right { flex: 1; display: flex; justify-content: center; position: relative; }
         .hero-circle {
-            width: 360px; height: 360px; border-radius: 50%;
+            width: 340px; height: 340px; border-radius: 50%;
             background: radial-gradient(circle at center, #FFF8DC 0%, #FDEBD0 100%);
             display: flex; align-items: center; justify-content: center;
             box-shadow: var(--shadow-md); position: relative;
         }
         .hero-circle::before {
-            content: '🌻'; font-size: 8.5rem; filter: drop-shadow(0 12px 20px rgba(0,0,0,0.08));
+            content: '🌻'; font-size: 8rem; filter: drop-shadow(0 12px 20px rgba(0,0,0,0.08));
             animation: float 5s ease-in-out infinite;
         }
-        @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.02); } }
+        @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-15px) scale(1.03); } }
 
         /* --- ABOUT SECTION --- */
-        .section-wrapper { padding: 90px 0; }
+        .section-wrapper { padding: 80px 0; }
         .section-title { font-size: 2.4rem; font-weight: 700; margin-bottom: 40px; color: var(--text-main); letter-spacing: -0.5px; }
         
         .about-card {
             background: var(--white); padding: 45px; border-radius: 32px;
             box-shadow: var(--shadow-md); border-left: 6px solid var(--primary);
             font-size: 16px; color: var(--text-muted); line-height: 1.8;
+            transition: var(--transition-smooth);
         }
+        .about-card:hover { box-shadow: var(--shadow-lg); }
         .about-card h3 {
             color: var(--text-main); font-size: 1.25rem; margin-bottom: 12px; margin-top: 30px; font-weight: 700;
         }
         .about-card h3:first-child { margin-top: 0; }
         .about-card p { margin-bottom: 15px; text-align: justify; }
 
-        /* --- DỰ ÁN VÀ BÀI TẬP (ACCORDION STYLE) --- */
+        /* --- DANH SÁCH BÀI TẬP (ACCORDION) --- */
         .filters { display: flex; gap: 12px; margin-bottom: 35px; flex-wrap: wrap; }
         .filter-btn {
             background: var(--white); padding: 10px 24px; border-radius: 50px;
             font-size: 13.5px; font-weight: 600; color: var(--text-muted);
-            box-shadow: var(--shadow-sm); cursor: pointer; transition: all 0.2s;
+            box-shadow: var(--shadow-sm); cursor: pointer; transition: var(--transition-smooth);
             border: 1px solid rgba(0,0,0,0.02);
         }
         .filter-btn.active, .filter-btn:hover { background: var(--primary); color: var(--text-main); box-shadow: 0 4px 15px rgba(244,208,63,0.2); }
@@ -198,10 +190,10 @@
         .project-accordion {
             background: var(--white); border-radius: 28px;
             box-shadow: var(--shadow-sm); overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: var(--transition-smooth);
             border: 1px solid rgba(244, 208, 63, 0.05);
         }
-        .project-accordion:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .project-accordion:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: rgba(244, 208, 63, 0.2); }
         
         .accordion-toggle { display: none; }
 
@@ -214,7 +206,10 @@
             width: 58px; height: 58px; border-radius: 20px;
             background: var(--primary-light); display: flex;
             align-items: center; justify-content: center; font-size: 26px; min-width: 58px;
+            transition: var(--transition-smooth);
         }
+        .project-accordion:hover .project-icon { transform: scale(1.08) rotate(5deg); background: var(--primary); }
+
         .project-info .heading-title { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
         .project-info p { font-size: 13.5px; color: var(--text-muted); font-weight: 500; }
         
@@ -224,21 +219,21 @@
             padding: 6px 18px; border-radius: 50px; font-size: 12.5px; font-weight: 700; white-space: nowrap;
         }
         .arrow-icon {
-            color: var(--primary-dark); font-size: 14px; transition: transform 0.3s;
+            color: var(--primary-dark); font-size: 14px; transition: var(--transition-smooth);
             width: 32px; height: 32px; background: var(--primary-light);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
         }
 
-        /* Tối ưu hiệu ứng mượt mà */
+        /* Hiệu ứng đóng mở mượt mà */
         .accordion-content {
             max-height: 0; overflow: hidden;
-            transition: max-height 0.4s ease-out;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             background: #FDFDFB; border-top: 0 solid rgba(0,0,0,0.03);
         }
         
         .accordion-toggle:checked ~ .accordion-content {
-            max-height: 3500px; 
-            border-top: 1px solid rgba(244, 208, 63, 0.1);
+            max-height: 4000px; 
+            border-top: 1px solid rgba(244, 208, 63, 0.15);
         }
         .accordion-toggle:checked ~ .project-header .arrow-icon {
             transform: rotate(180deg);
@@ -246,15 +241,34 @@
             color: var(--text-main);
         }
 
+        /* 📊 CẤU TRÚC METADATA GRID BÀI TẬP (HỖ TRỢ 4 CỘT) */
         .assignment-meta-grid {
-            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding: 30px 35px 20px;
+            display: grid; grid-template-columns: 1fr 1fr 1fr 1.2fr; gap: 16px; padding: 30px 35px 20px;
         }
         .meta-item {
-            background: var(--bg-body); padding: 16px 20px; border-radius: 16px;
+            background: var(--bg-body); padding: 16px 20px; border-radius: 18px;
             border: 1px solid rgba(244, 208, 63, 0.08);
+            display: flex; flex-direction: column; justify-content: center;
         }
         .meta-item p:first-child { font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; letter-spacing: 0.5px; }
         .meta-item p:last-child { font-size: 14px; font-weight: 600; color: var(--text-main); }
+
+        /* ✨ ĐỒ HỌA TRANG TRÍ NÚT XEM FILE PDF ĐẸP MẮT (ĐÃ DỜI VÀO ĐÂY) */
+        .btn-pdf-inline {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            background-color: var(--white); color: var(--text-main);
+            padding: 14px 20px; border-radius: 16px;
+            font-weight: 700; font-size: 13.5px; transition: var(--transition-smooth);
+            border: 2px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+        }
+        .btn-pdf-inline:hover { 
+            background-color: var(--primary); 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px rgba(244, 208, 63, 0.35); 
+        }
+        .btn-pdf-inline span { font-size: 16px; }
 
         .assignment-body { padding: 10px 35px 40px; }
         
@@ -272,67 +286,78 @@
             box-shadow: 0 4px 10px rgba(244, 208, 63, 0.2);
         }
         .step-detail { flex: 1; }
-        .step-detail h4 { font-size: 20px; margin: 0 0 12px 0; color: var(--text-main); font-weight: 700; }
-        .step-detail p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; color: var(--text-muted); }
+        .step-detail h4 { font-size: 19px; margin: 0 0 12px 0; color: var(--text-main); font-weight: 700; }
+        .step-detail p { font-size: 15px; line-height: 1.65; margin-bottom: 16px; color: var(--text-muted); }
         
         .note-box {
             background-color: var(--primary-light);
             border-left: 4px solid var(--primary);
             padding: 14px 20px; margin-bottom: 20px;
             font-size: 14px; color: var(--text-main);
-            border-radius: 0 12px 12px 0;
+            border-radius: 0 16px 16px 0;
             font-weight: 500;
         }
         
-        /* 🛠️ CHỈNH SỬA PHẦN 1: Tối ưu Gallery hình ảnh thống nhất kích thước, không lo ảnh quá to */
+        /* 🛠️ CHỈNH SỬA PHẦN KÍCH CỠ HÌNH ẢNH: Đẹp mượt mà, kích thước chuẩn, hiệu ứng bo góc tinh tế */
         .image-gallery { 
             display: flex; 
             flex-wrap: wrap; 
             gap: 16px; 
-            margin-top: 15px; 
+            margin-top: 18px; 
             width: 100%; 
         }
         .image-gallery a { 
             display: inline-block; 
-            transition: transform 0.2s ease; 
+            overflow: hidden;
+            border-radius: 16px;
+            transition: var(--transition-smooth);
         }
-        .image-gallery a:hover { transform: scale(1.015); }
         
         .image-gallery img {
             width: 100%; 
-            max-height: 250px;       /* Giới hạn chiều cao cố định để ảnh không bị quá to */
-            object-fit: cover;       /* Tự động cắt cúp ảnh cân bằng, không làm méo hình */
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm); 
+            max-height: 240px;       /* Chiều cao chuẩn cố định */
+            object-fit: cover;       /* Tự động cắt cúp vừa vặn không lo méo ảnh */
             display: block;
-            border: 1px solid rgba(244, 208, 63, 0.1);
+            border: 1px solid rgba(244, 208, 63, 0.15);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.5s ease;
         }
+        
+        /* Hiệu ứng zoom ảnh nhẹ nhàng cao cấp khi di chuột qua */
+        .image-gallery a:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .image-gallery a:hover img { transform: scale(1.05); }
         
         .img-cols-2 a { width: calc(50% - 8px); }
         .img-cols-3 a { width: calc(33.33% - 11px); }
 
-        /* Responsive */
+        /* Responsive di động */
+        @media (max-width: 992px) {
+            .assignment-meta-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+        }
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; min-height: auto; padding: 60px 0; }
             .hero-title { font-size: 2.5rem; }
             .hero-sub { justify-content: center; }
-            .hero-info-grid, .assignment-meta-grid { grid-template-columns: 1fr; gap: 12px; }
+            .hero-info-grid { grid-template-columns: 1fr; gap: 12px; }
+            .assignment-meta-grid { grid-template-columns: 1fr; gap: 12px; }
             .step-block { flex-direction: column; gap: 15px; }
             .img-cols-2 a, .img-cols-3 a { width: 100%; }
-            .image-gallery img { max-height: 200px; } /* Thu gọn hơn nữa trên màn hình di động */
+            .image-gallery img { max-height: 200px; }
+            .hero-circle { width: 280px; height: 280px; }
+            .hero-circle::before { font-size: 6.5rem; }
         }
 
         /* --- FOOTER --- */
         footer {
             background-color: var(--text-main); color: var(--primary-light);
-            text-align: center; padding: 30px 20px; font-size: 14px; margin-top: 60px;
+            text-align: center; padding: 35px 20px; font-size: 14px; margin-top: 80px;
             font-weight: 500; letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- ĐỒ HỌA ĐA CHIỀU BACKGROUND -->
+    <!-- ĐỒ HỌA ĐA CHIỀU BACKGROUND TRANG TRÍ -->
     <div class="bg-glow-1"></div>
     <div class="bg-glow-2"></div>
     <div class="bg-particles">
@@ -379,11 +404,7 @@
                 
                 <div class="btn-group">
                     <a href="#projects" class="btn-primary">
-                        Xem bài tập thực hành <span>👇</span>
-                    </a>
-                    <!-- 🛠️ CHỈNH SỬA PHẦN 2: Cập nhật đường dẫn file PDF chính xác để sửa lỗi 404 -->
-                    <a href="tmp7syrrf_25040334_dinhthithanhmai-1.pdf" target="_blank" class="btn-secondary">
-                        Xem báo cáo bản PDF <span>📄</span>
+                        Xem 6 bài tập thực hành <span>👇</span>
                     </a>
                 </div>
             </div>
@@ -411,14 +432,14 @@
             <h2 class="section-title">Danh sách bài tập thực hành</h2>
             
             <div class="filters">
-                <div class="filter-btn active">Tất cả bài tập</div>
+                <div class="filter-btn active">Tất cả bài tập (6)</div>
                 <div class="filter-btn">Hệ điều hành Windows</div>
                 <div class="filter-btn">Quản lý tệp tin</div>
             </div>
 
             <div class="project-list">
                 
-                <!-- BÀI 1 ACCORDION -->
+                <!-- 👑 BÀI 1 ACCORDION (ĐÃ TÍCH HỢP NÚT PDF CHUYÊN NGHIỆP Ở ĐÂY) -->
                 <div class="project-accordion">
                     <input type="checkbox" id="toggle-p1" class="accordion-toggle" checked />
                     
@@ -437,23 +458,29 @@
                     </label>
 
                     <div class="accordion-content">
-                        <!-- Khối Metadata bài tập -->
+                        <!-- Khối thông tin mở rộng 4 cột - có nút PDF của Bài 1 -->
                         <div class="assignment-meta-grid">
                             <div class="meta-item">
                                 <p>Nội dung thực hành</p>
-                                <p>Quản lý tệp tin & Thư mục</p>
+                                <p>Quản lý tệp & Thư mục</p>
                             </div>
                             <div class="meta-item">
                                 <p>Môi trường hệ thống</p>
                                 <p>Windows File Explorer</p>
                             </div>
                             <div class="meta-item">
-                                <p>Tổng số bước kiểm thử</p>
+                                <p>Tổng số bước</p>
                                 <p>12 Bước tiêu chuẩn</p>
+                            </div>
+                            <!-- 📄 NÚT XEM PDF ĐƯỢC GẮN ĐÚNG VỊ TRÍ BÀI 1 -->
+                            <div class="meta-item-btn">
+                                <a href="tmp7syrrf_25040334_dinhthithanhmai-1.pdf" target="_blank" class="btn-pdf-inline">
+                                    <span>📄</span> Xem báo cáo bản PDF
+                                </a>
                             </div>
                         </div>
 
-                        <!-- Thân nội dung 12 bước thực hành -->
+                        <!-- Thân nội dung từng bước thực hành -->
                         <div class="assignment-body">
                             
                             <!-- BƯỚC 1 -->
@@ -466,7 +493,7 @@
                                         Ảnh xác định đúng biểu tượng File Explorer trên thanh tác vụ — điểm bắt đầu để mở trình quản lý tệp của Windows.
                                     </div>
                                     <div class="image-gallery">
-                                        <a href="https://ibb.co/6pcKFS3" target="_blank"><img src="https://i.ibb.co/XdfntPh/1784386508495-855422893640761644-9212239093870015019-273406f0188816ce03476fb249eabb5f.jpg" alt="Bước 1" border="0"></a>
+                                        <a href="https://ibb.co/6pcKFS3" target="_blank"><img src="https://i.ibb.co/XdfntPh/1784386508495-855422893640761644-9212239093870015019-273406f0188816ce03476fb249eabb5f.jpg" alt="Bước 1"></a>
                                     </div>
                                 </div>
                             </div>
@@ -481,7 +508,7 @@
                                         Ảnh cho thấy cửa sổ This PC và vị trí ổ đĩa được chọn, xác nhận thao tác truy cập nơi sẽ tạo thư mục thực hành.
                                     </div>
                                     <div class="image-gallery">
-                                        <a href="https://ibb.co/h186F3vd" target="_blank"><img src="https://i.ibb.co/XkJQxcT5/1784386522010-855422893640761644-9212239093870015019-72032e48e82c2a17ff5e086b84fc6e0c.jpg" alt="Bước 2" border="0"></a>
+                                        <a href="https://ibb.co/h186F3vd" target="_blank"><img src="https://i.ibb.co/XkJQxcT5/1784386522010-855422893640761644-9212239093870015019-72032e48e82c2a17ff5e086b84fc6e0c.jpg" alt="Bước 2"></a>
                                     </div>
                                 </div>
                             </div>
@@ -491,12 +518,12 @@
                                 <div class="step-number">03</div>
                                 <div class="step-detail">
                                     <h4>Tạo thư mục mới</h4>
-                                    <p>Nhấp chuột phải vào một khoảng trống &rarr; chọn New &rarr; Folder. Đặt tên thư mục là ThucHanh_hotensinhvien (ví dụ: ThucHanh_DinhThiThanhMai). Nhấn Enter.</p>
+                                    <p>Nhấp chuột phải vào một khoảng trống &rarr; chọn New &rarr; Folder. Đặt tên thư mục là ThucHanh_DinhThiThanhMai. Nhấn Enter.</p>
                                     <div class="note-box">
                                         Ảnh ghi lại menu chuột phải New &rarr; Folder và kết quả thư mục ThucHanh_DinhThiThanhMai được tạo đúng tên.
                                     </div>
                                     <div class="image-gallery">
-                                        <a href="https://imgbb.com/" target="_blank"><img src="https://i.ibb.co/bgy337Kw/1784386875541-855422893640761644-9212239093870015019-1108c0974c1cf0ab1195c99cd4eeb4c2.jpg" alt="Bước 3" border="0"></a>
+                                        <a href="https://imgbb.com/" target="_blank"><img src="https://i.ibb.co/bgy337Kw/1784386875541-855422893640761644-9212239093870015019-1108c0974c1cf0ab1195c99cd4eeb4c2.jpg" alt="Bước 3"></a>
                                     </div>
                                 </div>
                             </div>
@@ -508,10 +535,10 @@
                                     <h4>Vào thư mục vừa tạo</h4>
                                     <p>Nhấp đúp vào thư mục ThucHanh_DinhThiThanhMai để chuẩn bị cho các thao tác tiếp theo.</p>
                                     <div class="note-box">
-                                        Ảnh xác nhận đã mở đúng thư mục ThucHanh_DinhThiThanhMai trước khi tạo các tệp và thư mục con.
+                                        Ảnh xác định đã mở đúng thư mục ThucHanh_DinhThiThanhMai trước khi tạo các tệp và thư mục con.
                                     </div>
                                     <div class="image-gallery">
-                                        <a href="https://ibb.co/bjmJd8Xz" target="_blank"><img src="https://i.ibb.co/XfL8JvtS/1784386893285-855422893640761644-9212239093870015019-267973a8535a2624f365ffbfc9a813ea.jpg" alt="Bước 4" border="0"></a>
+                                        <a href="https://ibb.co/bjmJd8Xz" target="_blank"><img src="https://i.ibb.co/XfL8JvtS/1784386893285-855422893640761644-9212239093870015019-267973a8535a2624f365ffbfc9a813ea.jpg" alt="Bước 4"></a>
                                     </div>
                                 </div>
                             </div>
@@ -523,12 +550,12 @@
                                     <h4>Tạo tệp tin văn bản</h4>
                                     <p>Nhấp chuột phải vào khoảng trống &rarr; New &rarr; Text Document. Đặt tên là GhiChu.txt. Nhấn Enter.</p>
                                     <div class="note-box">
-                                        Các ảnh thể hiện trọn vẹn thao tác tạo Text Document: mở menu New và kết quả tệp GhiChu.txt xuất hiện hiện trong thư mục.
+                                        Các ảnh thể hiện trọn vẹn thao tác tạo Text Document: mở menu New và kết quả tệp GhiChu.txt xuất hiện trong thư mục.
                                     </div>
                                     <div class="image-gallery img-cols-3">
-                                        <a href="https://ibb.co/XfzJhKcK" target="_blank"><img src="https://i.ibb.co/WNcKbMmM/1784386911363-855422893640761644-9212239093870015019-305afee0f746ba166d693432097692b7.jpg" alt="Bước 5 ảnh 1" border="0"></a>
-                                        <a href="https://ibb.co/wFVXyRYS" target="_blank"><img src="https://i.ibb.co/Rkfm2973/1784386927641-855422893640761644-9212239093870015019-93fba584ff4b5a3c063ff51a99722e02.jpg" alt="Bước 5 ảnh 2" border="0"></a>
-                                        <a href="https://ibb.co/gMnZstPK" target="_blank"><img src="https://i.ibb.co/5W7hqsnH/1784388244624-855422893640761644-9212239093870015019-26d27780b73d810befede9a93602d1d1.jpg" alt="Bước 5 ảnh 3" border="0"></a>
+                                        <a href="https://ibb.co/XfzJhKcK" target="_blank"><img src="https://i.ibb.co/WNcKbMmM/1784386911363-855422893640761644-9212239093870015019-305afee0f746ba166d693432097692b7.jpg" alt="Bước 5 ảnh 1"></a>
+                                        <a href="https://ibb.co/wFVXyRYS" target="_blank"><img src="https://i.ibb.co/Rkfm2973/1784386927641-855422893640761644-9212239093870015019-93fba584ff4b5a3c063ff51a99722e02.jpg" alt="Bước 5 ảnh 2"></a>
+                                        <a href="https://ibb.co/gMnZstPK" target="_blank"><img src="https://i.ibb.co/5W7hqsnH/1784388244624-855422893640761644-9212239093870015019-26d27780b73d810befede9a93602d1d1.jpg" alt="Bước 5 ảnh 3"></a>
                                     </div>
                                 </div>
                             </div>
@@ -543,7 +570,7 @@
                                         Ảnh chứng minh thao tác đổi tên thành công: chọn lệnh Rename trên tệp cũ và kiểm tra kết quả hiển thị tệp mới.
                                     </div>
                                     <div class="image-gallery">
-                                        <a href="https://ibb.co/v4rBFZzW" target="_blank"><img src="https://i.ibb.co/d43cTGKv/1784386937830-855422893640761644-9212239093870015019-e359c1744af1f49eb382ebdde41a2afe.jpg" alt="Bước 6" border="0"></a>
+                                        <a href="https://ibb.co/v4rBFZzW" target="_blank"><img src="https://i.ibb.co/d43cTGKv/1784386937830-855422893640761644-9212239093870015019-e359c1744af1f49eb382ebdde41a2afe.jpg" alt="Bước 6"></a>
                                     </div>
                                 </div>
                             </div>
@@ -558,8 +585,8 @@
                                         Các ảnh minh họa quá trình tạo và đặt đúng tên thư mục con TaiLieu nằm bên trong thư mục gốc.
                                     </div>
                                     <div class="image-gallery img-cols-2">
-                                        <a href="https://ibb.co/Z167m3tF" target="_blank"><img src="https://i.ibb.co/sJvzHhkN/1784386959485-855422893640761644-9212239093870015019-a23b3004fa0c0bf32dcc8c2dad056e7c.jpg" alt="Bước 7 ảnh 1" border="0"></a>
-                                        <a href="https://ibb.co/q3qL5Z3V" target="_blank"><img src="https://i.ibb.co/Q3S7d53t/1784386977484-855422893640761644-9212239093870015019-5091ab2ab6e27c375caad05d17a18001.jpg" alt="Bước 7 ảnh 2" border="0"></a>
+                                        <a href="https://ibb.co/Z167m3tF" target="_blank"><img src="https://i.ibb.co/sJvzHhkN/1784386959485-855422893640761644-9212239093870015019-a23b3004fa0c0bf32dcc8c2dad056e7c.jpg" alt="Bước 7 ảnh 1"></a>
+                                        <a href="https://ibb.co/q3qL5Z3V" target="_blank"><img src="https://i.ibb.co/Q3S7d53t/1784386977484-855422893640761644-9212239093870015019-5091ab2ab6e27c375caad05d17a18001.jpg" alt="Bước 7 ảnh 2"></a>
                                     </div>
                                 </div>
                             </div>
@@ -569,13 +596,13 @@
                                 <div class="step-number">08</div>
                                 <div class="step-detail">
                                     <h4>Sao chép tệp tin (Copy & Paste)</h4>
-                                    <p>Nhấp chuột phải vào tệp GhiChuQuanTrong.txt &rarr; chọn Copy. Mở thư mục TaiLieu, nhấp chuột phải vào khoảng trống bên trong &rarr; chọn Paste.</p>
+                                    <p>Nhấp chuột phải vào tệp GhiChuQuanTrong.txt &rarr; chọn Copy. Mở thư mục TaiLieu, nhấp chuột phải vào khoảng trống &rarr; chọn Paste.</p>
                                     <div class="note-box">
                                         Chuỗi ảnh minh họa các bước chọn lệnh sao chép, mở thư mục đích và dán tệp tin để tạo bản sao.
                                     </div>
                                     <div class="image-gallery img-cols-2">
-                                        <a href="https://ibb.co/dsgJ2qTh" target="_blank"><img src="https://i.ibb.co/5XFx8y07/1784386997479-855422893640761644-9212239093870015019-04c8eea99ed97baaf66d47344c9140d3.jpg" alt="Bước 8 ảnh 1" border="0"></a>
-                                        <a href="https://ibb.co/7JRNnpCf" target="_blank"><img src="https://i.ibb.co/HDxptP4S/1784387010860-855422893640761644-9212239093870015019-0806ee8947abcfade20fd1a57684346f.jpg" alt="Bước 8 ảnh 2" border="0"></a>
+                                        <a href="https://ibb.co/dsgJ2qTh" target="_blank"><img src="https://i.ibb.co/5XFx8y07/1784386997479-855422893640761644-9212239093870015019-04c8eea99ed97baaf66d47344c9140d3.jpg" alt="Bước 8 ảnh 1"></a>
+                                        <a href="https://ibb.co/7JRNnpCf" target="_blank"><img src="https://i.ibb.co/HDxptP4S/1784387010860-855422893640761644-9212239093870015019-0806ee8947abcfade20fd1a57684346f.jpg" alt="Bước 8 ảnh 2"></a>
                                     </div>
                                 </div>
                             </div>
@@ -590,14 +617,35 @@
                                         Ghi lại thao tác cắt tệp gốc khỏi vị trí ban đầu và dán cố định sang thư mục lưu trữ mới.
                                     </div>
                                     <div class="image-gallery img-cols-3">
-                                        <a href="https://ibb.co/1GVdsn0M" target="_blank"><img src="https://i.ibb.co/QvBC8cJk/1784387026188-855422893640761644-9212239093870015019-df8b5116ecb5802c3b5e56e4a1261371.jpg" alt="Bước 9 ảnh 1" border="0"></a>
-                                        <a href="https://ibb.co/qFdDp0FF" target="_blank"><img src="https://i.ibb.co/1JL0TsJJ/1784387040325-855422893640761644-9212239093870015019-4c418ba3b80c28d956f8296dd958d990.jpg" alt="Bước 9 ảnh 2" border="0"></a>
-                                        <a href="https://ibb.co/gMDKVSNn" target="_blank"><img src="https://i.ibb.co/27j4Nvxb/1784387056297-855422893640761644-9212239093870015019-86bccf0d07c29aa2b37616f295c599d9.jpg" alt="Bước 9 ảnh 3" border="0"></a>
+                                        <a href="https://ibb.co/1GVdsn0M" target="_blank"><img src="https://i.ibb.co/QvBC8cJk/1784387026188-855422893640761644-9212239093870015019-df8b5116ecb5802c3b5e56e4a1261371.jpg" alt="Bước 9 ảnh 1"></a>
+                                        <a href="https://ibb.co/qFdDp0FF" target="_blank"><img src="https://i.ibb.co/1JL0TsJJ/1784387040325-855422893640761644-9212239093870015019-4c418ba3b80c28d956f8296dd958d990.jpg" alt="Bước 9 ảnh 2"></a>
+                                        <a href="https://ibb.co/gMDKVSNn" target="_blank"><img src="https://i.ibb.co/27j4Nvxb/1784387056297-855422893640761644-9212239093870015019-86bccf0d07c29aa2b37616f295c599d9.jpg" alt="Bước 9 ảnh 3"></a>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
+                    </div>
+                </div>
+
+                <!-- 📌 KHUNG SẴN CHO BÀI TẬP 2 ĐẾN BÀI TẬP 6 -->
+                <div class="project-accordion">
+                    <input type="checkbox" id="toggle-p2" class="accordion-toggle" />
+                    <label for="toggle-p2" class="project-header">
+                        <div class="project-left">
+                            <div class="project-icon">💻</div>
+                            <div class="project-info">
+                                <div class="heading-title">Bài 2: Cấu hình Hệ điều hành nâng cao</div>
+                                <p>Tùy biến môi trường làm việc cá nhân hóa trên Windows</p>
+                            </div>
+                        </div>
+                        <div class="project-right">
+                            <span class="status-pill" style="background:#FEF9E7; color:#D4AC0D;">Đang chuẩn bị</span>
+                            <div class="arrow-icon">▼</div>
+                        </div>
+                    </label>
+                    <div class="accordion-content">
+                        <div class="assignment-body"><p style="color:var(--text-muted)">Nội dung bài tập đang được cập nhật...</p></div>
                     </div>
                 </div>
 
