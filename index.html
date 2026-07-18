@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Đinh Thị Thanh Mai</title>
-    <!-- Import font Quicksand giống hệt bản gốc -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- BẢNG MÀU VÀNG (PASTEL YELLOW THEME) --- */
         :root {
             --bg-body: #FFFEFA; 
             --primary: #F4D03F; 
@@ -20,226 +16,48 @@
             --white: #FFFFFF;
             --shadow: 0 8px 30px rgba(244, 208, 63, 0.08); 
             --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.03);
-            
             --font-main: 'Quicksand', sans-serif;
         }
 
-        /* --- CÀI ĐẶT CHUNG --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-
+        body { font-family: var(--font-main); background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- BACKGROUND PARTICLES (Hạt mờ trang trí) --- */
-        .bg-particles {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; pointer-events: none; overflow: hidden;
-        }
-        .particle { position: absolute; font-size: 1.5rem; opacity: 0.3; }
-        .p1 { top: 20%; left: 10%; color: #F1C40F; }
-        .p2 { top: 15%; right: 20%; color: #F7DC6F; font-size: 1rem; }
-        .p3 { bottom: 30%; left: 5%; color: #F4D03F; font-size: 2rem; opacity: 0.1; }
-        .p4 { top: 60%; right: 10%; color: #F1C40F; }
-
-        /* --- NAVIGATION TỔ CHIM (Floating Nav) --- */
-        header {
-            display: flex; justify-content: center;
-            padding-top: 30px; position: sticky; top: 0; z-index: 100;
-        }
-        nav {
-            background-color: var(--white);
-            padding: 10px 15px;
-            border-radius: 50px;
-            box-shadow: var(--shadow-sm);
-            display: flex; gap: 10px;
-        }
-        nav a {
-            padding: 10px 25px; border-radius: 50px;
-            font-weight: 600; font-size: 15px;
-            color: var(--text-muted); transition: 0.3s;
-        }
-        nav a:hover { color: var(--primary-dark); }
+        /* Navigation */
+        header { display: flex; justify-content: center; padding-top: 30px; position: sticky; top: 0; z-index: 100; }
+        nav { background-color: var(--white); padding: 10px 15px; border-radius: 50px; box-shadow: var(--shadow-sm); display: flex; gap: 10px; }
+        nav a { padding: 10px 25px; border-radius: 50px; font-weight: 600; font-size: 15px; color: var(--text-muted); transition: 0.3s; }
         nav a.active { background-color: var(--primary); color: var(--text-main); }
 
-        /* --- CÁC THẺ TAG NHỎ --- */
-        .section-tag {
-            background-color: var(--primary-light);
-            color: var(--primary-dark);
-            padding: 6px 18px; border-radius: 50px;
-            font-size: 13px; font-weight: 700;
-            display: inline-block; margin-bottom: 20px;
-        }
-
-        /* --- PHẦN HERO (Trang chủ) --- */
-        .hero {
-            display: flex; align-items: center; justify-content: space-between;
-            min-height: 80vh; padding: 50px 0; gap: 40px;
-        }
-        .hero-left { flex: 1.2; }
-        
-        .greeting { font-weight: 600; color: var(--text-muted); font-size: 18px; display: flex; align-items: center; gap: 10px; }
-        .greeting-icon { color: var(--primary); font-size: 24px; }
-        
-        .hero-title {
-            font-size: 3.2rem; font-weight: 700; color: var(--primary-dark);
-            margin: 10px 0; line-height: 1.2;
-        }
-        
-        .hero-sub { color: var(--text-muted); font-size: 15px; font-weight: 500; margin-bottom: 40px; }
-        
-        .hero-info-grid {
-            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 40px;
-        }
-        .hero-info-card {
-            background: var(--white); padding: 15px; border-radius: 20px;
-            box-shadow: var(--shadow-sm); text-align: center;
-            display: flex; flex-direction: column; justify-content: center;
-        }
-        .hero-info-card p:first-child { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-        .hero-info-card p:last-child { font-size: 14px; font-weight: 600; color: var(--text-main); }
-        
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 10px;
-            background-color: var(--primary); color: var(--text-main);
-            padding: 15px 30px; border-radius: 50px;
-            font-weight: 700; font-size: 16px; transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(244, 208, 63, 0.3);
-        }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(244, 208, 63, 0.4); }
-
-        .hero-right { flex: 1; display: flex; justify-content: center; position: relative; }
-        .hero-circle {
-            width: 350px; height: 350px; border-radius: 50%;
-            background: radial-gradient(circle at center, #FFF5D1 0%, #FDEBD0 100%);
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: var(--shadow); position: relative;
-        }
-        .hero-circle::before {
-            content: '🌻'; font-size: 8rem; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0); } }
-
-        /* --- PHẦN GIỚI THIỆU --- */
+        /* Sections */
         .section-wrapper { padding: 80px 0; }
-        .section-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 40px; color: var(--text-main); }
-        
-        .about-card {
-            background: var(--white); padding: 50px; border-radius: 30px;
-            box-shadow: var(--shadow-sm); border-left: 5px solid var(--primary);
-            font-size: 16px; color: var(--text-muted); line-height: 1.8;
-        }
-        .about-card h3 {
-            color: var(--primary-dark); font-size: 1.2rem; margin-bottom: 15px; margin-top: 25px;
-        }
-        .about-card h3:first-child { margin-top: 0; }
-        .about-card p { margin-bottom: 15px; }
+        .section-tag { background-color: var(--primary-light); color: var(--primary-dark); padding: 6px 18px; border-radius: 50px; font-size: 13px; font-weight: 700; display: inline-block; margin-bottom: 20px; }
+        .section-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 40px; }
 
-        /* --- PHẦN BÀI TẬP (DỰ ÁN) --- */
-        .filters { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
-        .filter-btn {
-            background: var(--white); padding: 10px 25px; border-radius: 50px;
-            font-size: 14px; font-weight: 600; color: var(--text-muted);
-            box-shadow: var(--shadow-sm); cursor: pointer; transition: 0.3s;
-        }
-        .filter-btn.active { background: var(--primary); color: var(--text-main); }
+        /* Project Cards Detailed */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .project-card { background: var(--white); border-radius: 25px; padding: 30px; box-shadow: var(--shadow-sm); transition: 0.3s; border: 1px solid #f9f9f9; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); border-color: var(--primary); }
+        .project-icon { font-size: 40px; margin-bottom: 20px; }
+        .project-card h3 { font-size: 1.25rem; margin-bottom: 15px; color: var(--text-main); }
+        .project-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; min-height: 60px; }
+        .btn-detail { display: inline-block; padding: 10px 20px; background: var(--primary-light); color: var(--primary-dark); border-radius: 50px; font-weight: 600; font-size: 13px; }
 
-        .project-list { display: flex; flex-direction: column; gap: 20px; }
-        .project-item {
-            background: var(--white); padding: 25px 30px; border-radius: 25px;
-            display: flex; align-items: center; justify-content: space-between;
-            box-shadow: var(--shadow-sm); transition: 0.3s; cursor: pointer;
-        }
-        .project-item:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-        
-        .project-left { display: flex; align-items: center; gap: 25px; }
-        .project-icon {
-            width: 60px; height: 60px; border-radius: 18px;
-            background: var(--primary-light); display: flex;
-            align-items: center; justify-content: center; font-size: 28px; min-width: 60px;
-        }
-        .project-info h3 { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 5px; }
-        .project-info p { font-size: 14px; color: var(--text-muted); font-weight: 500; }
-        
-        .project-right { display: flex; align-items: center; gap: 15px; }
-        .status-pill {
-            background: var(--primary-light); color: var(--primary-dark);
-            padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; white-space: nowrap;
-        }
-        .arrow-down { color: var(--primary); font-size: 20px; }
+        /* General styles preserved from your draft */
+        .hero { min-height: 70vh; display: flex; align-items: center; justify-content: space-between; }
+        .hero-title { font-size: 3.2rem; color: var(--primary-dark); margin: 10px 0; }
+        .about-card { background: var(--white); padding: 50px; border-radius: 30px; box-shadow: var(--shadow-sm); border-left: 5px solid var(--primary); }
+        .reflection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .reflection-card { background: var(--white); padding: 40px; border-radius: 25px; box-shadow: var(--shadow-sm); border-top: 5px solid var(--primary); }
+        footer { margin-top: 80px; padding: 40px 0; text-align: center; color: var(--text-muted); }
 
-        /* --- PHẦN TỔNG KẾT (Grid Thẻ) --- */
-        .reflection-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
-        }
-        .reflection-card {
-            background: var(--white); padding: 40px; border-radius: 25px;
-            box-shadow: var(--shadow-sm); border-top: 5px solid var(--primary);
-            transition: 0.3s;
-        }
-        .reflection-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-        .reflection-card h3 {
-            font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 20px;
-            display: flex; align-items: center; gap: 10px;
-        }
-        .reflection-card p {
-            font-size: 15.5px; color: var(--text-muted); line-height: 1.7;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            margin-top: 80px; padding: 40px 0; border-top: 1px solid #EAE8E1;
-            display: flex; justify-content: space-between; align-items: center;
-            color: var(--text-muted); font-size: 14px;
-        }
-        .footer-left h4 { color: var(--text-main); font-size: 16px; margin-bottom: 5px; }
-        .footer-right { text-align: right; }
-        .footer-right h4 { color: var(--text-muted); font-size: 14px; font-weight: 500; margin-bottom: 5px; }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 991px) {
-            .hero-info-grid { grid-template-columns: 1fr; }
-            .reflection-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding: 30px 0; }
-            .hero-right { margin-top: 30px; }
-            .hero-circle { width: 280px; height: 280px; }
-            .project-item { flex-direction: column; text-align: center; gap: 20px; }
-            .project-left { flex-direction: column; }
-            footer { flex-direction: column; text-align: center; gap: 20px; }
-            .footer-right { text-align: center; }
-        }
+        @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } .reflection-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <!-- Hạt trang trí nền -->
-    <div class="bg-particles">
-        <span class="particle p1">✨</span>
-        <span class="particle p2">⭐</span>
-        <span class="particle p3">🌟</span>
-        <span class="particle p4">✨</span>
-    </div>
-
-    <!-- Thanh Điều Hướng -->
     <header>
         <nav>
             <a href="#trang-chu" class="active">Trang chủ</a>
@@ -250,227 +68,91 @@
     </header>
 
     <main class="container">
-        
-        <!-- PHẦN TRANG CHỦ -->
         <section id="trang-chu" class="hero">
             <div class="hero-left">
-                <div class="greeting">
-                    <span class="greeting-icon">✨</span> Xin chào! Mình là
-                </div>
                 <h1 class="hero-title">Đinh Thị Thanh Mai</h1>
-                <p class="hero-sub">MSSV: 25040334</p>
-                
-                <div class="hero-info-grid">
-                    <div class="hero-info-card">
-                        <p>Trường</p>
-                        <p>Đại học Ngoại ngữ - ĐHQGHN</p>
-                    </div>
-                    <div class="hero-info-card">
-                        <p>Khoa</p>
-                        <p>Tiếng Việt & VH VN và ĐNÁ</p>
-                    </div>
-                    <div class="hero-info-card">
-                        <p>Sở thích</p>
-                        <p>Xem phim, đọc sách</p>
-                    </div>
-                </div>
-                
-                <a href="#du-an" class="btn-primary">Xem dự án →</a>
-            </div>
-            
-            <div class="hero-right">
-                <div class="hero-circle">
-                    <!-- Icon bông hoa hướng dương -->
-                </div>
+                <p>MSSV: 25040334 | Khoa Tiếng Việt & VH VN và ĐNÁ</p>
             </div>
         </section>
 
-        <!-- PHẦN GIỚI THIỆU -->
         <section id="gioi-thieu" class="section-wrapper">
             <span class="section-tag">Giới thiệu</span>
-            <h2 class="section-title">Về mình & Portfolio này</h2>
-            
+            <h2 class="section-title">Về mình & Portfolio</h2>
             <div class="about-card">
-                <h3>Chia sẻ mục tiêu học tập và định hướng cá nhân</h3>
-                <p>Mục tiêu học tập của em là nắm vững những kiến thức cơ bản về công nghệ số, rèn luyện kỹ năng sử dụng các công cụ số một cách hiệu quả để hỗ trợ học tập và công việc sau này. Em định hướng trở thành giáo viên, vì vậy em mong muốn ứng dụng công nghệ vào giảng dạy nhằm nâng cao chất lượng bài học và tạo môi trường học tập tích cực cho học sinh.</p>
-                
-                <h3>Mục tiêu của Portfolio</h3>
-                <p>Portfolio được xây dựng nhằm thể hiện những kiến thức và kỹ năng em đã học được trong quá trình học tập, đồng thời là nơi lưu trữ và chia sẻ các dự án cá nhân một cách dễ dàng, khoa học và chủ động. Đây cũng là công cụ giúp em theo dõi sự phát triển của bản thân và giới thiệu năng lực trong học tập cũng như công việc sau này.</p>
+                <p>Mục tiêu của mình là ứng dụng công nghệ số vào giảng dạy. Portfolio này là nơi mình lưu trữ chặng đường học tập và phát triển kỹ năng số.</p>
             </div>
         </section>
 
-        <!-- PHẦN DỰ ÁN (BÀI TẬP) -->
         <section id="du-an" class="section-wrapper">
-            <span class="section-tag">Bài tập</span>
+            <span class="section-tag">Dự án</span>
             <h2 class="section-title">6 bài tập thực hành</h2>
-            <p style="color: var(--text-muted); margin-top: -30px; margin-bottom: 30px;">Nhấn vào từng bài tập để xem nội dung chi tiết, quy trình thực hiện và minh chứng.</p>
-            
-            <div class="filters">
-                <span class="filter-btn active">Tất cả</span>
-                <span class="filter-btn">Bài tập 1</span>
-                <span class="filter-btn">Bài tập 2</span>
-                <span class="filter-btn">Bài tập 3</span>
-                <span class="filter-btn">Bài tập 4</span>
-                <span class="filter-btn">Bài tập 5</span>
-                <span class="filter-btn">Bài tập 6</span>
-            </div>
-
-            <div class="project-list">
-                <!-- Card 1 -->
-                <div class="project-item">
-                    <div class="project-left">
-                        <div class="project-icon">📁</div>
-                        <div class="project-info">
-                            <h3>Thao tác cơ bản với tệp tin và thư mục</h3>
-                            <p>Bài tập 1 · Máy tính & Thiết bị ngoại vi</p>
-                        </div>
-                    </div>
-                    <div class="project-right">
-                        <span class="status-pill">Hoàn thành</span>
-                        <span class="arrow-down">▼</span>
-                    </div>
+            <div class="project-grid">
+                <!-- 6 Bài tập -->
+                <div class="project-card">
+                    <div class="project-icon">📁</div>
+                    <h3>Bài 1: Tệp tin & Thư mục</h3>
+                    <p>Thực hành quản lý dữ liệu khoa học trên máy tính và lưu trữ đám mây.</p>
+                    <a href="#" class="btn-detail">Xem chi tiết</a>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="project-item">
-                    <div class="project-left">
-                        <div class="project-icon">🔍</div>
-                        <div class="project-info">
-                            <h3>Tìm kiếm và đánh giá thông tin học thuật</h3>
-                            <p>Bài tập 2 · Khai thác dữ liệu & Thông tin</p>
-                        </div>
-                    </div>
-                    <div class="project-right">
-                        <span class="status-pill">Hoàn thành</span>
-                        <span class="arrow-down">▼</span>
-                    </div>
+                <div class="project-card">
+                    <div class="project-icon">🔍</div>
+                    <h3>Bài 2: Thông tin học thuật</h3>
+                    <p>Kỹ năng tìm kiếm tài liệu uy tín và đánh giá độ tin cậy của thông tin.</p>
+                    <a href="#" class="btn-detail">Xem chi tiết</a>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="project-item">
-                    <div class="project-left">
-                        <div class="project-icon">✨</div>
-                        <div class="project-info">
-                            <h3>Viết Prompt hiệu quả cho các tác vụ học tập</h3>
-                            <p>Bài tập 3 · Tổng quan về Trí tuệ Nhân tạo</p>
-                        </div>
-                    </div>
-                    <div class="project-right">
-                        <span class="status-pill">Hoàn thành</span>
-                        <span class="arrow-down">▼</span>
-                    </div>
+                <div class="project-card">
+                    <div class="project-icon">🤖</div>
+                    <h3>Bài 3: Prompt AI</h3>
+                    <p>Xây dựng các câu lệnh tối ưu để AI hỗ trợ học tập hiệu quả.</p>
+                    <a href="#" class="btn-detail">Xem chi tiết</a>
                 </div>
-
-                <!-- Card 4 -->
-                <div class="project-item">
-                    <div class="project-left">
-                        <div class="project-icon">🤝</div>
-                        <div class="project-info">
-                            <h3>Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h3>
-                            <p>Bài tập 4 · Giao tiếp & Hợp tác số</p>
-                        </div>
-                    </div>
-                    <div class="project-right">
-                        <span class="status-pill">Hoàn thành</span>
-                        <span class="arrow-down">▼</span>
-                    </div>
+                <div class="project-card">
+                    <div class="project-icon">🤝</div>
+                    <h3>Bài 4: Hợp tác số</h3>
+                    <p>Sử dụng công cụ nhóm trực tuyến để phối hợp làm việc dự án.</p>
+                    <a href="#" class="btn-detail">Xem chi tiết</a>
                 </div>
-
-                 <!-- Card 5 -->
-                 <div class="project-item">
-                    <div class="project-left">
-                        <div class="project-icon">🎨</div>
-                        <div class="project-info">
-                            <h3>Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h3>
-                            <p>Bài tập 5 · Sáng tạo nội dung số</p>
-                        </div>
-                    </div>
-                    <div class="project-right">
-                        <span class="status-pill">Hoàn thành</span>
-                        <span class="arrow-down">▼</span>
-                    </div>
+                <div class="project-card">
+                    <div class="project-icon">🎨</div>
+                    <h3>Bài 5: Sáng tạo nội dung</h3>
+                    <p>Ứng dụng AI tạo sinh để thiết kế bài thuyết trình và nội dung số.</p>
+                    <a href="#" class="btn-detail">Xem chi tiết</a>
                 </div>
-                
-                 <!-- Card 6 -->
-                 <div class="project-item">
-                    <div class="project-left">
-                        <div class="project-icon">🛡️</div>
-                        <div class="project-info">
-                            <h3>Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
-                            <p>Bài tập 6 · Đạo đức & An toàn số</p>
-                        </div>
-                    </div>
-                    <div class="project-right">
-                        <span class="status-pill">Hoàn thành</span>
-                        <span class="arrow-down">▼</span>
-                    </div>
+                <div class="project-card">
+                    <div class="project-icon">🛡️</div>
+                    <h3>Bài 6: Đạo đức số</h3>
+                    <p>Nhận thức về đạo đức, bản quyền và an toàn khi sử dụng AI.</p>
+                    <a href="#" class="btn-detail">Xem chi tiết</a>
                 </div>
             </div>
         </section>
 
-        <!-- PHẦN TỔNG KẾT -->
         <section id="tong-ket" class="section-wrapper">
             <span class="section-tag">Tổng kết</span>
             <h2 class="section-title">Nhìn lại hành trình</h2>
-            
             <div class="reflection-grid">
-                <!-- Thẻ 1 -->
-                <div class="reflection-card">
-                    <h3><span>💭</span> Cảm nhận và trải nghiệm</h3>
-                    <p>Quá trình xây dựng Portfolio là cơ hội để em hệ thống hóa những kiến thức đã học và vận dụng vào việc tạo ra một sản phẩm mang tính thực tiễn. Thông qua hoạt động này, em nhận thức rõ hơn về tầm quan trọng của việc ứng dụng công nghệ số trong học tập, đồng thời rèn luyện tính chủ động và tinh thần học hỏi trong quá trình hoàn thiện sản phẩm.</p>
-                </div>
-                
-                <!-- Thẻ 2 -->
-                <div class="reflection-card">
-                    <h3><span>💡</span> Kiến thức và kỹ năng đạt được</h3>
-                    <p>Việc thực hiện Portfolio giúp em củng cố các kiến thức nền tảng về công nghệ số, đồng thời phát triển các kỹ năng như tổ chức và trình bày nội dung, quản lý thông tin, thiết kế bố cục hợp lý, tìm kiếm và xử lý dữ liệu, cũng như nâng cao khả năng tự học và giải quyết vấn đề. Đây là những kỹ năng cần thiết cho quá trình học tập và công việc trong tương lai.</p>
-                </div>
-                
-                <!-- Thẻ 3 -->
-                <div class="reflection-card">
-                    <h3><span>❤️</span> Điều tâm đắc</h3>
-                    <p>Điều em tâm đắc nhất là có thể xây dựng một Portfolio mang dấu ấn cá nhân, phản ánh quá trình học tập và sự tiến bộ của bản thân một cách hệ thống và trực quan. Đây không chỉ là nơi lưu giữ các kết quả học tập mà còn là động lực để em tiếp tục hoàn thiện kiến thức, kỹ năng và phát triển bản thân trong thời gian tới.</p>
-                </div>
-                
-                <!-- Thẻ 4 -->
-                <div class="reflection-card">
-                    <h3><span>🧗‍♀️</span> Thách thức</h3>
-                    <p>Trong quá trình thực hiện Portfolio, em gặp một số khó khăn như lựa chọn nội dung phù hợp, sắp xếp bố cục khoa học và đảm bảo tính thống nhất trong cách trình bày. Tuy nhiên, những thách thức này đã giúp em rèn luyện tư duy logic, tính kiên trì và khả năng thích ứng khi giải quyết các vấn đề phát sinh trong quá trình thực hiện.</p>
-                </div>
+                <div class="reflection-card"><h3>💭 Cảm nhận</h3><p>Quá trình xây dựng Portfolio giúp mình hệ thống hóa kiến thức thực tiễn.</p></div>
+                <div class="reflection-card"><h3>💡 Kỹ năng</h3><p>Nâng cao khả năng tổ chức, thiết kế và tư duy giải quyết vấn đề số.</p></div>
             </div>
         </section>
 
-        <!-- CHÂN TRANG (FOOTER) -->
         <footer>
-            <div class="footer-left">
-                <h4>Đinh Thị Thanh Mai</h4>
-                <p>Khoa Tiếng Việt và VH VN & ĐNÁ — MSSV: 25040334</p>
-            </div>
-            <div class="footer-right">
-                <h4>Đại học Ngoại ngữ — ĐHQGHN</h4>
-                <p>Kỹ năng Số & Trí tuệ Nhân tạo</p>
-            </div>
+            <p>© 2026 Đinh Thị Thanh Mai - Portfolio Kỹ năng Số</p>
         </footer>
-
     </main>
 
-    <!-- Script chuyển đổi trạng thái menu khi cuộn -->
     <script>
+        // Smooth scroll active state
         const sections = document.querySelectorAll("section");
         const navLi = document.querySelectorAll("nav a");
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute("id");
-                }
+                if (window.scrollY >= section.offsetTop - 150) current = section.getAttribute("id");
             });
             navLi.forEach((a) => {
                 a.classList.remove("active");
-                if (a.getAttribute("href").includes(current)) {
-                    a.classList.add("active");
-                }
+                if (a.getAttribute("href").includes(current)) a.classList.add("active");
             });
         });
     </script>
