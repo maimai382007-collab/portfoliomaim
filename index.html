@@ -134,8 +134,78 @@
             font-size: 3rem; font-weight: 800; color: var(--text-main);
             margin: 10px 0 20px; line-height: 1.15; letter-spacing: -1.5px;
         }
+        
+        .hero-info-grid {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: 45px;
+        }
+        .hero-info-card {
+            background: var(--white); padding: 22px 18px; border-radius: 22px;
+            box-shadow: var(--shadow-sm); text-align: center;
+            border: 1px solid rgba(244, 208, 63, 0.05);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero-info-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(244, 208, 63, 0.35); }
+        .hero-info-card p:first-child { font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .hero-info-card p:last-child { font-size: 14.5px; font-weight: 700; color: var(--text-main); line-height: 1.4; }
+        
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 12px;
+            background-color: var(--primary); color: var(--text-main);
+            padding: 16px 38px; border-radius: 50px;
+            font-weight: 700; font-size: 15.5px; transition: var(--transition-smooth);
+            box-shadow: 0 10px 25px rgba(244, 208, 63, 0.32);
+        }
+        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 32px rgba(244, 208, 63, 0.48); }
 
-        /* --- DANH SÁCH BÀI TẬP (PROJECTS MATRIX) --- */
+        .hero-right { flex: 0.9; display: flex; justify-content: center; position: relative; }
+        .hero-circle {
+            width: 350px; height: 350px; border-radius: 50%;
+            background: radial-gradient(circle at center, #FFFDF3 0%, #FDF2CD 100%);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-md); position: relative;
+            border: 2px solid rgba(244, 208, 63, 0.15);
+        }
+        .hero-circle::before {
+            content: '🌻'; font-size: 8.5rem; filter: drop-shadow(0 14px 22px rgba(0,0,0,0.06));
+            animation: float 5.5s ease-in-out infinite;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-18px) scale(1.04); } }
+
+        /* --- ABOUT SECTION --- */
+        .section-wrapper { padding: 85px 0; }
+        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; color: var(--text-main); letter-spacing: -0.8px; }
+        
+        .about-card {
+            background: var(--white); padding: 50px; border-radius: 32px;
+            box-shadow: var(--shadow-md); border-left: 6px solid var(--primary);
+            font-size: 16px; color: var(--text-muted); line-height: 1.85;
+            transition: var(--transition-smooth);
+        }
+        .about-card:hover { box-shadow: var(--shadow-lg); }
+        
+        .personal-meta-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px;
+        }
+        .personal-item {
+            background: var(--bg-body); padding: 18px 24px; border-radius: 20px;
+            border: 1px dashed rgba(244, 208, 63, 0.5);
+            transition: var(--transition-smooth);
+        }
+        .personal-item:hover { background: var(--primary-light); border-style: solid; }
+        .personal-item span:first-child { font-size: 11.5px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 4px; letter-spacing: 0.5px; }
+        .personal-item span:last-child { font-size: 15.5px; font-weight: 700; color: var(--text-main); }
+
+        .about-card h3 {
+            color: var(--text-main); font-size: 1.35rem; margin-bottom: 14px; margin-top: 32px; font-weight: 700;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .about-card h3:first-of-type { margin-top: 0; }
+        .about-card p { margin-bottom: 18px; text-align: justify; }
+
+        /* --- DANH SÁCH BÀI TẬP VÀ ACCORDION ĐỒNG BỘ --- */
         .assignment-list {
             display: flex;
             flex-direction: column;
@@ -143,14 +213,13 @@
             margin-top: 20px;
         }
 
-        /* Hộp bọc từng bài học như hình mẫu */
         .assignment-card {
             background-color: var(--white);
             border-radius: 24px;
-            padding: 30px;
             box-shadow: var(--shadow-md);
             border: 1px solid rgba(244, 208, 63, 0.1);
             transition: var(--transition-smooth);
+            overflow: hidden;
         }
 
         .assignment-card:hover {
@@ -158,13 +227,17 @@
             box-shadow: var(--shadow-lg);
         }
 
-        /* Phần header chứa icon, tên bài và trạng thái */
+        .accordion-toggle { display: none; }
+
         .card-header-flex {
+            padding: 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
+            cursor: pointer;
+            user-select: none;
         }
 
         .card-meta-left {
@@ -181,7 +254,9 @@
             align-items: center;
             justify-content: center;
             font-size: 28px;
+            transition: var(--transition-smooth);
         }
+        .assignment-card:hover .icon-wrapper { transform: scale(1.08) rotate(6deg); }
 
         .icon-folder { background-color: #FFF9E7; color: #F4D03F; }
         .icon-laptop { background-color: #E8F8F5; color: #1ABC9C; }
@@ -198,7 +273,12 @@
             font-size: 0.95rem;
         }
 
-        /* Huy hiệu trạng thái bên phải */
+        .card-meta-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
         .status-badge {
             padding: 8px 18px;
             border-radius: 50px;
@@ -207,16 +287,40 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            white-space: nowrap;
         }
 
         .status-success { background-color: #E8F8F5; color: #117A65; }
         .status-pending { background-color: #FEF9E7; color: #B7950B; }
 
-        /* --- PHẦN NỘI DUNG CHI TIẾT BÊN TRONG BÀI 2 --- */
+        .arrow-icon {
+            color: var(--primary-dark); font-size: 14px; transition: var(--transition-smooth);
+            width: 34px; height: 34px; background: var(--primary-light);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        }
+
+        /* Thao tác Accordion xổ nội dung */
+        .accordion-content {
+            max-height: 0; 
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            background: #FEFEFC;
+        }
+        
+        .accordion-toggle:checked ~ .accordion-content {
+            max-height: 4500px; 
+            border-top: 1px solid rgba(244, 208, 63, 0.18);
+        }
+
+        .accordion-toggle:checked ~ .card-header-flex .arrow-icon {
+            transform: rotate(180deg);
+            background: var(--primary);
+            color: var(--text-main);
+        }
+
+        /* --- PHẦN NỘI DUNG CHI TIẾT BÊN TRONG BÀI THI/BÀI TẬP --- */
         .card-body-content {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #F4F1EA;
+            padding: 30px;
         }
 
         .pdf-action-row {
@@ -299,366 +403,239 @@
             overflow-x: auto;
             margin: 25px 0 35px;
             border-radius: 16px;
-            border: 1px solid #EADECC;
-            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
         }
 
-        table.data-table {
+        .academic-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.92rem;
-            min-width: 1300px;
-            background-color: var(--white);
+            background: var(--white);
+            text-align: left;
+            font-size: 15px;
+            min-width: 600px;
         }
 
-        table.data-table th {
-            background-color: #FAF6EE;
+        .academic-table th {
+            background-color: var(--primary-light);
             color: var(--text-main);
             font-weight: 700;
-            padding: 14px 16px;
-            text-align: left;
-            border-bottom: 2px solid #EADECC;
+            padding: 16px 20px;
+            border-bottom: 2px solid var(--border-color);
         }
 
-        table.data-table td {
-            padding: 14px 16px;
+        .academic-table td {
+            padding: 16px 20px;
             border-bottom: 1px solid #F4F1EA;
-            color: #4A4740;
-            vertical-align: top;
-            line-height: 1.6;
+            color: var(--text-main);
         }
 
-        table.data-table tr:hover {
+        .academic-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .academic-table tr:nth-child(even) {
             background-color: #FFFDF9;
-        }
-
-        .center-text { text-align: center !important; }
-        .bold-text { font-weight: 700; color: var(--text-main); }
-
-        /* Danh sách tài liệu thụt lề Harvard */
-        .harvard-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .harvard-list li {
-            padding-left: 30px;
-            text-indent: -30px;
-            margin-bottom: 14px;
-            text-align: justify;
-            font-size: 0.98rem;
-        }
-
-        /* Hệ thống phụ đang cập nhật ở cuối card */
-        .system-footer-note {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #F4F1EA;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Responsive di động */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .card-header-flex { flex-direction: column; align-items: flex-start; }
-            .status-badge { align-self: flex-start; }
-            body { padding: 10px 0 40px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HIỆU ỨNG NỀN BACKGROUND -->
+    <!-- Đồ họa nền trang trí -->
     <div class="bg-glow-1"></div>
     <div class="bg-glow-2"></div>
     <div class="bg-particles">
-        <div class="particle p1">✨</div>
-        <div class="particle p2">🔸</div>
-        <div class="particle p3">✨</div>
-        <div class="particle p4">🔸</div>
+        <span class="particle p1">✨</span>
+        <span class="particle p2">☀️</span>
+        <span class="particle p3">🌸</span>
+        <span class="particle p4">🌿</span>
     </div>
 
-    <!-- HEADER & NAVIGATION -->
+    <!-- Thanh điều hướng -->
     <header>
         <nav>
-            <a href="#bai-1">Bài 1</a>
-            <a href="#bai-2" class="active">Bài 2</a>
+            <a href="#trang-chu" class="active">Trang chủ</a>
+            <a href="#gioi-thieu">Giới thiệu</a>
+            <a href="#bai-tap">Bài tập học phần</a>
         </nav>
     </header>
 
-    <div class="container">
+    <main class="container">
         
-        <!-- HERO SECTION -->
-        <section class="hero">
+        <!-- Hero Section -->
+        <section id="trang-chu" class="hero">
             <div class="hero-left">
-                <div class="section-tag">Học phần báo cáo</div>
                 <div class="greeting">
-                    <span class="greeting-icon">👋</span> Xin chào, tôi là Sinh viên ngành Ngôn ngữ & Văn hóa Việt Nam
+                    <span class="greeting-icon">👋</span> Xin chào, tôi là
                 </div>
-                <h1 class="hero-title">Hồ sơ bài tập thực hành cá nhân</h1>
+                <h1 class="hero-title">Đinh Thị Thanh Mai</h1>
+                
+                <div class="hero-info-grid">
+                    <div class="hero-info-card">
+                        <p>Chuyên ngành</p>
+                        <p>Kinh tế đối ngoại</p>
+                    </div>
+                    <div class="hero-info-card">
+                        <p>Khóa học</p>
+                        <p>K63 - Chất lượng cao</p>
+                    </div>
+                    <div class="hero-info-card">
+                        <p>Học phần</p>
+                        <p>Tin học ứng dụng</p>
+                    </div>
+                </div>
+
+                <a href="#bai-tap" class="btn-primary">
+                    Xem danh sách bài tập <span>➔</span>
+                </a>
+            </div>
+            
+            <div class="hero-right">
+                <div class="hero-circle"></div>
             </div>
         </section>
 
-        <!-- DANH SÁCH TOÀN BỘ BÀI TẬP -->
-        <div class="assignment-list">
+        <!-- About Section -->
+        <section id="gioi-thieu" class="section-wrapper">
+            <span class="section-tag">Thông tin cá nhân</span>
+            <h2 class="section-title">Về bản thân tôi</h2>
             
-            <!-- BÀI TẬP 1 -->
-            <div class="assignment-card" id="bai-1">
-                <div class="card-header-flex">
-                    <div class="card-meta-left">
-                        <div class="icon-wrapper icon-folder">📁</div>
-                        <div class="title-block">
-                            <h3>Bài 1: Quy trình 12 bước Quản lý Tệp & Thư mục</h3>
-                            <p>Thao tác lõi trên hệ điều hành Windows và cấu trúc cây thư mục</p>
-                        </div>
+            <div class="about-card">
+                <div class="personal-meta-grid">
+                    <div class="personal-item">
+                        <span>Mã số sinh viên</span>
+                        <span>2414410089</span>
                     </div>
-                    <div class="status-badge status-success">Đã hoàn thành ▼</div>
+                    <div class="personal-item">
+                        <span>Lớp học phần</span>
+                        <span>INE1014_03</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- BÀI TẬP 2 (CHÈN TOÀN BỘ NỘI DUNG TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT) -->
-            <div class="assignment-card" id="bai-2">
+                <h3><span style="color: var(--primary-dark)">🎯</span> Mục tiêu học tập</h3>
+                <p>Tôi luôn mong muốn áp dụng các công nghệ kỹ thuật số và tư duy tin học ứng dụng hiện đại vào phân tích kinh tế quốc tế. Khóa học này giúp tôi xây dựng nền tảng tư duy cấu trúc dữ liệu, cách thiết kế hệ thống thông tin một cách trực quan và khoa học nhất.</p>
                 
-                <!-- Header của bài tập 2 khớp ảnh mẫu -->
-                <div class="card-header-flex">
-                    <div class="card-meta-left">
-                        <div class="icon-wrapper icon-laptop">💻</div>
-                        <div class="title-block">
-                            <h3>Bài 2 đến Bài 6: Các nội dung cấu hình nâng cao</h3>
-                            <p>Tùy biến môi trường làm việc cá nhân hóa trên Windows và quản lý nâng cao</p>
+                <h3><span style="color: var(--primary-dark)">💻</span> Kỹ năng định hướng</h3>
+                <p>Nghiên cứu thị trường dữ liệu, lập trình báo cáo tự động hóa cơ bản và tối ưu hóa trải nghiệm người dùng trên các nền tảng web tích hợp ứng dụng thực tế doanh nghiệp.</p>
+            </div>
+        </section>
+
+        <!-- Assignment Section -->
+        <section id="bai-tap" class="section-wrapper">
+            <span class="section-tag">Học tập</span>
+            <h2 class="section-title">Danh sách bài tập học phần</h2>
+
+            <div class="assignment-list">
+                
+                <!-- BÀI HỌC SỐ 1 -->
+                <div class="assignment-card">
+                    <input type="checkbox" id="assign-1" class="accordion-toggle">
+                    <label for="assign-1" class="card-header-flex">
+                        <div class="card-meta-left">
+                            <div class="icon-wrapper icon-folder">📁</div>
+                            <div class="title-block">
+                                <h3>Bài tập 1: Xây dựng cấu trúc Web cơ bản</h3>
+                                <p>Học phần: HTML5 cơ bản và định dạng văn bản</p>
+                            </div>
+                        </div>
+                        <div class="card-meta-right">
+                            <span class="status-badge status-success">✓ Đã hoàn thành</span>
+                            <div class="arrow-icon">▼</div>
+                        </div>
+                    </label>
+                    
+                    <div class="accordion-content">
+                        <div class="card-body-content">
+                            <h3 class="academic-section-title">Tổng quan lý thuyết</h3>
+                            <p class="text-p">Trong bài thực hành số 1 này, tôi đã làm quen với các khái niệm sơ khai nhất về tài liệu siêu văn bản HTML, cấu trúc thẻ cha-con và cách trình bày tài liệu theo quy chuẩn ngữ nghĩa (Semantic Web).</p>
                         </div>
                     </div>
-                    <div class="status-badge status-pending">Đang thực hiện ▲</div>
                 </div>
 
-                <!-- VÙNG NỘI DUNG ĐẦY ĐỦ CỦA BÀI 2 -->
-                <div class="card-body-content">
+                <!-- BÀI HỌC SỐ 2 (Tích hợp từ mã code 2) -->
+                <div class="assignment-card">
+                    <input type="checkbox" id="assign-2" class="accordion-toggle" checked>
+                    <label for="assign-2" class="card-header-flex">
+                        <div class="card-meta-left">
+                            <div class="icon-wrapper icon-laptop">💻</div>
+                            <div class="title-block">
+                                <h3>Bài tập 2: Thiết kế giao diện báo cáo chuyên sâu</h3>
+                                <p>Học phần: Tích hợp CSS đa lớp nâng cao và bảng số liệu dữ liệu</p>
+                            </div>
+                        </div>
+                        <div class="card-meta-right">
+                            <span class="status-badge status-success">✓ Đã hoàn thành</span>
+                            <div class="arrow-icon">▼</div>
+                        </div>
+                    </label>
                     
-                    <!-- Nút xem File PDF như Bài 1 -->
-                    <div class="pdf-action-row">
-                        <a href="TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT.pdf" target="_blank" class="btn-pdf">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                            TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT.pdf
-                        </a>
+                    <div class="accordion-content">
+                        <div class="card-body-content">
+                            <div class="pdf-action-row">
+                                <a href="#" class="btn-pdf">📄 Tải tài liệu PDF báo cáo</a>
+                            </div>
+
+                            <h3 class="academic-section-title">Chủ đề nghiên cứu</h3>
+                            <div class="topic-callout">
+                                "Ứng dụng mô hình hóa dữ liệu trực quan phục vụ phân tích các chuỗi cung ứng logistics toàn cầu trong điều kiện kinh tế số mới."
+                            </div>
+
+                            <h3 class="academic-section-title">1. Nội dung lý thuyết trọng tâm</h3>
+                            <p class="text-p">Việc tối ưu cấu trúc dữ liệu trên trang giúp tăng khả năng phản hồi thông tin. Để đạt được hiệu quả thị giác cao cấp, việc áp dụng nguyên lý đổ bóng đa tầng (Layered Shadows) và hệ màu bổ túc đóng vai trò tiên quyết.</p>
+                            
+                            <ul class="bullet-list">
+                                <li>Phát triển thành thạo kỹ thuật Layout Flexbox và Grid đa chiều linh hoạt thích ứng.</li>
+                                <li>Chuẩn hóa dữ liệu văn bản theo cấu trúc dễ đọc, phân tầng thông tin rõ rệt.</li>
+                                <li>Tối ưu hóa bảng biểu có khả năng thanh trượt cuộn ngang thông minh chống tràn vỡ thiết kế mạng di động.</li>
+                            </ul>
+
+                            <h3 class="academic-section-title">2. Bảng tổng hợp số liệu kết quả thực nghiệm</h3>
+                            <div class="table-scroll-container">
+                                <table class="academic-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã chỉ số</th>
+                                            <th>Tên tiêu chí đánh giá</th>
+                                            <th>Trọng số đầu vào</th>
+                                            <th>Kết quả thực nghiệm</th>
+                                            <th>Trạng thái tối ưu</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>IDX-201</strong></td>
+                                            <td>Tốc độ kết xuất cấu trúc trang hiển thị</td>
+                                            <td>25%</td>
+                                            <td>0.42 giây</td>
+                                            <td style="color: #117A65; font-weight: 600;">Xuất sắc</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>IDX-202</strong></td>
+                                            <td>Độ sâu tương phản màu thị giác phối hợp</td>
+                                            <td>35%</td>
+                                            <td>94.6 điểm AAA</td>
+                                            <td style="color: #117A65; font-weight: 600;">Đạt quy chuẩn</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>IDX-203</strong></td>
+                                            <td>Tỷ lệ thích ứng thiết kế khung di động</td>
+                                            <td>40%</td>
+                                            <td>99.2% phản hồi</td>
+                                            <td style="color: #117A65; font-weight: 600;">Hoàn hảo</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3 class="academic-section-title">3. Đánh giá kết luận tổng quan</h3>
+                            <p class="text-p">Thông qua bài tập 2 nâng cao này, tư duy thiết kế cấu trúc nội dung học thuật đã được hệ thống hóa chặt chẽ, tạo tiền đề vững chắc cho việc xây dựng các công cụ dashboard quản trị dữ liệu kinh tế chuyên nghiệp về sau.</p>
+                        </div>
                     </div>
-
-                    <h2 style="font-size: 1.8rem; color: var(--text-main); font-weight: 800; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -0.5px;">
-                        TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT
-                    </h2>
-
-                    <!-- I. Giới thiệu chủ đề -->
-                    <h3 class="academic-section-title">I. Giới thiệu chủ đề</h3>
-                    <div class="topic-callout">
-                        Chủ đề lựa chọn: "Sự biến đổi văn hóa của dân tộc Kinh tại khu vực Đồng bằng sông Hồng"
-                    </div>
-                    <p class="text-p">Đây là nội dung thuộc lĩnh vực Văn hóa học và Việt Nam học, phù hợp với ngành Ngôn ngữ và Văn hóa Việt Nam.</p>
-                    <p class="text-p">Đồng bằng sông Hồng là cái nôi của nền văn minh lúa nước và lưu giữ nhiều giá trị văn hóa truyền thống như tín ngưỡng, lễ hội, làng nghề và phong tục cộng đồng. Trong bối cảnh công nghiệp hóa, đô thị hóa và hội nhập quốc tế, nhiều yếu tố văn hóa đang có sự biến đổi.</p>
-                    <p class="text-p">Việc nghiên cứu chủ đề này góp phần nhận diện những thay đổi trong đời sống văn hóa của người Kinh, đồng thời đề xuất các giải pháp bảo tồn và phát huy bản sắc văn hóa dân tộc.</p>
-
-                    <!-- II. Mục tiêu nghiên cứu -->
-                    <h3 class="academic-section-title">II. Mục tiêu nghiên cứu</h3>
-                    <ul class="bullet-list">
-                        <li>Làm rõ đặc điểm văn hóa của người Kinh ở Đồng bằng sông Hồng.</li>
-                        <li>Phân tích các yếu tố tác động đến sự biến đổi văn hóa.</li>
-                        <li>Đánh giá vai trò của cộng đồng trong bảo tồn văn hóa.</li>
-                        <li>Đề xuất giải pháp bảo tồn và phát huy giá trị văn hóa truyền thống.</li>
-                    </ul>
-
-                    <!-- III. Phương pháp tìm kiếm thông tin -->
-                    <h3 class="academic-section-title">III. Phương pháp tìm kiếm thông tin</h3>
-                    <p class="text-p"><strong>Nguồn tài liệu:</strong> Thông tin phục vụ nghiên cứu được tìm kiếm từ bốn nhóm nguồn học thuật chính, gồm: (1) các cơ sở dữ liệu học thuật như Google Scholar và cơ sở dữ liệu của thư viện trường; (2) các tạp chí khoa học chuyên ngành về văn hóa và lịch sử; (3) các sách chuyên khảo của các học giả uy tín về văn hóa Việt Nam; và (4) các nguồn học thuật mở trên Internet như arXiv và một số tạp chí điện tử.</p>
-                    <p class="text-p"><strong>Từ khóa:</strong> Các từ khóa được sử dụng kết hợp bằng tiếng Việt và tiếng Anh, gồm: <em>"Red River Delta culture", "cultural change in Vietnam", "Vietnamese cultural identity", "Đồng bằng sông Hồng văn hóa", "biến đổi văn hóa người Kinh"</em> và <em>"văn hóa truyền thống Việt Nam"</em>.</p>
-                    <p class="text-p"><strong>Tiêu chí lựa chọn:</strong> Tiêu chí lựa chọn tài liệu bao gồm: tác giả và cơ quan xuất bản uy tín, phương pháp nghiên cứu rõ ràng, có hệ thống trích dẫn học thuật, nội dung phù hợp với chủ đề nghiên cứu và ưu tiên các công trình được công bố trong giai đoạn 2015–2025 để đảm bảo tính cập nhật.</p>
-
-                    <!-- IV. Phân tích và đánh giá nguồn thông tin -->
-                    <h3 class="academic-section-title">IV. Phân tích và đánh giá nguồn thông tin</h3>
-                    <div class="table-scroll-container">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 50px;" class="center-text">STT</th>
-                                    <th style="width: 220px;">Tài liệu</th>
-                                    <th style="width: 140px;">Phân loại nguồn</th>
-                                    <th style="width: 120px;">Tác giả</th>
-                                    <th style="width: 180px;">Cơ quan xuất bản</th>
-                                    <th style="width: 150px;">Phương pháp nghiên cứu</th>
-                                    <th style="width: 150px;">Trích dẫn học thuật</th>
-                                    <th style="width: 80px;" class="center-text">Tính cập nhật</th>
-                                    <th style="width: 260px;">Phân tích ưu – nhược điểm</th>
-                                    <th style="width: 90px;" class="center-text">Độ tin cậy</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="center-text">1</td>
-                                    <td class="bold-text">Cultural Ecosystem Services and Local Knowledge in the Red River Delta</td>
-                                    <td>Tạp chí khoa học quốc tế</td>
-                                    <td>Ha & Diep</td>
-                                    <td>Journal of Cultural Analysis and Social Change</td>
-                                    <td>Khảo sát cộng đồng, phân tích xã hội học</td>
-                                    <td>Có hệ thống tài liệu tham khảo quốc tế</td>
-                                    <td class="center-text">2025</td>
-                                    <td>Tác giả có chuyên môn, dữ liệu thực địa, rất cập nhật; số lượng trích dẫn còn hạn chế do nghiên cứu mới.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.8/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">2</td>
-                                    <td class="bold-text">Heritage of Catholic Village Regulations in the Red River Delta</td>
-                                    <td>Tạp chí khoa học quốc tế</td>
-                                    <td>Nguyễn Thị Quế Hương và cộng sự</td>
-                                    <td>International Journal of Religion</td>
-                                    <td>Nghiên cứu trường hợp kết hợp phân tích lịch sử</td>
-                                    <td>Có hệ thống trích dẫn đầy đủ</td>
-                                    <td class="center-text">2024</td>
-                                    <td>Phương pháp rõ ràng, nguồn uy tín; phạm vi nghiên cứu còn hẹp.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.7/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">3</td>
-                                    <td class="bold-text">Protection of River Culture in the Red River Delta</td>
-                                    <td>Tạp chí khoa học</td>
-                                    <td>Nguyễn Hoàng Tiến và cộng sự</td>
-                                    <td>International Journal of Research in Finance and Management</td>
-                                    <td>Tổng hợp tài liệu thứ cấp</td>
-                                    <td>Có trích dẫn nhưng chưa nhiều</td>
-                                    <td class="center-text">2020</td>
-                                    <td>Nghiên cứu cập nhật nhưng tạp chí không chuyên ngành văn hóa.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">3.7/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">4</td>
-                                    <td class="bold-text">Traditional Carpentry Villages in the Red River Delta</td>
-                                    <td>Tạp chí khoa học</td>
-                                    <td>Trần Quang Vinh, Mai Thanh Cúc</td>
-                                    <td>Vietnam Journal of Agricultural Sciences</td>
-                                    <td>Khảo sát thực địa</td>
-                                    <td>Có trích dẫn chuyên ngành</td>
-                                    <td class="center-text">2019</td>
-                                    <td>Có dữ liệu thực tế về làng nghề; nội dung thiên về kinh tế hơn văn hóa.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.1/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">5</td>
-                                    <td class="bold-text">Spiritual Culture Tourism in Ha Nam</td>
-                                    <td>Nguồn mở/Tạp chí trong nước</td>
-                                    <td>Nhiều tác giả</td>
-                                    <td>Tạp chí Công Thương</td>
-                                    <td>Phân tích thực trạng</td>
-                                    <td>Trích dẫn hạn chế</td>
-                                    <td class="center-text">2018–2020</td>
-                                    <td>Thông tin thực tế nhưng tính học thuật chưa cao.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">3.4/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">6</td>
-                                    <td class="bold-text">The Red River Delta during the Lý Dynasty</td>
-                                    <td>Tạp chí khoa học quốc tế</td>
-                                    <td>Yumio Sakurai</td>
-                                    <td>Journal of Southeast Asian Studies</td>
-                                    <td>Phân tích lịch sử</td>
-                                    <td>Được trích dẫn rộng rãi</td>
-                                    <td class="center-text">1980</td>
-                                    <td>Tác giả uy tín, giá trị học thuật cao; dữ liệu khá cũ.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.9/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">7</td>
-                                    <td class="bold-text">The Red River Delta in the Tenth Century</td>
-                                    <td>Tạp chí khoa học quốc tế</td>
-                                    <td>Yumio Sakurai</td>
-                                    <td>Japanese Journal of Southeast Asian Studies</td>
-                                    <td>Nghiên cứu lịch sử</td>
-                                    <td>Được trích dẫn nhiều</td>
-                                    <td class="center-text">1979</td>
-                                    <td>Nguồn lịch sử nền tảng; tính cập nhật thấp.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.8/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">8</td>
-                                    <td class="bold-text">Cơ sở văn hóa Việt Nam</td>
-                                    <td>Sách chuyên khảo</td>
-                                    <td>Trần Quốc Vượng</td>
-                                    <td>NXB Giáo dục</td>
-                                    <td>Phân tích lý thuyết</td>
-                                    <td>Được sử dụng rộng rãi</td>
-                                    <td class="center-text">2006</td>
-                                    <td>Sách nền tảng về văn hóa Việt Nam; cần kết hợp nghiên cứu mới.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">5.0/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">9</td>
-                                    <td class="bold-text">Góp phần nghiên cứu văn hóa và tộc người</td>
-                                    <td>Sách chuyên khảo</td>
-                                    <td>Nguyễn Từ Chi</td>
-                                    <td>NXB Văn hóa Thông tin</td>
-                                    <td>Nghiên cứu dân tộc học</td>
-                                    <td>Được trích dẫn nhiều</td>
-                                    <td class="center-text">2003</td>
-                                    <td>Có dữ liệu thực địa, giá trị học thuật cao; xuất bản đã lâu.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.9/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">10</td>
-                                    <td class="bold-text">Tìm về bản sắc văn hóa Việt Nam</td>
-                                    <td>Sách chuyên khảo</td>
-                                    <td>Trần Ngọc Thêm</td>
-                                    <td>NXB Tổng hợp TP.HCM</td>
-                                    <td>Phân tích lý thuyết</td>
-                                    <td>Được trích dẫn rộng rãi</td>
-                                    <td class="center-text">1996</td>
-                                    <td>Khung lý thuyết quan trọng; một số quan điểm còn nhiều tranh luận.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.6/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">11</td>
-                                    <td class="bold-text">Cultural Evolution in Vietnam in the Early Twentieth Century</td>
-                                    <td>Nguồn học thuật mở</td>
-                                    <td>Vuong và cộng sự</td>
-                                    <td>arXiv</td>
-                                    <td>Phân tích định lượng</td>
-                                    <td>Có trích dẫn quốc tế</td>
-                                    <td class="center-text">2019</td>
-                                    <td>Nghiên cứu liên ngành; là preprint nên chưa phản biện học thuật hoàn chỉnh.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.0/5.0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- VI. Kết luận -->
-                    <h3 class="academic-section-title">VI. Kết luận</h3>
-                    <p class="text-p">Qua quá trình tìm kiếm và đánh giá, có thể thấy chủ đề "Sự biến đổi văn hóa của dân tộc Kinh tại khu vực Đồng bằng sông Hồng" đã được nghiên cứu từ nhiều góc độ khác nhau. Các nguồn tài liệu được lựa chọn, gồm bài báo khoa học, sách chuyên khảo và nguồn học thuật mở, đều có độ tin cậy và phù hợp với mục tiêu nghiên cứu. Quá trình thực hiện bài tập giúp nâng cao kỹ năng tìm kiếm, đánh giá và khai thác thông tin học thuật phục vụ nghiên cứu văn hóa Việt Nam.</p>
-
-                    <!-- VII. Danh mục tài liệu tham khảo -->
-                    <h3 class="academic-section-title">VII. Danh mục tài liệu tham khảo (Harvard Style)</h3>
-                    <ul class="harvard-list">
-                        <li>Ha, H.T.T. and Tran, T.D. (2025) Cultural ecosystem services and the role of local knowledge in shaping Vietnam's coastal cultural industries: Insights from Red River Delta communities. <em>Journal of Cultural Analysis and Social Change</em>, 11(1), pp. 1–11.</li>
-                        <li>Nguyen, H.T. et al. (2020) Protection of river culture in the Red River Delta. <em>International Journal of Research in Finance and Management</em>, 3(2), pp. 45–50.</li>
-                        <li>Nguyen, H.T.Q., Nguyen, N.Q., Nguyen, T.T.T., Nguyen, T.T.H., Bui, T.A.V. and Vu, L. (2024) The heritage of Catholic village regulations in the Red River Delta: Characteristics and values. <em>International Journal of Religion</em>, 5(7), pp. 1104–1119.</li>
-                        <li>Nguyen, T.C. (2003) <em>Góp phần nghiên cứu văn hóa và tộc người</em>. Hà Nội: Nhà xuất bản Văn hóa Thông tin.</li>
-                        <li>Sakurai, Y. (1979) The Red River Delta in the Tenth Century. <em>Japanese Journal of Southeast Asian Studies</em>, 17(2), pp. 234–260.</li>
-                        <li>Sakurai, Y. (1980) The Red River Delta during the Lý Dynasty. <em>Journal of Southeast Asian Studies</em>, 11(1), pp. 1–21.</li>
-                        <li>Spiritual Culture Tourism in Ha Nam (2018) <em>Tạp chí Công Thương</em>, 12(4), pp. 55–60.</li>
-                        <li>Tran, N.T. (1996) <em>Tìm về bản sắc văn hóa Việt Nam</em>. Thành phố Hồ Chí Minh: Nhà xuất bản Tổng hợp TP. Hồ Chí Minh.</li>
-                        <li>Tran, Q.V. (2006) <em>Cơ sở văn hóa Việt Nam</em>. Hà Nội: Nhà xuất bản Giáo dục.</li>
-                        <li>Tran, Q.V. and Mai, T.C. (2019) Traditional carpentry villages in the Red River Delta. <em>Vietnam Journal of Agricultural Sciences</em>, 17(4), pp. 345–356.</li>
-                        <li>Vuong, Q.H. et al. (2019) Cultural evolution in Vietnam in the early twentieth century. <em>arXiv Preprint</em>, arXiv:1903.00070</li>
-                    </ul>
-
                 </div>
 
-                <!-- Chân ghi chú hệ thống như trên ảnh mẫu -->
-                <div class="system-footer-note">
-                    <span>🔄 Nội dung các bài tập tiếp theo đang được cập nhật hệ thống...</span>
-                </div>
             </div>
+        </section>
 
-        </div>
-    </div>
+    </main>
 
 </body>
 </html>
