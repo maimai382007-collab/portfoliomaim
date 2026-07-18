@@ -158,21 +158,34 @@
         }
         @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-15px) scale(1.03); } }
 
-        /* --- ABOUT SECTION --- */
+        /* --- ABOUT SECTION (ĐÃ CẬP NHẬT THEO ĐÚNG YÊU CẦU) --- */
         .section-wrapper { padding: 80px 0; }
         .section-title { font-size: 2.4rem; font-weight: 700; margin-bottom: 40px; color: var(--text-main); letter-spacing: -0.5px; }
         
         .about-card {
             background: var(--white); padding: 45px; border-radius: 32px;
             box-shadow: var(--shadow-md); border-left: 6px solid var(--primary);
-            font-size: 16px; color: var(--text-muted); line-height: 1.8;
+            font-size: 15.5px; color: var(--text-muted); line-height: 1.8;
             transition: var(--transition-smooth);
         }
         .about-card:hover { box-shadow: var(--shadow-lg); }
-        .about-card h3 {
-            color: var(--text-main); font-size: 1.25rem; margin-bottom: 12px; margin-top: 30px; font-weight: 700;
+        
+        /* Hàng thông tin MSV, Khoa, Sở thích */
+        .personal-meta-grid {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 35px;
         }
-        .about-card h3:first-child { margin-top: 0; }
+        .personal-item {
+            background: var(--bg-body); padding: 14px 20px; border-radius: 16px;
+            border: 1px dashed rgba(244, 208, 63, 0.4);
+        }
+        .personal-item span:first-child { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px; }
+        .personal-item span:last-child { font-weight: 600; color: var(--text-main); }
+
+        .about-card h3 {
+            color: var(--text-main); font-size: 1.3rem; margin-bottom: 12px; margin-top: 30px; font-weight: 700;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .about-card h3:first-of-type { margin-top: 0; }
         .about-card p { margin-bottom: 15px; text-align: justify; }
 
         /* --- DANH SÁCH BÀI TẬP (ACCORDION) --- */
@@ -339,6 +352,7 @@
             .hero-title { font-size: 2.5rem; }
             .hero-sub { justify-content: center; }
             .hero-info-grid { grid-template-columns: 1fr; gap: 12px; }
+            .personal-meta-grid { grid-template-columns: 1fr; gap: 12px; }
             .assignment-meta-grid { grid-template-columns: 1fr; gap: 12px; }
             .step-block { flex-direction: column; gap: 15px; }
             .img-cols-2 a, .img-cols-3 a { width: 100%; }
@@ -414,15 +428,33 @@
             </div>
         </section>
 
-        <!-- ABOUT SECTION -->
+        <!-- ABOUT SECTION (ĐÃ CẬP NHẬT CHÍNH XÁC NỘI DUNG YÊU CẦU) -->
         <section id="about" class="section-wrapper">
             <div class="section-tag">ABOUT ME</div>
             <h2 class="section-title">Giới thiệu bản thân</h2>
             <div class="about-card">
-                <h3>Lời mở đầu</h3>
-                <p>Chào mừng bạn đến với trang báo cáo thực hành Tin học văn phòng của tôi. Đây là không gian số được thiết kế để lưu trữ và hiển thị một cách trực quan, hệ thống toàn bộ nhật ký quá trình thao tác trên hệ điều hành cũng như quản lý tệp tin trong chuỗi bài tập thực hành.</p>
-                <h3>Mục tiêu học tập</h3>
-                <p>Thông qua việc chuẩn hóa các thao tác kỹ thuật và trực quan hóa bằng minh chứng hình ảnh thực tế, tôi hướng tới việc làm chủ các công cụ tin học văn phòng cốt lõi, xây dựng tư duy quản lý dữ liệu khoa học và ứng dụng hiệu quả vào học tập cũng như công việc chuyên môn sau này.</p>
+                
+                <!-- Hàng thông tin MSV, Tên Khoa, Sở thích (Bạn hãy điền thông tin của mình vào đây nhé) -->
+                <div class="personal-meta-grid">
+                    <div class="personal-item">
+                        <span>Mã sinh viên</span>
+                        <span>[Điền mã sinh viên của bạn]</span>
+                    </div>
+                    <div class="personal-item">
+                        <span>Tên Khoa</span>
+                        <span>[Điền tên khoa của bạn]</span>
+                    </div>
+                    <div class="personal-item">
+                        <span>Sở thích</span>
+                        <span>[Điền sở thích của bạn]</span>
+                    </div>
+                </div>
+
+                <h3>🎯 Mục tiêu học tập và định hướng cá nhân</h3>
+                <p>Mục tiêu học tập của em là nắm vững những kiến thức cơ bản về công nghệ số, rèn luyện kỹ năng sử dụng các công cụ số một cách hiệu quả để hỗ trợ học tập và công việc sau này. Em định hướng trở thành giáo viên, vì vậy em mong muốn ứng dụng công nghệ vào giảng dạy nhằm nâng cao chất lượng bài học và tạo môi trường học tập tích cực cho học sinh.</p>
+                
+                <h3>📊 Mục tiêu của Portfolio</h3>
+                <p>Portfolio được xây dựng nhằm thể hiện những kiến thức và kỹ năng em đã học được trong quá trình học tập, đồng thời là nơi lưu trữ và chia sẻ các dự án cá nhân một cách dễ dàng, khoa học và chủ động. Đây cũng là công cụ giúp em theo dõi sự phát triển của bản thân và giới thiệu năng lực trong học tập cũng như công việc sau này.</p>
             </div>
         </section>
 
@@ -439,7 +471,7 @@
 
             <div class="project-list">
                 
-                <!-- 👑 BÀI 1 ACCORDION (ĐÃ TÍCH HỢP NÚT PDF CHUYÊN NGHIỆP Ở ĐÂY) -->
+                <!-- 👑 BÀI 1 ACCORDION (GẮN NÚT PDF NẰM BÊN TRONG BÀI 1) -->
                 <div class="project-accordion">
                     <input type="checkbox" id="toggle-p1" class="accordion-toggle" checked />
                     
@@ -458,7 +490,7 @@
                     </label>
 
                     <div class="accordion-content">
-                        <!-- Khối thông tin mở rộng 4 cột - có nút PDF của Bài 1 -->
+                        <!-- Khối thông tin mở rộng 4 cột - chứa nút PDF gọn gàng -->
                         <div class="assignment-meta-grid">
                             <div class="meta-item">
                                 <p>Nội dung thực hành</p>
@@ -472,7 +504,7 @@
                                 <p>Tổng số bước</p>
                                 <p>12 Bước tiêu chuẩn</p>
                             </div>
-                            <!-- 📄 NÚT XEM PDF ĐƯỢC GẮN ĐÚNG VỊ TRÍ BÀI 1 -->
+                            <!-- 📄 NÚT XEM PDF ĐƯỢC ĐẶT RIÊNG CHO BÀI 1 -->
                             <div class="meta-item-btn">
                                 <a href="tmp7syrrf_25040334_dinhthithanhmai-1.pdf" target="_blank" class="btn-pdf-inline">
                                     <span>📄</span> Xem báo cáo bản PDF
@@ -628,15 +660,15 @@
                     </div>
                 </div>
 
-                <!-- 📌 KHUNG SẴN CHO BÀI TẬP 2 ĐẾN BÀI TẬP 6 -->
+                <!-- 📌 KHUNG SẴN CHO CÁC BÀI TẬP TIẾP THEO (TỪ BÀI 2 ĐẾN BÀI 6) -->
                 <div class="project-accordion">
                     <input type="checkbox" id="toggle-p2" class="accordion-toggle" />
                     <label for="toggle-p2" class="project-header">
                         <div class="project-left">
                             <div class="project-icon">💻</div>
                             <div class="project-info">
-                                <div class="heading-title">Bài 2: Cấu hình Hệ điều hành nâng cao</div>
-                                <p>Tùy biến môi trường làm việc cá nhân hóa trên Windows</p>
+                                <div class="heading-title">Bài 2 đến Bài 6: Các nội dung cấu hình nâng cao</div>
+                                <p>Tùy biến môi trường làm việc cá nhân hóa trên Windows và quản lý nâng cao</p>
                             </div>
                         </div>
                         <div class="project-right">
@@ -645,7 +677,7 @@
                         </div>
                     </label>
                     <div class="accordion-content">
-                        <div class="assignment-body"><p style="color:var(--text-muted)">Nội dung bài tập đang được cập nhật...</p></div>
+                        <div class="assignment-body"><p style="color:var(--text-muted)">Nội dung các bài tập tiếp theo đang được cập nhật hệ thống...</p></div>
                     </div>
                 </div>
 
