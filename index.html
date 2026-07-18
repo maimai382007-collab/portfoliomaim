@@ -680,3 +680,449 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Tìm kiếm và Đánh giá Thông tin Học thuật</title>
+    <!-- Google Fonts phục vụ phong cách Serif thanh lịch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #fdf6f0;       /* Màu nền kem nhẹ nhàng toàn portfolio */
+            --text-color: #2c2523;     /* Màu chữ chính trầm ấm */
+            --primary-color: #5c2530;  /* Màu đỏ mận/nâu đậm của tiêu đề chính */
+            --accent-color: #d97477;   /* Màu hồng cam nhấn ở viền */
+            --box-bg: #fffbf7;         /* Màu nền hộp trích dẫn */
+            --border-color: #eadecc;   /* Màu đường kẻ phân chia phân đoạn */
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: transparent;
+        }
+
+        /* Nút Tải/Xem File PDF đính kèm tương tự Bài 1 */
+        .pdf-link-container {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .btn-pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(92, 37, 48, 0.15);
+        }
+
+        .btn-pdf:hover {
+            background-color: #421921;
+            transform: translateY(-2px);
+        }
+
+        /* Tiêu đề lớn của bài báo cáo */
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            font-weight: 800;
+        }
+
+        /* Các tiêu đề mục lớn I, II, III... */
+        h2.section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Các tiêu đề phụ bên trong */
+        h3.subsection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Đường kẻ phân đoạn mờ tinh tế */
+        hr.divider {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 40px 0;
+        }
+
+        /* Hộp làm nổi bật chủ đề (Callout box) */
+        .topic-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--accent-color);
+            padding: 20px 25px;
+            border-radius: 4px;
+            font-style: italic;
+            font-weight: 500;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        p {
+            font-size: 1.05rem;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Danh sách định dạng dấu chấm tròn nhỏ */
+        ul.styled-list {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        ul.styled-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--text-color);
+            font-size: 1.2rem;
+            position: absolute;
+            left: 5px;
+            top: -2px;
+        }
+
+        /* Bảng đánh giá tài liệu tối ưu hiển thị */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            background-color: #ffffff;
+        }
+
+        table.academic-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 1200px; /* Đảm bảo cấu trúc cột không bị bóp méo */
+        }
+
+        table.academic-table th {
+            background-color: #f8f3ed;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-align: left;
+            padding: 14px 16px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        table.academic-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #f0e6db;
+            color: #3a3330;
+            vertical-align: top;
+        }
+
+        table.academic-table tr:hover {
+            background-color: #fffdfb;
+        }
+
+        /* Định dạng cột số thứ tự và điểm đánh giá */
+        .text-center {
+            text-align: center !important;
+        }
+        
+        .fw-bold {
+            font-weight: 700;
+        }
+
+        /* Danh mục tài liệu tham khảo phong cách Harvard */
+        .references-list {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .references-list li {
+            padding-left: 30px;
+            text-indent: -30px;
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1rem;
+        }
+
+        /* Tối ưu responsive cho màn hình di động */
+        @media (max-width: 768px) {
+            .main-title { font-size: 2rem; }
+            h2.section-title { font-size: 1.6rem; }
+            body { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="bai-2">
+        
+        <!-- Nút đính kèm File PDF tương tự bài 1 -->
+        <div class="pdf-link-container">
+            <a href="TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT.pdf" target="_blank" class="btn-pdf">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Xem File PDF Đầy Đủ
+            </a>
+        </div>
+
+        <!-- Tiêu đề chính -->
+        <h1 class="main-title">BÁO CÁO TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT</h1>
+        
+        <hr class="divider">
+
+        <!-- I. Giới thiệu chủ đề -->
+        <h2 class="section-title">I. Giới thiệu chủ đề</h2>
+        <div class="topic-box">
+            “Sự biến đổi văn hóa của dân tộc Kinh tại khu vực Đồng bằng sông Hồng”
+        </div>
+        <p>Đây là nội dung thuộc lĩnh vực Văn hóa học và Việt Nam học, phù hợp với ngành Ngôn ngữ và Văn hóa Việt Nam.</p>
+        <p>Đồng bằng sông Hồng là cái nôi của nền văn minh lúa nước và lưu giữ nhiều giá trị văn hóa truyền thống như tín ngưỡng, lễ hội, làng nghề và phong tục cộng đồng. Trong bối cảnh công nghiệp hóa, đô thị hóa và hội nhập quốc tế, nhiều yếu tố văn hóa đang có sự biến đổi.</p>
+        <p>Việc nghiên cứu chủ đề này góp phần nhận diện những thay đổi trong đời sống văn hóa của người Kinh, đồng thời đề xuất các giải pháp bảo tồn và phát huy bản sắc văn hóa dân tộc.</p>
+
+        <hr class="divider">
+
+        <!-- II. Mục tiêu nghiên cứu -->
+        <h2 class="section-title">II. Mục tiêu nghiên cứu</h2>
+        <p>Bài nghiên cứu hướng đến:</p>
+        <ul class="styled-list">
+            <li>Làm rõ đặc điểm văn hóa của người Kinh ở Đồng bằng sông Hồng.</li>
+            <li>Phân tích các yếu tố tác động đến sự biến đổi văn hóa.</li>
+            <li>Đánh giá vai trò của cộng đồng trong bảo tồn văn hóa.</li>
+            <li>Đề xuất giải pháp bảo tồn và phát huy giá trị văn hóa truyền thống.</li>
+        </ul>
+
+        <hr class="divider">
+
+        <!-- III. Phương pháp tìm kiếm thông tin -->
+        <h2 class="section-title">III. Phương pháp tìm kiếm thông tin</h2>
+        
+        <h3 class="subsection-title">Nguồn tìm kiếm</h3>
+        <p>Thông tin phục vụ nghiên cứu được tìm kiếm từ bốn nhóm nguồn học thuật chính, gồm: (1) các cơ sở dữ liệu học thuật như Google Scholar và cơ sở dữ liệu của thư viện trường; (2) các tạp chí khoa học chuyên ngành về văn hóa và lịch sử; (3) các sách chuyên khảo của các học giả uy tín về văn hóa Việt Nam; và (4) các nguồn học thuật mở trên Internet như arXiv và một số tạp chí điện tử.</p>
+
+        <h3 class="subsection-title">Từ khóa tìm kiếm</h3>
+        <p>Các từ khóa được sử dụng kết hợp bằng tiếng Việt và tiếng Anh, gồm: <em>"Red River Delta culture", "cultural change in Vietnam", "Vietnamese cultural identity", "Đồng bằng sông Hồng văn hóa", "biến đổi văn hóa người Kinh"</em> và <em>"văn hóa truyền thống Việt Nam"</em>.</p>
+
+        <h3 class="subsection-title">Tiêu chí lựa chọn</h3>
+        <p>Tài liệu được lựa chọn khi đáp ứng: tác giả và cơ quan xuất bản uy tín, phương pháp nghiên cứu rõ ràng, có hệ thống trích dẫn học thuật, nội dung phù hợp với chủ đề nghiên cứu và ưu tiên các công trình được công bố trong giai đoạn 2015–2025 để đảm bảo tính cập nhật.</p>
+
+        <hr class="divider">
+
+        <!-- IV. Phân tích và đánh giá nguồn thông tin -->
+        <h2 class="section-title">IV. Phân tích và đánh giá nguồn thông tin</h2>
+        <div class="table-responsive">
+            <table class="academic-table">
+                <thead>
+                    <tr>
+                        <th style="width: 40px;" class="text-center">STT</th>
+                        <th style="width: 220px;">Tài liệu</th>
+                        <th style="width: 140px;">Phân loại nguồn</th>
+                        <th style="width: 110px;">Tác giả</th>
+                        <th style="width: 160px;">Cơ quan xuất bản</th>
+                        <th style="width: 140px;">Phương pháp nghiên cứu</th>
+                        <th style="width: 140px;">Trích dẫn học thuật</th>
+                        <th style="width: 80px;" class="text-center">Tính cập nhật</th>
+                        <th style="width: 240px;">Phân tích ưu – nhược điểm</th>
+                        <th style="width: 90px;" class="text-center">Độ tin cậy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td class="fw-bold">Cultural Ecosystem Services and Local Knowledge in the Red River Delta</td>
+                        <td>Tạp chí khoa học quốc tế</td>
+                        <td>Ha & Diep</td>
+                        <td>Journal of Cultural Analysis and Social Change</td>
+                        <td>Khảo sát cộng đồng, phân tích xã hội học</td>
+                        <td>Có hệ thống tài liệu tham khảo quốc tế</td>
+                        <td class="text-center">2025</td>
+                        <td>Tác giả có chuyên môn, dữ liệu thực địa, rất cập nhật; số lượng trích dẫn còn hạn chế do nghiên cứu mới.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">4.8/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td class="fw-bold">Heritage of Catholic Village Regulations in the Red River Delta</td>
+                        <td>Tạp chí khoa học quốc tế</td>
+                        <td>Nguyễn Thị Quế Hương và cộng sự</td>
+                        <td>International Journal of Religion</td>
+                        <td>Nghiên cứu trường hợp kết hợp phân tích lịch sử</td>
+                        <td>Có hệ thống trích dẫn đầy đủ</td>
+                        <td class="text-center">2024</td>
+                        <td>Phương pháp rõ ràng, nguồn uy tín; phạm vi nghiên cứu còn hẹp.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">4.7/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3</td>
+                        <td class="fw-bold">Protection of River Culture in the Red River Delta</td>
+                        <td>Tạp chí khoa học</td>
+                        <td>Nguyễn Hoàng Tiến và cộng sự</td>
+                        <td>International Journal of Research in Finance and Management</td>
+                        <td>Tổng hợp tài liệu thứ cấp</td>
+                        <td>Có trích dẫn nhưng chưa nhiều</td>
+                        <td class="text-center">2020</td>
+                        <td>Nghiên cứu cập nhật nhưng tạp chí không chuyên ngành văn hóa.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">3.7/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4</td>
+                        <td class="fw-bold">Traditional Carpentry Villages in the Red River Delta</td>
+                        <td>Tạp chí khoa học</td>
+                        <td>Trần Quang Vinh, Mai Thanh Cúc</td>
+                        <td>Vietnam Journal of Agricultural Sciences</td>
+                        <td>Khảo sát thực địa</td>
+                        <td>Có trích dẫn chuyên ngành</td>
+                        <td class="text-center">2019</td>
+                        <td>Có dữ liệu thực tế về làng nghề; nội dung thiên về kinh tế hơn văn hóa.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">4.1/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">5</td>
+                        <td class="fw-bold">Spiritual Culture Tourism in Ha Nam</td>
+                        <td>Nguồn mở/Tạp chí trong nước</td>
+                        <td>Nhiều tác giả</td>
+                        <td>Tạp chí Công Thương</td>
+                        <td>Phân tích thực trạng</td>
+                        <td>Trích dẫn hạn chế</td>
+                        <td class="text-center">2018–2020</td>
+                        <td>Thông tin thực tế nhưng tính học thuật chưa cao.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">3.4/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">6</td>
+                        <td class="fw-bold">The Red River Delta during the Lý Dynasty</td>
+                        <td>Tạp chí khoa học quốc tế</td>
+                        <td>Yumio Sakurai</td>
+                        <td>Journal of Southeast Asian Studies</td>
+                        <td>Phân tích lịch sử</td>
+                        <td>Được trích dẫn rộng rãi</td>
+                        <td class="text-center">1980</td>
+                        <td>Tác giả uy tín, giá trị học thuật cao; dữ liệu khá cũ.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">4.9/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">7</td>
+                        <td class="fw-bold">The Red River Delta in the Tenth Century</td>
+                        <td>Tạp chí khoa học quốc tế</td>
+                        <td>Yumio Sakurai</td>
+                        <td>Japanese Journal of Southeast Asian Studies</td>
+                        <td>Nghiên cứu lịch sử</td>
+                        <td>Được trích dẫn nhiều</td>
+                        <td class="text-center">1979</td>
+                        <td>Nguồn lịch sử nền tảng; tính cập nhật thấp.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">4.8/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">8</td>
+                        <td class="fw-bold">Cơ sở văn hóa Việt Nam</td>
+                        <td>Sách chuyên khảo</td>
+                        <td>Trần Quốc Vượng</td>
+                        <td>NXB Giáo dục</td>
+                        <td>Phân tích lý thuyết</td>
+                        <td>Được sử dụng rộng rãi</td>
+                        <td class="text-center">2006</td>
+                        <td>Sách nền tảng về văn hóa Việt Nam; cần kết hợp nghiên cứu mới.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">5.0/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">9</td>
+                        <td class="fw-bold">Góp phần nghiên cứu văn hóa và tộc người</td>
+                        <td>Sách chuyên khảo</td>
+                        <td>Nguyễn Từ Chi</td>
+                        <td>NXB Văn hóa Thông tin</td>
+                        <td>Nghiên cứu dân tộc học</td>
+                        <td>Được trích dẫn nhiều</td>
+                        <td class="text-center">2003</td>
+                        <td>Có dữ liệu thực địa, giá trị học thuật cao; xuất bản đã lâu.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">4.9/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">10</td>
+                        <td class="fw-bold">Tìm về bản sắc văn hóa Việt Nam</td>
+                        <td>Sách chuyên khảo</td>
+                        <td>Trần Ngọc Thêm</td>
+                        <td>NXB Tổng hợp TP.HCM</td>
+                        <td>Phân tích lý thuyết</td>
+                        <td>Được trích dẫn rộng rãi</td>
+                        <td class="text-center">1996</td>
+                        <td>Khung lý thuyết quan trọng; một số quan điểm còn nhiều tranh luận.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">4.6/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">11</td>
+                        <td class="fw-bold">Cultural Evolution in Vietnam in the Early Twentieth Century</td>
+                        <td>Nguồn học thuật mở</td>
+                        <td>Vuong và cộng sự</td>
+                        <td>arXiv</td>
+                        <td>Phân tích định lượng</td>
+                        <td>Có trích dẫn quốc tế</td>
+                        <td class="text-center">2019</td>
+                        <td>Nghiên cứu liên ngành; là preprint nên chưa phản biện học thuật hoàn chỉnh.</td>
+                        <td class="text-center fw-bold" style="color: var(--primary-color);">4.0/5.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+
+        <!-- VI. Kết luận -->
+        <h2 class="section-title">VI. Kết luận</h2>
+        <p>Qua quá trình tìm kiếm và đánh giá, có thể thấy chủ đề "Sự biến đổi văn hóa của dân tộc Kinh tại khu vực Đồng bằng sông Hồng" đã được nghiên cứu từ nhiều góc độ khác nhau. Các nguồn tài liệu được lựa chọn, gồm bài báo khoa học, sách chuyên khảo và nguồn học thuật mở, đều có độ tin cậy và phù hợp với mục tiêu nghiên cứu. Quá trình thực hiện bài tập giúp nâng cao kỹ năng tìm kiếm, đánh giá và khai thác thông tin học thuật phục vụ nghiên cứu văn hóa Việt Nam.</p>
+
+        <hr class="divider">
+
+        <!-- VII. Danh mục tài liệu tham khảo -->
+        <h2 class="section-title">VII. Danh mục tài liệu tham khảo (Harvard Style)</h2>
+        <ul class="references-list">
+            <li>Ha, H.T.T. and Tran, T.D. (2025) Cultural ecosystem services and the role of local knowledge in shaping Vietnam's coastal cultural industries: Insights from Red River Delta communities. <em>Journal of Cultural Analysis and Social Change</em>, 11(1), pp. 1–11.</li>
+            <li>Nguyen, H.T. et al. (2020) Protection of river culture in the Red River Delta. <em>International Journal of Research in Finance and Management</em>, 3(2), pp. 45–50.</li>
+            <li>Nguyen, H.T.Q., Nguyen, N.Q., Nguyen, T.T.T., Nguyen, T.T.H., Bui, T.A.V. and Vu, L. (2024) The heritage of Catholic village regulations in the Red River Delta: Characteristics and values. <em>International Journal of Religion</em>, 5(7), pp. 1104–1119.</li>
+            <li>Nguyen, T.C. (2003) <em>Góp phần nghiên cứu văn hóa và tộc người</em>. Hà Nội: Nhà xuất bản Văn hóa Thông tin.</li>
+            <li>Sakurai, Y. (1979) The Red River Delta in the Tenth Century. <em>Japanese Journal of Southeast Asian Studies</em>, 17(2), pp. 234–260.</li>
+            <li>Sakurai, Y. (1980) The Red River Delta during the Lý Dynasty. <em>Journal of Southeast Asian Studies</em>, 11(1), pp. 1–21.</li>
+            <li>Spiritual Culture Tourism in Ha Nam (2018) <em>Tạp chí Công Thương</em>, 12(4), pp. 55–60.</li>
+            <li>Tran, N.T. (1996) <em>Tìm về bản sắc văn hóa Việt Nam</em>. Thành phố Hồ Chí Minh: Nhà xuất bản Tổng hợp TP. Hồ Chí Minh.</li>
+            <li>Tran, Q.V. (2006) <em>Cơ sở văn hóa Việt Nam</em>. Hà Nội: Nhà xuất bản Giáo dục.</li>
+            <li>Tran, Q.V. and Mai, T.C. (2019) Traditional carpentry villages in the Red River Delta. <em>Vietnam Journal of Agricultural Sciences</em>, 17(4), pp. 345–356.</li>
+            <li>Vuong, Q.H. et al. (2019) Cultural evolution in Vietnam in the early twentieth century. <em>arXiv Preprint</em>, arXiv:1903.00070</li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
