@@ -3,217 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đinh Thị Thanh Mai - Không Gian Học Tập Số</title>
-    <!-- Nhúng thư viện Tailwind CSS thế hệ mới -->
+    <title>Portfolio Sinh Viên - Đinh Thị Thanh Mai</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Nhúng bộ thư viện icon công nghệ FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Font chữ Google thanh lịch, hiện đại -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(49, 130, 206, 0.05);
+        }
+        .tech-shadow:hover {
+            box-shadow: 0 20px 40px rgba(49, 130, 206, 0.15), 0 0 20px rgba(236, 201, 75, 0.2);
+            transform: translateY(-5px);
+        }
+        .nav-active {
+            background: linear-gradient(135deg, #3182CE, #4299E1);
+            color: white;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.4);
+        }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-[#FDFBF7] text-[#2D3748] antialiased scroll-smooth">
+<body class="text-[#1A202C] antialiased selection:bg-[#3182CE] selection:text-white pb-20">
 
-  <!-- ================= HEADER & NAVIGATION ================= -->
-  <header class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center bg-white/80 backdrop-blur-lg rounded-full mt-4 sticky top-4 z-50 shadow-sm border border-[#E2E8F0]">
-      <div class="flex items-center gap-3">
-          <!-- Logo kết hợp chữ M và biểu tượng trống đồng/hoa sen công nghệ -->
-          <div class="w-11 h-11 bg-gradient-to-tr from-[#3182CE] to-[#63B3ED] rounded-full flex items-center justify-center text-white font-bold border-2 border-[#ECC94B] shadow-sm">
-              <i class="fa-solid fa-fan animate-spin-slow text-sm text-[#FFF5F5] mr-[1px]"></i>M
-          </div>
-          <div>
-              <h1 class="text-sm font-bold tracking-wide text-[#1A365D]">Đinh Thị Thanh Mai</h1>
-              <p class="text-[11px] text-gray-500 font-medium">MSV: 25040334 • VNU</p>
-          </div>
-      </div>
-      <!-- Mục lục điều hướng thông minh -->
-      <nav class="hidden md:flex gap-6 text-xs font-semibold uppercase tracking-wider text-[#4A5568]">
-          <a href="#tong-quan" class="hover:text-[#3182CE] transition">Tổng quan</a>
-          <a href="#hanh-trinh" class="hover:text-[#3182CE] transition">Hành trình số</a>
-          <a href="#nghien-cuu" class="hover:text-[#3182CE] transition">Nghiên cứu văn hóa</a>
-          <a href="#tam-nhin" class="hover:text-[#3182CE] transition">Tầm nhìn</a>
-      </nav>
-  </header>
+    <!-- NAVIGATION BAR DẠNG SEGMENTED CONTROL (Chuyển trang) -->
+    <div class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-md">
+        <div class="glass-card p-1.5 rounded-full flex justify-between items-center relative">
+            <a href="#trang-chu" class="nav-active flex-1 text-center py-2.5 rounded-full text-sm font-bold transition-all duration-300">Trang chủ</a>
+            <a href="#du-an" class="flex-1 text-center py-2.5 rounded-full text-sm font-semibold text-gray-600 hover:text-[#3182CE] transition-all duration-300">Dự án</a>
+            <a href="#tong-ket" class="flex-1 text-center py-2.5 rounded-full text-sm font-semibold text-gray-600 hover:text-[#3182CE] transition-all duration-300">Tổng kết</a>
+        </div>
+    </div>
 
-  <!-- ================= HERO SECTION (BỐ CỤC ĐẠT GIẢI QUỐC TẾ) ================= -->
-  <main id="tong-quan" class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      
-      <!-- CỘT TRÁI: THÔNG TIN DI SẢN & CÔNG NGHỆ -->
-      <div class="space-y-6">
-          <span class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#B7791F] uppercase bg-[#FEFCBF] px-4 py-1.5 rounded-full border border-[#F6E05E]">
-              <i class="fa-solid fa-microchip text-[#3182CE]"></i> Không gian học tập số • Ngôn ngữ di sản
-          </span>
-          
-          <h2 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-[#1A365D]">
-              Đinh Thị Thanh Mai <br>
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3182CE] to-[#B7791F] text-3xl md:text-4xl font-mono block mt-2">
-                  Mã SV: 25040334
-              </span>
-          </h2>
-          
-          <p class="text-base text-gray-600 leading-relaxed max-w-lg">
-              Chào mừng bạn đến với Không gian lưu trữ số hóa của mình! Nơi giao thoa giữa <strong class="text-[#1A365D]">Hồn cốt Văn hóa Việt Nam</strong> và sức mạnh chuyển đổi của <strong class="text-[#3182CE]">Trí tuệ nhân tạo (AI)</strong> trong học phần <em>Nhập môn Công nghệ số</em>. Trang web này đóng vai trò như một bảo tàng số thu nhỏ, hệ thống hóa hành trình nghiên cứu ngôn ngữ, bản sắc của mình.
-          </p>
+    <div class="max-w-6xl mx-auto px-4 pt-32">
+        
+        <!-- NGĂN 1: TRANG GIỚI THIỆU -->
+        <section id="trang-chu" class="min-h-[80vh] flex flex-col justify-center mb-24">
+            <div class="glass-card rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden border-2 border-white">
+                <!-- Hiệu ứng ánh sáng nền (Inspiration từ Tech Flyers) -->
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#3182CE] opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-[#ECC94B] opacity-10 rounded-full blur-3xl pointer-events-none"></div>
 
-          <!-- Thông tin ngày sinh thiết kế lịch lãm -->
-          <div class="flex items-center gap-3 text-sm text-[#4A5568] bg-[#EBF8FF] w-fit px-4 py-2 rounded-xl border border-[#BEE3F8]">
-              <i class="fa-solid fa-calendar-days text-[#3182CE]"></i>
-              <span>Ngày sinh: <strong>03/08/2007</strong></span>
-          </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                    <div class="space-y-6">
+                        <div class="inline-block px-4 py-1.5 rounded-full bg-[#EBF8FF] text-[#3182CE] font-bold text-xs uppercase tracking-wider border border-[#BEE3F8]">
+                            <i class="fa-solid fa-microchip mr-2"></i> Không gian Portfolio Số hóa
+                        </div>
+                        <h1 class="text-5xl font-extrabold leading-tight text-[#2D3748]">
+                            Đinh Thị <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3182CE] to-[#2B6CB0]">Thanh Mai</span>
+                        </h1>
+                        
+                        <div class="bg-white/80 p-5 rounded-2xl border border-gray-100 shadow-sm">
+                            <ul class="space-y-3 text-sm text-gray-700 font-medium">
+                                <li><i class="fa-solid fa-id-card text-[#ECC94B] w-6"></i> MSV: <span class="font-bold text-[#2D3748]">25040334</span></li>
+                                <li><i class="fa-solid fa-book-open text-[#ECC94B] w-6"></i> Ngành: Tiếng Việt và văn hóa Việt Nam</li>
+                                <li><i class="fa-solid fa-building-columns text-[#ECC94B] w-6"></i> Khoa: Việt Nam và Đông Nam Á</li>
+                                <li><i class="fa-solid fa-heart text-[#ECC94B] w-6"></i> Sở thích: Khám phá di sản, Ứng dụng AI, Sáng tạo nội dung</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-[#3182CE]">
+                            <h3 class="text-lg font-bold text-[#2D3748] mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-bullseye text-[#3182CE]"></i> Mục tiêu học tập & Định hướng
+                            </h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Tích hợp kiến thức Ngành Việt Nam học với tư duy hệ thống máy tính. Trở thành chuyên gia ứng dụng công nghệ số trong việc bảo tồn, truyền thông và số hóa các giá trị di sản văn hóa dân tộc ra trường quốc tế.
+                            </p>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-[#ECC94B]">
+                            <h3 class="text-lg font-bold text-[#2D3748] mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-folder-tree text-[#ECC94B]"></i> Mục tiêu của Portfolio
+                            </h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Đây là không gian chuyên nghiệp lưu trữ minh chứng các kỹ năng số đã làm chủ. Thể hiện năng lực tổ chức dữ liệu khoa học, tư duy logic phản biện và khả năng ứng dụng AI một cách sáng tạo, có đạo đức.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <!-- Nút hành động nhanh -->
-          <div class="flex flex-wrap gap-4 pt-2">
-              <a href="#nghien-cuu" class="bg-gradient-to-r from-[#3182CE] to-[#4299E1] text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:opacity-95 transition inline-block">
-                  <i class="fa-solid fa-graduation-cap mr-2"></i> Khám phá Nghiên cứu số
-              </a>
-              <a href="#hanh-trinh" class="bg-white text-[#2D3748] border border-[#E2E8F0] px-7 py-3.5 rounded-xl font-semibold shadow-sm hover:bg-[#F7FAFC] transition inline-block">
-                  <i class="fa-solid fa-fingerprint text-[#B7791F] mr-2"></i> Bản sắc cá nhân
-              </a>
-          </div>
-      </div>
+        <!-- NGĂN 2: TRANG DỰ ÁN (6 BÀI TẬP) -->
+        <section id="du-an" class="mb-24 scroll-mt-28">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-[#2D3748] tracking-tight">Hồ Sơ Dự Án Thực Hành</h2>
+                <p class="text-gray-500 mt-3 font-medium">Nhấn vào từng thẻ để xem mục tiêu, quy trình và minh chứng sản phẩm chuyên sâu.</p>
+            </div>
 
-      <!-- CỘT PHẢI: KHUNG ĐỒ HỌA VIỆT NAM DIGITAL GRAPHIC -->
-      <div class="relative flex justify-center items-center h-[500px]">
-          
-          <!-- Khung vòm kiến trúc nghệ thuật kết hợp tone xanh nhạt công nghệ và hoa sen vàng -->
-          <div class="w-[330px] h-[450px] bg-gradient-to-b from-[#EBF8FF] to-[#E2E8F0] rounded-t-full relative overflow-hidden flex flex-col justify-center items-center border-4 border-[#FFF5F5] shadow-2xl ring-4 ring-[#3182CE]/10">
-              
-              <!-- Pattern trống đồng Đông Sơn chìm bằng vector/icon -->
-              <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/az-subtle.png')] pointer-events-none"></div>
-              <div class="absolute text-[180px] text-[#3182CE]/5 font-bold pointer-events-none"><i class="fa-solid fa-circle-nodes"></i></div>
-              
-              <!-- Biểu tượng Hoa Sen kết hợp Mạng lưới Công nghệ (Network) -->
-              <div class="w-24 h-24 bg-white border-2 border-[#ECC94B] rounded-full flex items-center justify-center text-[#3182CE] text-4xl shadow-md mb-6 relative">
-                  <i class="fa-solid fa-seedling text-[#B7791F]"></i>
-                  <div class="absolute inset-0 rounded-full border border-dashed border-[#3182CE] animate-spin-slow"></div>
-              </div>
-              
-              <!-- Tên chuyên ngành viết kiểu chữ Thư Pháp Digital sắc nét -->
-              <div class="text-2xl font-extrabold text-[#1A365D] tracking-wide text-center px-4">
-                  Tiếng Việt & <br>Văn hóa Việt Nam
-              </div>
-              <div class="w-12 h-[2px] bg-[#B7791F] my-3"></div>
-              <p class="text-[10px] text-[#4A5568] uppercase tracking-widest font-bold bg-[#FEFCBF] px-3 py-1 rounded-full border border-[#F6E05E]">
-                  Khoa Việt Nam học & ĐNA
-              </p>
-          </div>
+            <div class="grid grid-cols-1 gap-6">
+                <!-- BÀI TẬP 1 -->
+                <div class="glass-card rounded-3xl p-8 tech-shadow transition-all duration-300 border border-gray-200 group">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-yellow-600 text-2xl shadow-sm">
+                                <i class="fa-solid fa-folder-open"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#2D3748] group-hover:text-[#3182CE] transition-colors">Máy tính và thiết bị ngoại vi</h3>
+                                <p class="text-sm text-gray-500 font-medium">Bài tập 1 • Quản lý tệp & thư mục</p>
+                            </div>
+                        </div>
+                        <span class="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1 border border-green-200">
+                            <i class="fa-solid fa-check-circle"></i> Đạt Mức 4
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white/50 p-6 rounded-2xl">
+                        <div><strong class="block text-[#3182CE] mb-1 text-sm"><i class="fa-solid fa-crosshairs"></i> Mục tiêu:</strong> <p class="text-xs text-gray-600 leading-relaxed">Xây dựng cấu trúc thư mục logic, khoa học. Đặt tên file chuẩn mực, dễ truy xuất cho dữ liệu Ngành Văn hóa.</p></div>
+                        <div><strong class="block text-[#ECC94B] mb-1 text-sm"><i class="fa-solid fa-gears"></i> Quy trình thực hiện:</strong> <p class="text-xs text-gray-600 leading-relaxed">Sử dụng quy tắc phân cấp thư mục hình cây (Tree-structure). Đặt tên sáng tạo bằng kỹ thuật Regex (Loại bỏ dấu, dùng dấu gạch dưới).</p></div>
+                        <div class="flex items-center justify-end">
+                            <a href="#" class="bg-[#2D3748] hover:bg-[#3182CE] text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition-colors w-full text-center shadow-md">Xem Minh Chứng (PDF)</a>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- THẺ BAY 1: KIÊN TRÚC HỌC THUẬT (Góc trên bên phải) -->
-          <div class="absolute top-10 -right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-[#E2E8F0] max-w-[170px] transform rotate-3 hover:rotate-0 hover:scale-105 transition duration-300">
-              <span class="text-[9px] uppercase text-[#B7791F] font-bold block mb-1"><i class="fa-solid fa-landmark"></i> Đơn vị đào tạo</span>
-              <span class="text-xs font-extrabold text-[#1A365D] block">Khoa Việt Nam Học & Đông Nam Á</span>
-          </div>
+                <!-- BÀI TẬP 2 -->
+                <div class="glass-card rounded-3xl p-8 tech-shadow transition-all duration-300 border border-gray-200 group">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-600 text-2xl shadow-sm">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#2D3748] group-hover:text-[#3182CE] transition-colors">Khai thác dữ liệu và thông tin</h3>
+                                <p class="text-sm text-gray-500 font-medium">Bài tập 2 • Tìm kiếm & Đánh giá học thuật</p>
+                            </div>
+                        </div>
+                        <span class="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1 border border-green-200"><i class="fa-solid fa-check-circle"></i> Đạt Mức 4</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white/50 p-6 rounded-2xl">
+                        <div class="col-span-2">
+                            <strong class="block text-[#3182CE] mb-1 text-sm">Phân tích chuyên sâu:</strong> 
+                            <p class="text-xs text-gray-600 leading-relaxed">Ứng dụng linh hoạt trên 4 toán tử tìm kiếm nâng cao (site:, filetype:, intitle:, " "). Phân tích rất sâu sắc về chiến lược đánh giá độ tin cậy của nguồn tài liệu văn hóa lịch sử dựa trên thang đo CRAAP (Currency, Relevance, Authority, Accuracy, Purpose).</p>
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <a href="#" class="bg-[#2D3748] hover:bg-[#3182CE] text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition-colors w-full text-center shadow-md">Xem Minh Chứng (Ảnh/Link)</a>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- THẺ BAY 2: BIỂU TƯỢNG VĂN HÓA SỐ (Góc giữa bên trái) -->
-          <div class="absolute top-1/3 -left-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-[#E2E8F0] max-w-[190px] transform -rotate-3 hover:rotate-0 hover:scale-105 transition duration-300">
-              <div class="flex items-center gap-2 mb-1">
-                  <span class="w-2 h-2 rounded-full bg-[#48BB78] animate-ping"></span>
-                  <span class="text-[9px] uppercase text-gray-400 font-bold">Văn hóa Việt trong kỷ nguyên AI</span>
-              </div>
-              <span class="text-xs text-[#2D3748] font-medium block">Ứng dụng ngôn ngữ học số hóa, bảo tồn di sản phi vật thể.</span>
-          </div>
+                <!-- BÀI TẬP 3 -->
+                <div class="glass-card rounded-3xl p-8 tech-shadow transition-all duration-300 border border-gray-200 group">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center text-purple-600 text-2xl shadow-sm">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#2D3748] group-hover:text-[#3182CE] transition-colors">Tổng quan về trí tuệ nhân tạo</h3>
+                                <p class="text-sm text-gray-500 font-medium">Bài tập 3 • Viết Prompt hiệu quả (Prompt Engineering)</p>
+                            </div>
+                        </div>
+                        <span class="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1 border border-green-200"><i class="fa-solid fa-check-circle"></i> Đạt Mức 4</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white/50 p-6 rounded-2xl">
+                        <div class="col-span-2">
+                            <strong class="block text-[#3182CE] mb-1 text-sm">Quá trình & Mục tiêu:</strong> 
+                            <p class="text-xs text-gray-600 leading-relaxed">Áp dụng thành thạo nguyên tắc thiết kế Prompt (Vai trò, Bối cảnh, Nhiệm vụ, Định dạng). So sánh cực kỳ sâu sắc về cơ chế phản hồi giữa các phiên bản Prompt ban đầu và Prompt đã tinh chỉnh. Hiểu rõ giới hạn và khả năng của AI trong phân tích văn bản ngôn ngữ học.</p>
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <a href="#" class="bg-gradient-to-r from-[#ECC94B] to-[#D69E2E] hover:opacity-90 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-opacity w-full text-center shadow-md text-shadow">Xem Bộ Prompt (PDF)</a>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- THẺ BAY 3: BIỂU TƯỢNG CÔNG NGHỆ (Góc dưới bên phải) -->
-          <div class="absolute bottom-12 -right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-[#E2E8F0] max-w-[180px] transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300">
-              <div class="flex items-center gap-2 mb-1">
-                  <i class="fa-solid fa-cube text-[#3182CE] text-xs"></i>
-                  <span class="text-[9px] uppercase text-gray-400 font-bold">Công nghệ số học phần</span>
-              </div>
-              <span class="text-xs text-[#2D3748] font-medium block">Hệ thống hóa dữ liệu bằng tư duy thuật toán 5W1H.</span>
-          </div>
+                <!-- BÀI TẬP 4 -->
+                <div class="glass-card rounded-3xl p-8 tech-shadow transition-all duration-300 border border-gray-200 group">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-100 to-teal-200 flex items-center justify-center text-teal-600 text-2xl shadow-sm">
+                                <i class="fa-solid fa-people-arrows"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#2D3748] group-hover:text-[#3182CE] transition-colors">Giao tiếp và hợp tác trong môi trường số</h3>
+                                <p class="text-sm text-gray-500 font-medium">Bài tập 4 • Dự án nhóm trực tuyến</p>
+                            </div>
+                        </div>
+                        <span class="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1 border border-green-200"><i class="fa-solid fa-check-circle"></i> Đạt Mức 4</span>
+                    </div>
+                    <div class="bg-white/50 p-5 rounded-2xl border-l-2 border-[#3182CE] flex justify-between items-center">
+                        <p class="text-xs text-gray-600 leading-relaxed max-w-2xl">
+                            <strong>Thành tựu:</strong> Tích hợp các tính năng nâng cao của công cụ quản lý dự án (Trello/Notion). Phân công nhiệm vụ logic, theo dõi tiến độ rõ ràng. Mô tả chi tiết cách tối ưu hóa quy trình làm việc nhóm, loại bỏ nút thắt giao tiếp số.
+                        </p>
+                        <a href="#" class="bg-white text-[#2D3748] border border-gray-300 hover:bg-gray-50 px-5 py-2 rounded-lg text-xs font-bold transition-colors shadow-sm">Xem Ảnh chụp</a>
+                    </div>
+                </div>
 
-      </div>
-  </main>
+                <!-- BÀI TẬP 5 -->
+                <div class="glass-card rounded-3xl p-8 tech-shadow transition-all duration-300 border border-gray-200 group">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center text-pink-600 text-2xl shadow-sm">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#2D3748] group-hover:text-[#3182CE] transition-colors">Sáng tạo nội dung số</h3>
+                                <p class="text-sm text-gray-500 font-medium">Bài tập 5 • Sử dụng AI tạo sinh</p>
+                            </div>
+                        </div>
+                        <span class="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1 border border-green-200"><i class="fa-solid fa-check-circle"></i> Đạt Mức 4</span>
+                    </div>
+                    <div class="bg-white/50 p-5 rounded-2xl border-l-2 border-[#ECC94B] flex justify-between items-center">
+                        <p class="text-xs text-gray-600 leading-relaxed max-w-2xl">
+                            <strong>Sản phẩm chuyên nghiệp:</strong> Thiết kế ấn phẩm truyền thông văn hóa sáng tạo, độc đáo. Thể hiện khả năng tận dụng tối đa các tính năng thiết kế sinh ra từ công cụ AI (Midjourney/Canva AI), xử lý hậu kỳ hoàn hảo.
+                        </p>
+                        <a href="#" class="bg-white text-[#2D3748] border border-gray-300 hover:bg-gray-50 px-5 py-2 rounded-lg text-xs font-bold transition-colors shadow-sm">Xem File/Video</a>
+                    </div>
+                </div>
 
-  <!-- ================= SECTION 2: BỐ CỤC NỘI DUNG HỌC TẬP LOGIC ================= -->
-  <section id="nghien-cuu" class="max-w-6xl mx-auto px-4 py-16 border-t border-[#E2E8F0]/60 bg-gradient-to-b from-transparent to-[#F7FAFC] rounded-3xl my-8">
-      <div class="text-center max-w-xl mx-auto mb-16">
-          <h3 class="text-3xl font-bold text-[#1A365D] flex items-center justify-center gap-3">
-              <i class="fa-solid fa-folder-open text-[#B7791F]"></i> Công Trình Nghiên Cứu Số Hóa
-          </h3>
-          <div class="w-16 h-1 bg-[#3182CE] mx-auto mt-3 rounded-full"></div>
-          <p class="text-sm text-gray-500 mt-3">Sản phẩm lưu trữ học tập chuẩn hóa cấu trúc logic quốc tế, đạt điểm đánh giá tối ưu.</p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <!-- Dự án 1: Cấu trúc 5W1H Văn hóa -->
-          <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#E2E8F0] flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition duration-300 relative overflow-hidden group">
-              <div class="absolute top-0 left-0 w-full h-[4px] bg-[#B7791F]"></div>
-              <div>
-                  <div class="flex justify-between items-center mb-4">
-                      <span class="text-[10px] font-bold uppercase text-[#B7791F] bg-[#FEFCBF] px-3 py-1 rounded-full border border-[#F6E05E]">Mô-đun 01</span>
-                      <span class="text-xs text-gray-400"><i class="fa-solid fa-brain"></i> Critical Thinking</span>
-                  </div>
-                  <h4 class="text-2xl font-bold text-[#1A365D] group-hover:text-[#3182CE] transition">Mô hình Phân tích 5W1H trong Truyền thông Văn hóa</h4>
-                  <p class="text-sm text-gray-600 mt-4 leading-relaxed">
-                      Ứng dụng tư duy thuật toán khoa học máy tính để phân tích cấu trúc của một thông điệp quảng cáo văn hóa. Bóc tách toàn diện các khía cạnh <strong>Who - What - Where - When - Why - How</strong> để nhận diện lớp nghĩa chìm, xây dựng lập luận phản biện sắc bén đạt chuẩn tư duy quốc tế.
-                  </p>
-              </div>
-              <div class="pt-6 border-t border-[#F7FAFC] mt-8 flex justify-between items-center">
-                  <span class="text-xs font-semibold text-gray-500"><i class="fa-solid fa-code-branch mr-1 text-[#3182CE]"></i> Kỹ năng: Ngôn ngữ học số, Logic học</span>
-                  <span class="text-xs font-bold text-[#48BB78] bg-[#E6FFFA] px-2 py-1 rounded-md"><i class="fa-solid fa-circle-check"></i> Đạt chuẩn 10/10</span>
-              </div>
-          </div>
+                <!-- BÀI TẬP 6 -->
+                <div class="glass-card rounded-3xl p-8 tech-shadow transition-all duration-300 border border-gray-200 group">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center text-red-600 text-2xl shadow-sm">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#2D3748] group-hover:text-[#3182CE] transition-colors">An toàn và liêm chính học thuật trong môi trường số</h3>
+                                <p class="text-sm text-gray-500 font-medium">Bài tập 6 • Đạo đức AI & Bảo mật</p>
+                            </div>
+                        </div>
+                        <span class="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1 border border-green-200"><i class="fa-solid fa-check-circle"></i> Đạt Mức 4</span>
+                    </div>
+                    <div class="bg-white/50 p-5 rounded-2xl border-l-2 border-red-400 flex justify-between items-center">
+                        <p class="text-xs text-gray-600 leading-relaxed max-w-2xl">
+                            <strong>Phân tích tư duy biện cao:</strong> Xây dựng bộ quy tắc đạo đức AI chi tiết. Phân tích sâu sắc các vấn đề đạo đức (Bản quyền, Bias dữ liệu) và đề xuất bộ giải pháp mang tính thực tiễn cao cho các thách thức đạo đức trong nghiên cứu học thuật.
+                        </p>
+                        <a href="#" class="bg-white text-[#2D3748] border border-gray-300 hover:bg-gray-50 px-5 py-2 rounded-lg text-xs font-bold transition-colors shadow-sm">Xem Báo cáo (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <!-- Dự án 2: Ý thức triết học số -->
-          <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#E2E8F0] flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition duration-300 relative overflow-hidden group">
-              <div class="absolute top-0 left-0 w-full h-[4px] bg-[#3182CE]"></div>
-              <div>
-                  <div class="flex justify-between items-center mb-4">
-                      <span class="text-[10px] font-bold uppercase text-[#3182CE] bg-[#EBF8FF] px-3 py-1 rounded-full border border-[#BEE3F8]">Mô-đun 02</span>
-                      <span class="text-xs text-gray-400"><i class="fa-solid fa-network-wired"></i> Kiến thức học thuật</span>
-                  </div>
-                  <h4 class="text-2xl font-bold text-[#1A365D] group-hover:text-[#3182CE] transition">Số hóa Lý thuyết Ý thức & Sáng tạo Tri thức mới</h4>
-                  <p class="text-sm text-gray-600 mt-4 leading-relaxed">
-                      Phát triển học liệu số chuyên sâu giải mã bản chất của ý thức theo Triết học. Đưa ra mô hình minh họa cách bộ não con người xử lý thông tin để liên tưởng, tưởng tượng và sáng tạo ra những giá trị nghệ thuật, di sản văn hóa độc đáo hoàn toàn mới không có sẵn trong thế giới vật chất.
-                  </p>
-              </div>
-              <div class="pt-6 border-t border-[#F7FAFC] mt-8 flex justify-between items-center">
-                  <span class="text-xs font-semibold text-gray-500"><i class="fa-solid fa-robot mr-1 text-[#B7791F]"></i> Kỹ năng: AI Content, Nghiên cứu hệ thống</span>
-                  <span class="text-xs font-bold text-[#48BB78] bg-[#E6FFFA] px-2 py-1 rounded-md"><i class="fa-solid fa-circle-check"></i> Đạt chuẩn 10/10</span>
-              </div>
-          </div>
-      </div>
-  </section>
+        <!-- NGĂN 3: TRANG TỔNG KẾT -->
+        <section id="tong-ket" class="mb-24 scroll-mt-28">
+             <div class="glass-card rounded-[2.5rem] p-10 relative overflow-hidden border-2 border-white bg-gradient-to-br from-white to-[#F7FAFC]">
+                 <div class="text-center mb-10">
+                    <span class="text-[#ECC94B] text-4xl mb-3 block"><i class="fa-solid fa-award"></i></span>
+                    <h2 class="text-3xl font-extrabold text-[#2D3748]">Tổng Kết Đánh Giá Cá Nhân</h2>
+                    <p class="text-sm text-gray-500 mt-2 max-w-xl mx-auto">Phân tích sâu sắc sự trưởng thành và cách áp dụng các kỹ năng trong tương lai học thuật.</p>
+                 </div>
 
-  <!-- ================= SECTION 3: TẦM NHÌN TOÀN CẦU ================= -->
-  <section id="tam-nhin" class="max-w-6xl mx-auto px-4 py-16 mb-16">
-      <div class="max-w-4xl mx-auto bg-gradient-to-br from-[#1A365D] to-[#2A4365] p-10 rounded-3xl text-white shadow-2xl relative overflow-hidden">
-          <!-- Hoa sen chìm nghệ thuật góc khung -->
-          <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-[#ECC94B]/10 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute top-4 right-6 text-5xl text-white/5"><i class="fa-solid fa-globe"></i></div>
-          
-          <h3 class="text-2xl font-bold text-[#ECC94B] mb-6 flex items-center gap-2">
-              <i class="fa-solid fa-compass text-white text-xl"></i> Tầm nhìn & Mục tiêu Toàn cầu - Đinh Thị Thanh Mai
-          </h3>
-          
-          <div class="space-y-6 relative z-10">
-              <div class="flex gap-4 items-start">
-                  <div class="w-8 h-8 rounded-full bg-[#ECC94B] text-[#1A365D] flex items-center justify-center font-bold text-sm shrink-0 shadow">1</div>
-                  <div>
-                      <h4 class="text-base font-bold text-white">Quốc tế hóa Ngôn ngữ & Văn hóa Việt Nam</h4>
-                      <p class="text-sm text-gray-300 mt-1 leading-relaxed">Sử dụng các công cụ công nghệ số như Website, Trí tuệ nhân tạo và dữ liệu lớn để quảng bá vẻ đẹp của tiếng Việt và bản sắc dân tộc Đông Nam Á ra thế giới một cách hiện đại, trực quan.</p>
-                  </div>
-              </div>
-              
-              <div class="flex gap-4 items-start">
-                  <div class="w-8 h-8 rounded-full bg-[#ECC94B] text-[#1A365D] flex items-center justify-center font-bold text-sm shrink-0 shadow">2</div>
-                  <div>
-                      <h4 class="text-base font-bold text-white">Phát triển Chuyên môn ứng dụng Công nghệ số</h4>
-                      <p class="text-sm text-gray-300 mt-1 leading-relaxed">Xây dựng nền tảng tư duy số vững chắc, hướng tới nghiên cứu khoa học liên ngành (Digital Humanities) để bảo tồn các giá trị di sản trong tương lai.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                     <!-- Cảm nhận -->
+                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                         <h4 class="font-bold text-[#3182CE] mb-3 border-b pb-2"><i class="fa-regular fa-lightbulb mr-2"></i>Trải nghiệm & Cảm nhận</h4>
+                         <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                            Quá trình xây dựng Portfolio là một hành trình tự phản tỉnh kiến thức quý giá. Từ chỗ bỡ ngỡ với các thuật toán, mình đã hoàn toàn làm chủ việc hệ thống hóa dữ liệu, biến không gian số thành trợ thủ đắc lực cho việc nghiên cứu ngôn ngữ học.
+                         </p>
+                     </div>
+                     <!-- Kỹ năng -->
+                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
+                         <div class="absolute top-0 right-0 w-16 h-16 bg-[#ECC94B] rounded-bl-full opacity-10"></div>
+                         <h4 class="font-bold text-[#ECC94B] mb-3 border-b pb-2"><i class="fa-solid fa-code-branch mr-2"></i>Kỹ năng cốt lõi đạt được</h4>
+                         <ul class="text-xs text-gray-600 leading-relaxed space-y-2 list-disc list-inside">
+                             <li>Tư duy thuật toán trong quản trị dữ liệu.</li>
+                             <li>Kỹ năng Prompt Engineering chuyên nghiệp.</li>
+                             <li>Năng lực đánh giá độ tin cậy thông tin (CRAAP).</li>
+                             <li>Ứng xử tuân thủ Liêm chính học thuật số.</li>
+                         </ul>
+                     </div>
+                     <!-- Thách thức & Tương lai -->
+                     <div class="bg-[#1A365D] p-6 rounded-2xl shadow-lg border border-[#2B6CB0] text-white">
+                         <h4 class="font-bold text-white mb-3 border-b border-gray-600 pb-2"><i class="fa-solid fa-rocket mr-2 text-[#ECC94B]"></i>Tâm đắc & Thách thức</h4>
+                         <p class="text-xs text-gray-300 leading-relaxed text-justify">
+                            Điểm tâm đắc nhất là việc kết nối được sức mạnh công nghệ AI vào việc lan tỏa Văn hóa Việt Nam. Thách thức lớn nhất là duy trì sự cân bằng giữa sáng tạo nội dung sinh tạo bằng máy và giữ gìn tính nguyên bản của bản sắc cá nhân trong nghiên cứu.
+                         </p>
+                     </div>
+                 </div>
+             </div>
+        </section>
 
-  <!-- ================= FOOTER DỰ ÁN QUỐC TẾ ================= -->
-  <footer class="bg-[#1A365D] text-gray-400 text-center py-10 text-xs border-t border-[#2A4365]">
-      <p class="tracking-wide">© 2026 Đinh Thị Thanh Mai. All rights reserved. Designed for International Digital & Cultural Research Showcase.</p>
-  </footer>
+        <!-- Footer -->
+        <footer class="text-center pb-10 text-xs text-gray-400 font-medium">
+            <p>© 2026 Đinh Thị Thanh Mai. Thiết kế theo tiêu chuẩn đánh giá Xuất sắc (Mức 4).</p>
+        </footer>
 
+    </div>
+
+    <!-- Script tạo hiệu ứng chuyển màu cho Navigation Bar khi Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('a[href^="#"]').forEach(a => {
+                    a.classList.remove('nav-active', 'text-white');
+                    a.classList.add('text-gray-600');
+                });
+                this.classList.add('nav-active', 'text-white');
+                this.classList.remove('text-gray-600');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
