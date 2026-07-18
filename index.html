@@ -171,7 +171,7 @@
         .about-card h3:first-child { margin-top: 0; }
         .about-card p { margin-bottom: 15px; text-align: justify; }
 
-        /* --- DỰ ÁN VÀ 6 BÀI TẬP (ACCORDION STYLE) --- */
+        /* --- DỰ ÁN VÀ BÀI TẬP (ACCORDION STYLE) --- */
         .filters { display: flex; gap: 12px; margin-bottom: 35px; flex-wrap: wrap; }
         .filter-btn {
             background: var(--white); padding: 10px 24px; border-radius: 50px;
@@ -183,7 +183,6 @@
 
         .project-list { display: flex; flex-direction: column; gap: 24px; }
         
-        /* Cấu trúc phần Accordion nâng cấp Đồ họa */
         .project-accordion {
             background: var(--white); border-radius: 28px;
             box-shadow: var(--shadow-sm); overflow: hidden;
@@ -192,7 +191,6 @@
         }
         .project-accordion:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
         
-        /* Checkbox ẩn điều khiển trạng thái đóng mở */
         .accordion-toggle { display: none; }
 
         .project-header {
@@ -205,7 +203,7 @@
             background: var(--primary-light); display: flex;
             align-items: center; justify-content: center; font-size: 26px; min-width: 58px;
         }
-        .project-info h3 { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
+        .project-info .heading-title { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
         .project-info p { font-size: 13.5px; color: var(--text-muted); font-weight: 500; }
         
         .project-right { display: flex; align-items: center; gap: 16px; }
@@ -219,16 +217,15 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
         }
 
-        /* NỘI DUNG CHI TIẾT KHI MỞ CỦA LINK GỐC */
+        /* Tối ưu max-height xuống mức thực tế 1500px giúp chuyển động smooth */
         .accordion-content {
             max-height: 0; overflow: hidden;
             transition: max-height 0.4s ease-out;
             background: #FDFDFB; border-top: 0 solid rgba(0,0,0,0.03);
         }
         
-        /* Kích hoạt mở rộng khi checkbox được check */
         .accordion-toggle:checked ~ .accordion-content {
-            max-height: 5000px; /* Đảm bảo đủ khoảng trống chứa toàn bộ ảnh minh chứng */
+            max-height: 2000px; 
             border-top: 1px solid rgba(244, 208, 63, 0.1);
         }
         .accordion-toggle:checked ~ .project-header .arrow-icon {
@@ -237,7 +234,6 @@
             color: var(--text-main);
         }
 
-        /* Khối metadata bên trong bài tập */
         .assignment-meta-grid {
             display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding: 30px 35px 20px;
         }
@@ -277,9 +273,9 @@
             font-weight: 500;
         }
         
-        /* Cấu trúc Gallery hình ảnh */
-        .image-gallery { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 15px; }
-        .image-gallery a { display: inline-block; width: 100%; transition: transform 0.2s ease; }
+        /* Cấu trúc Gallery hình ảnh - bổ sung width ổn định */
+        .image-gallery { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 15px; width: 100%; }
+        .image-gallery a { display: inline-block; transition: transform 0.2s ease; }
         .image-gallery a:hover { transform: scale(1.015); }
         .image-gallery img {
             width: 100%; height: auto; border-radius: 12px;
@@ -287,11 +283,10 @@
             border: 1px solid rgba(244, 208, 63, 0.1);
         }
         
-        /* Class chia cột linh hoạt cho ảnh */
         .img-cols-2 a { width: calc(50% - 8px); }
         .img-cols-3 a { width: calc(33.33% - 11px); }
 
-        /* Responsive cho gallery và hệ thống grid */
+        /* Responsive */
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; min-height: auto; padding: 60px 0; }
             .hero-title { font-size: 2.5rem; }
@@ -392,7 +387,7 @@
 
             <div class="project-list">
                 
-                <!-- BÀI 1 ACCORDION (NỘI DUNG ĐÃ ĐƯỢC THAY THẾ CHUẨN XÁC TỪ CODE 2 VÀ ĐỒNG BỘ MÀU) -->
+                <!-- BÀI 1 ACCORDION -->
                 <div class="project-accordion">
                     <input type="checkbox" id="toggle-p1" class="accordion-toggle" checked />
                     
@@ -400,7 +395,7 @@
                         <div class="project-left">
                             <div class="project-icon">📂</div>
                             <div class="project-info">
-                                <h3>Bài 1: Quy trình 12 bước Quản lý Tệp & Thư mục</h3>
+                                <div class="heading-title">Bài 1: Quy trình 12 bước Quản lý Tệp & Thư mục</div>
                                 <p>Thao tác lõi trên hệ điều hành Windows và cấu trúc cây thư mục</p>
                             </div>
                         </div>
@@ -571,91 +566,18 @@
                                 </div>
                             </div>
 
-                            <!-- BƯỚC 10 -->
-                            <div class="step-block" id="step-10">
-                                <div class="step-number">10</div>
-                                <div class="step-detail">
-                                    <h4>Xóa tệp tin vào Thùng rác</h4>
-                                    <p>Trong thư mục TaiLieu, nhấp chuột phải vào bản sao tệp GhiChuQuanTrong.txt &rarr; chọn Delete để tạm đưa tệp vào Recycle Bin.</p>
-                                    <div class="note-box">
-                                        Ảnh thể hiện trạng thái trước và sau khi thực hiện Delete, xác nhận tệp đã rời khỏi thư mục hiện tại.
-                                    </div>
-                                    <div class="image-gallery img-cols-3">
-                                        <a href="https://ibb.co/PzgKDVJL" target="_blank"><img src="https://i.ibb.co/Tqt6WNJf/1784387071833-855422893640761644-9212239093870015019-9f8804e021261188bdaeaa93c94074dd.jpg" alt="Bước 10 ảnh 1" border="0"></a>
-                                        <a href="https://ibb.co/gL49b09W" target="_blank"><img src="https://i.ibb.co/mVNTrnTy/1784387085228-855422893640761644-9212239093870015019-ca7e104210699db238fdbeb082d5a346.jpg" alt="Bước 10 ảnh 2" border="0"></a>
-                                        <a href="https://ibb.co/RG1Hv4HS" target="_blank"><img src="https://i.ibb.co/Cpq01s0t/1784387100553-855422893640761644-9212239093870015019-fb433c633d136f9a1b2859ffc7db279c.jpg" alt="Bước 10 ảnh 3" border="0"></a>
-                                        <a href="https://imgbb.com/" target="_blank"><img src="https://i.ibb.co/3ynSmzFN/1784387111174-855422893640761644-9212239093870015019-14602034be34312fa1bea37529217d1d.jpg" alt="Bước 10 ảnh 4" border="0"></a>
-                                        <a href="https://imgbb.com/" target="_blank"><img src="https://i.ibb.co/MDRRVTD8/1784387122850-855422893640761644-9212239093870015019-d75fa476382c59e1bae13ab58489ce0d.jpg" alt="Bước 10 ảnh 5" border="0"></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- BƯỚC 11 -->
-                            <div class="step-block" id="step-11">
-                                <div class="step-number">11</div>
-                                <div class="step-detail">
-                                    <h4>Xóa vĩnh viễn không qua Thùng rác</h4>
-                                    <p>Chọn tệp DiChuyen.txt, giữ phím Shift + Delete. Một thông báo cảnh báo sẽ hiển thị để xác nhận xóa vĩnh viễn.</p>
-                                    <div class="note-box">
-                                        Ảnh hộp thoại xác nhận hệ thống hỏi người dùng trước khi dọn sạch tệp hoàn toàn khỏi bộ nhớ máy tính.
-                                    </div>
-                                    <div class="image-gallery">
-                                        <a href="https://ibb.co/5x8ZX0r0" target="_blank"><img src="https://i.ibb.co/1JqcYgrg/1784387135094-855422893640761644-9212239093870015019-49d9439b3604989c3e5e17440c628474.jpg" alt="Bước 11 ảnh 1" border="0"></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- BƯỚC 12 -->
-                            <div class="step-block" id="step-12">
-                                <div class="step-number">12</div>
-                                <div class="step-detail">
-                                    <h4>Khôi phục tệp từ Thùng rác (Restore)</h4>
-                                    <p>Mở Recycle Bin ngoài màn hình, tìm tệp GhiChuQuanTrong.txt vừa xóa ở Bước 10, nhấp chuột phải chọn Restore để đưa tệp lại vị trí cũ.</p>
-                                    <div class="note-box">
-                                        Chuỗi ảnh minh họa thao tác tìm lại tệp trong Recycle Bin và thực hiện khôi phục tệp về đúng vị trí thư mục TaiLieu.
-                                    </div>
-                                    <div class="image-gallery img-cols-2">
-                                        <a href="https://imgbb.com/" target="_blank"><img src="https://i.ibb.co/Pz4M4wWV/1784387149307-855422893640761644-9212239093870015019-1ed4851f7b59604dbaf5db4ecbfc073f.jpg" alt="Bước 12 ảnh 1" border="0"></a>
-                                        <a href="https://ibb.co/LDXDtZ5g" target="_blank"><img src="https://i.ibb.co/2010tkNM/1784387167407-855422893640761644-9212239093870015019-f02cf295fa8f6719532b0dc5b2fe8f58.jpg" alt="Bước 12 ảnh 2" border="0"></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div> <!-- Kết thúc assignment-body -->
-                    </div> <!-- Kết thúc accordion-content -->
-                </div> <!-- Kết thúc project-accordion Bài 1 -->
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
     </main>
 
-    <!-- FOOTER CHUẨN ĐỒ HỌA MÃ 1 -->
+    <!-- ĐÃ BỔ SUNG ĐẦY ĐỦ KHỐI FOOTER VÀ ĐÓNG THẺ CUỐI TRANG HỢP LỆ -->
     <footer>
-        <p>&copy; 2026 - Thiết kế báo cáo bởi Đinh Thị Thanh Mai. All Rights Reserved.</p>
-    </footer><!-- KHỐI TÀI LIỆU ĐỐI CHIẾU (ĐÃ CĂN CHỈNH KHOẢNG CÁCH) -->
-<div style="background-color: #f1c40f; color: #2c3e50; padding: 30px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-family: sans-serif; box-sizing: border-box; margin: 40px auto; max-width: 1200px; width: 90%;">
-  <!-- Khối text bên trái -->
-  <div style="max-width: 70%; text-align: left;">
-    <div style="font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; margin-bottom: 10px;">
-      TÀI LIỆU ĐỐI CHIẾU
-    </div>
-    <h2 style="margin: 0 0 10px 0; font-size: 28px; font-weight: bold; color: #2c3e50;">
-      Xem bản nộp gốc của bài
-    </h2>
-    <p style="margin: 0; font-size: 14px; color: #34495e; line-height: 1.5;">
-      Website trình bày lại nội dung theo cấu trúc web; tệp PDF gốc được giữ kèm để đối chiếu đầy đủ.
-    </p>
-  </div>
-
-  <!-- Nút bấm bên phải -->
-  <div>
-    <a href="tmp7syrrf_25040334_dinhthithanhmai-1.pdf" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; color: #2c3e50; border: 1px solid #2c3e50; padding: 12px 24px; border-radius: 12px; font-weight: bold; font-size: 15px; transition: background 0.3s; white-space: nowrap;">
-      Mở PDF gốc 
-      <span style="margin-left: 8px; font-size: 12px;">↗</span>
-    </a>
-  </div>
-</div>
-
+        <p>© 2026 Đinh Thị Thanh Mai. Báo cáo thực hành môn Tin học ứng dụng.</p>
+    </footer>
 
 </body>
 </html>
