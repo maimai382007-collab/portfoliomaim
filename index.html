@@ -134,6 +134,8 @@
         .hero-info-card p:first-child { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
         .hero-info-card p:last-child { font-size: 14px; font-weight: 600; color: var(--text-main); }
         
+        /* Chỉnh sửa style nút PDF để nổi bật và đồng bộ hơn */
+        .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
         .btn-primary {
             display: inline-flex; align-items: center; gap: 12px;
             background-color: var(--primary); color: var(--text-main);
@@ -142,6 +144,16 @@
             box-shadow: 0 10px 25px rgba(244, 208, 63, 0.35);
         }
         .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(244, 208, 63, 0.45); }
+        
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 12px;
+            background-color: var(--white); color: var(--text-main);
+            padding: 16px 36px; border-radius: 50px;
+            font-weight: 700; font-size: 15px; transition: all 0.3s;
+            border: 1px solid rgba(244, 208, 63, 0.4);
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-secondary:hover { transform: translateY(-4px); background-color: var(--primary-light); box-shadow: var(--shadow-md); }
 
         .hero-right { flex: 1; display: flex; justify-content: center; position: relative; }
         .hero-circle {
@@ -217,7 +229,7 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
         }
 
-        /* Tối ưu max-height xuống mức thực tế 1500px giúp chuyển động smooth */
+        /* Tối ưu hiệu ứng mượt mà */
         .accordion-content {
             max-height: 0; overflow: hidden;
             transition: max-height 0.4s ease-out;
@@ -225,7 +237,7 @@
         }
         
         .accordion-toggle:checked ~ .accordion-content {
-            max-height: 2000px; 
+            max-height: 3500px; 
             border-top: 1px solid rgba(244, 208, 63, 0.1);
         }
         .accordion-toggle:checked ~ .project-header .arrow-icon {
@@ -244,7 +256,6 @@
         .meta-item p:first-child { font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; letter-spacing: 0.5px; }
         .meta-item p:last-child { font-size: 14px; font-weight: 600; color: var(--text-main); }
 
-        /* ==================== BÀI LÀM: QUY TRÌNH 12 BƯỚC ==================== */
         .assignment-body { padding: 10px 35px 40px; }
         
         .step-block {
@@ -273,13 +284,27 @@
             font-weight: 500;
         }
         
-        /* Cấu trúc Gallery hình ảnh - bổ sung width ổn định */
-        .image-gallery { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 15px; width: 100%; }
-        .image-gallery a { display: inline-block; transition: transform 0.2s ease; }
+        /* 🛠️ CHỈNH SỬA PHẦN 1: Tối ưu Gallery hình ảnh thống nhất kích thước, không lo ảnh quá to */
+        .image-gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 16px; 
+            margin-top: 15px; 
+            width: 100%; 
+        }
+        .image-gallery a { 
+            display: inline-block; 
+            transition: transform 0.2s ease; 
+        }
         .image-gallery a:hover { transform: scale(1.015); }
+        
         .image-gallery img {
-            width: 100%; height: auto; border-radius: 12px;
-            box-shadow: var(--shadow-sm); display: block;
+            width: 100%; 
+            max-height: 250px;       /* Giới hạn chiều cao cố định để ảnh không bị quá to */
+            object-fit: cover;       /* Tự động cắt cúp ảnh cân bằng, không làm méo hình */
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm); 
+            display: block;
             border: 1px solid rgba(244, 208, 63, 0.1);
         }
         
@@ -294,6 +319,7 @@
             .hero-info-grid, .assignment-meta-grid { grid-template-columns: 1fr; gap: 12px; }
             .step-block { flex-direction: column; gap: 15px; }
             .img-cols-2 a, .img-cols-3 a { width: 100%; }
+            .image-gallery img { max-height: 200px; } /* Thu gọn hơn nữa trên màn hình di động */
         }
 
         /* --- FOOTER --- */
@@ -351,10 +377,15 @@
                     </div>
                 </div>
                 
-                <a href="#projects" class="btn-primary">
-                    Xem các bài tập thực hành
-                    <span>👇</span>
-                </a>
+                <div class="btn-group">
+                    <a href="#projects" class="btn-primary">
+                        Xem bài tập thực hành <span>👇</span>
+                    </a>
+                    <!-- 🛠️ CHỈNH SỬA PHẦN 2: Cập nhật đường dẫn file PDF chính xác để sửa lỗi 404 -->
+                    <a href="tmp7syrrf_25040334_dinhthithanhmai-1.pdf" target="_blank" class="btn-secondary">
+                        Xem báo cáo bản PDF <span>📄</span>
+                    </a>
+                </div>
             </div>
             
             <div class="hero-right">
@@ -574,7 +605,7 @@
         </section>
     </main>
 
-    <!-- ĐÃ BỔ SUNG ĐẦY ĐỦ KHỐI FOOTER VÀ ĐÓNG THẺ CUỐI TRANG HỢP LỆ -->
+    <!-- FOOTER CHUẨN ĐÓNG ĐẦY ĐỦ THẺ -->
     <footer>
         <p>© 2026 Đinh Thị Thanh Mai. Báo cáo thực hành môn Tin học ứng dụng.</p>
     </footer>
