@@ -1,51 +1,1069 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio - Đinh Thị Thanh Mai</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- ==========================================
+            BASIC SEO
+    =========================================== -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Đinh Thị Thanh Mai | Digital Portfolio
+    </title>
+
+    <meta name="description"
+        content="Portfolio cá nhân của Đinh Thị Thanh Mai - Sinh viên ngành Tiếng Việt và Văn hóa Việt Nam.">
+
+    <meta name="keywords"
+        content="Portfolio, Thanh Mai, HTML, CSS, JavaScript, Github, Digital Portfolio">
+
+    <meta name="author"
+        content="Đinh Thị Thanh Mai">
+
+    <link rel="icon"
+        href="assets/favicon.ico">
+
+    <!-- ==============================
+        GOOGLE FONT
+    =============================== -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ==============================
+        CSS
+    =============================== -->
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <link rel="stylesheet"
+        href="css/responsive.css">
+
+    <link rel="stylesheet"
+        href="css/animation.css">
+
 </head>
+
 <body>
-  <header class="hero">
-    <div class="overlay">
-      <div class="container">
-        <h1>Đinh Thị Thanh Mai</h1>
-        <p class="meta">Mã sinh viên: <strong>25040334</strong> • Ngành: <strong>Tiếng Việt và Văn hóa Việt Nam</strong></p>
-        <p class="hobbies">Sở thích: xem phim; đọc sách; làm nghiên cứu</p>
-        <nav class="nav">
-          <a href="index.html" class="active">Trang chủ</a>
-          <a href="projects.html">Dự án</a>
-          <a href="summary.html">Tổng kết</a>
+
+    <!-- ============================
+            LOADING
+    ============================= -->
+
+    <div id="loader">
+
+        <div class="loader-circle"></div>
+
+        <h2>Loading Portfolio...</h2>
+
+    </div>
+
+    <!-- ============================
+            PARTICLES
+    ============================= -->
+
+    <div id="particles-js"></div>
+
+    <!-- ============================
+            HEADER
+    ============================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <span>TM.</span>
+
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="#home">
+                        Trang chủ
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#about">
+                        Giới thiệu
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="projects.html">
+                        Dự án
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="summary.html">
+                        Tổng kết
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#contact">
+                        Liên hệ
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="menu-btn">
+
+                ☰
+
+            </div>
+
         </nav>
-      </div>
-    </div>
-  </header>
 
-  <main class="container content">
-    <section>
-      <h2>Chia sẻ mục tiêu học tập và định hướng cá nhân</h2>
-      <p><strong>Mục tiêu học tập:</strong> Nắm vững kiến thức cơ bản về công nghệ số, rèn luyện kỹ năng sử dụng các công cụ số để hỗ trợ học tập và công việc.</p>
-      <p><strong>Định hướng cá nhân:</strong> Trở thành giáo viên; ứng dụng công nghệ vào giảng dạy để nâng cao chất lượng bài học và tạo môi trường học tập tích cực.</p>
+    </header>
+
+    <!-- ============================
+            HERO
+    ============================= -->
+
+    <section
+        id="home"
+        class="hero">
+
+        <!-- Hero Background -->
+
+        <img
+            src="assets/hero.jpg"
+            alt="Hero Background"
+            class="hero-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="welcome">
+
+                Xin chào, mình là
+
+            </p>
+
+            <h1>
+
+                Đinh Thị Thanh Mai
+
+            </h1>
+
+            <h2>
+
+                <span class="typing"></span>
+
+            </h2>
+
+            <p class="hero-description">
+
+                Portfolio được xây dựng nhằm lưu trữ các dự án,
+                chia sẻ quá trình học tập và thể hiện năng lực
+                ứng dụng công nghệ số trong học tập cũng như
+                định hướng nghề nghiệp trong tương lai.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#about"
+                    class="btn-primary">
+
+                    Khám phá Portfolio
+
+                </a>
+
+                <a
+                    href="projects.html"
+                    class="btn-secondary">
+
+                    Xem dự án
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Scroll -->
+
+        <div class="scroll-down">
+
+            <span></span>
+
+        </div>
+
     </section>
 
-    <section>
-      <h2>Mục tiêu của Portfolio</h2>
-      <p>Portfolio này thể hiện kiến thức và kỹ năng đã học, lưu trữ và chia sẻ các dự án cá nhân, giúp theo dõi sự phát triển và giới thiệu năng lực học tập, nghề nghiệp.</p>
+    <!-- =======================================
+            QUICK INFORMATION
+    ======================================== -->
+
+    <section
+        class="quick-info">
+
+        <div class="container">
+
+            <div class="info-card">
+
+                <h3>
+
+                    👩 Họ tên
+
+                </h3>
+
+                <p>
+
+                    Đinh Thị Thanh Mai
+
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>
+
+                    🎓 MSSV
+
+                </h3>
+
+                <p>
+
+                    25040334
+
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>
+
+                    📚 Ngành học
+
+                </h3>
+
+                <p>
+
+                    Tiếng Việt và Văn hóa Việt Nam
+
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>
+
+                    💼 Định hướng
+
+                </h3>
+
+                <p>
+
+                    Giáo viên
+
+                </p>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section class="quick-score">
-      <h2>Điểm tổng kết</h2>
-      <div id="scoreCard" class="score-card"></div>
+    <!-- =======================================
+            ABOUT
+    ======================================== -->
+
+    <section
+        id="about"
+        class="about">
+
+        <div class="section-title">
+
+            <h2>
+
+                Giới thiệu bản thân
+
+            </h2>
+
+            <p>
+
+                Một vài thông tin cơ bản về bản thân và
+                mục tiêu học tập.
+
+            </p>
+
+        </div>
+
+        <div class="about-container">
+
+            <!-- Avatar -->
+
+            <div class="about-image">
+
+                <img
+                    src="assets/avatar.png"
+                    alt="Avatar">
+
+            </div>
+
+            <!-- Nội dung -->
+
+            <div class="about-content">
+
+                <h3>
+
+                    Xin chào!
+
+                </h3>
+
+                <p>
+
+                    Mình là
+                    <strong>Đinh Thị Thanh Mai</strong>,
+                    sinh viên ngành
+                    <strong>Tiếng Việt và Văn hóa Việt Nam</strong>.
+
+                </p>
+
+                <p>
+
+                    Mình yêu thích việc khám phá tri thức,
+                    nghiên cứu văn hóa, đọc sách và xem phim.
+                    Đồng thời mình luôn mong muốn ứng dụng
+                    công nghệ số để nâng cao hiệu quả học tập
+                    và phục vụ công việc trong tương lai.
+
+                </p>
+
+                <!-- Skill Tags -->
+
+                <div class="tags">
+
+                    <span>HTML</span>
+
+                    <span>CSS</span>
+
+                    <span>JavaScript</span>
+
+                    <span>AI Tools</span>
+
+                    <span>Canva</span>
+
+                    <span>Google Workspace</span>
+
+                    <span>Research</span>
+
+                </div>
+                                <!-- Personal Information -->
+
+                <div class="personal-info">
+
+                    <div class="info-item">
+
+                        <h4>🎂 Họ và tên</h4>
+
+                        <p>Đinh Thị Thanh Mai</p>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <h4>🆔 Mã sinh viên</h4>
+
+                        <p>25040334</p>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <h4>🎓 Ngành học</h4>
+
+                        <p>Tiếng Việt và Văn hóa Việt Nam</p>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <h4>💼 Nghề nghiệp mong muốn</h4>
+
+                        <p>Giáo viên</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Đinh Thị Thanh Mai • Mã SV 25040334</p>
-    </div>
-  </footer>
+    <!-- =======================================
+            LEARNING GOAL
+    ======================================== -->
 
-  <script src="assets/js/main.js"></script>
+    <section class="learning-goal">
+
+        <div class="section-title">
+
+            <h2>
+
+                Mục tiêu học tập
+
+            </h2>
+
+            <p>
+
+                Không ngừng học hỏi để phát triển năng lực số,
+                kỹ năng chuyên môn và khả năng sáng tạo.
+
+            </p>
+
+        </div>
+
+        <div class="goal-container">
+
+            <div class="goal-card">
+
+                <div class="goal-icon">
+
+                    💻
+
+                </div>
+
+                <h3>
+
+                    Công nghệ số
+
+                </h3>
+
+                <p>
+
+                    Nắm vững các kiến thức cơ bản về công nghệ số,
+                    biết khai thác và sử dụng hiệu quả các nền tảng,
+                    phần mềm và công cụ AI để phục vụ học tập.
+
+                </p>
+
+            </div>
+
+            <div class="goal-card">
+
+                <div class="goal-icon">
+
+                    📖
+
+                </div>
+
+                <h3>
+
+                    Học tập
+
+                </h3>
+
+                <p>
+
+                    Rèn luyện khả năng tự học, nghiên cứu,
+                    phân tích thông tin và phát triển tư duy
+                    phản biện trong môi trường số.
+
+                </p>
+
+            </div>
+
+            <div class="goal-card">
+
+                <div class="goal-icon">
+
+                    👩‍🏫
+
+                </div>
+
+                <h3>
+
+                    Nghề nghiệp
+
+                </h3>
+
+                <p>
+
+                    Trở thành giáo viên có khả năng ứng dụng
+                    công nghệ vào giảng dạy nhằm xây dựng
+                    môi trường học tập hiện đại và tích cực.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =======================================
+            PERSONAL ORIENTATION
+    ======================================== -->
+
+    <section class="orientation">
+
+        <div class="section-title">
+
+            <h2>
+
+                Định hướng cá nhân
+
+            </h2>
+
+            <p>
+
+                Những mục tiêu phát triển trong tương lai.
+
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <span class="timeline-year">
+
+                    Hiện tại
+
+                </span>
+
+                <div class="timeline-content">
+
+                    <h3>
+
+                        Sinh viên
+
+                    </h3>
+
+                    <p>
+
+                        Tập trung học tập, hoàn thành tốt các học phần,
+                        nâng cao kỹ năng số và tích cực tham gia
+                        các hoạt động nghiên cứu.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <span class="timeline-year">
+
+                    2026
+
+                </span>
+
+                <div class="timeline-content">
+
+                    <h3>
+
+                        Phát triển kỹ năng
+
+                    </h3>
+
+                    <p>
+
+                        Thành thạo HTML, CSS, JavaScript,
+                        Canva, AI và các công cụ hỗ trợ giảng dạy.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <span class="timeline-year">
+
+                    Tương lai
+
+                </span>
+
+                <div class="timeline-content">
+
+                    <h3>
+
+                        Giáo viên
+
+                    </h3>
+
+                    <p>
+
+                        Ứng dụng công nghệ số vào giảng dạy,
+                        xây dựng các bài học trực quan,
+                        sáng tạo và hiệu quả cho học sinh.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =======================================
+            PORTFOLIO PURPOSE
+    ======================================== -->
+
+    <section class="portfolio-purpose">
+
+        <div class="section-title">
+
+            <h2>
+
+                Mục tiêu của Portfolio
+
+            </h2>
+
+        </div>
+
+        <div class="purpose-grid">
+
+            <div class="purpose-card">
+
+                <h3>
+
+                    📂 Lưu trữ
+
+                </h3>
+
+                <p>
+
+                    Lưu giữ toàn bộ bài tập,
+                    dự án và sản phẩm học tập
+                    một cách khoa học.
+
+                </p>
+
+            </div>
+
+            <div class="purpose-card">
+
+                <h3>
+
+                    🌐 Chia sẻ
+
+                </h3>
+
+                <p>
+
+                    Giới thiệu các sản phẩm học tập
+                    và quá trình phát triển bản thân
+                    thông qua GitHub Pages.
+
+                </p>
+
+            </div>
+
+            <div class="purpose-card">
+
+                <h3>
+
+                    📈 Theo dõi
+
+                </h3>
+
+                <p>
+
+                    Đánh giá quá trình học tập,
+                    ghi nhận sự tiến bộ và cải thiện
+                    kỹ năng theo từng học phần.
+
+                </p>
+
+            </div>
+
+            <div class="purpose-card">
+
+                <h3>
+
+                    🚀 Phát triển
+
+                </h3>
+
+                <p>
+
+                    Xây dựng hồ sơ năng lực cá nhân
+                    phục vụ học tập,
+                    thực tập và công việc sau này.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =======================================
+            HOBBY
+    ======================================== -->
+
+    <section class="hobby">
+
+        <div class="section-title">
+
+            <h2>
+
+                Sở thích
+
+            </h2>
+
+        </div>
+
+        <div class="hobby-container">
+
+            <div class="hobby-card">
+
+                <div class="emoji">
+
+                    🎬
+
+                </div>
+
+                <h3>
+
+                    Xem phim
+
+                </h3>
+
+                <p>
+
+                    Khám phá nhiều thể loại phim,
+                    đặc biệt là phim mang giá trị
+                    văn hóa và giáo dục.
+
+                </p>
+
+            </div>
+
+            <div class="hobby-card">
+
+                <div class="emoji">
+
+                    📚
+
+                </div>
+
+                <h3>
+
+                    Đọc sách
+
+                </h3>
+
+                <p>
+
+                    Yêu thích đọc sách về văn học,
+                    lịch sử, văn hóa và giáo dục
+                    để mở rộng kiến thức.
+
+                </p>
+
+            </div>
+
+            <div class="hobby-card">
+
+                <div class="emoji">
+
+                    🔬
+
+                </div>
+
+                <h3>
+
+                    Làm nghiên cứu
+
+                </h3>
+
+                <p>
+
+                    Tham gia các đề tài nghiên cứu,
+                    rèn luyện tư duy phân tích
+                    và khả năng giải quyết vấn đề.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- =======================================
+            CONTACT
+    ======================================== -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-title">
+
+            <h2>Liên hệ</h2>
+
+            <p>
+                Rất vui khi được kết nối và chia sẻ quá trình học tập,
+                nghiên cứu cũng như các dự án cá nhân.
+            </p>
+
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    👩
+                </div>
+
+                <h3>Họ tên</h3>
+
+                <p>
+                    Đinh Thị Thanh Mai
+                </p>
+
+            </div>
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    🎓
+                </div>
+
+                <h3>Mã sinh viên</h3>
+
+                <p>
+                    25040334
+                </p>
+
+            </div>
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📚
+                </div>
+
+                <h3>Ngành học</h3>
+
+                <p>
+                    Tiếng Việt và Văn hóa Việt Nam
+                </p>
+
+            </div>
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    🌐
+                </div>
+
+                <h3>Github Pages</h3>
+
+                <p>
+                    Portfolio Digital
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+            QUOTE
+    ======================================== -->
+
+    <section class="quote-section">
+
+        <div class="quote-box">
+
+            <h2>
+
+                "Learning never exhausts the mind."
+
+            </h2>
+
+            <p>
+
+                Công nghệ không thay thế người giáo viên,
+                mà giúp người giáo viên truyền cảm hứng tốt hơn.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+            FOOTER
+    ======================================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-left">
+
+                <h2>
+
+                    Đinh Thị Thanh Mai
+
+                </h2>
+
+                <p>
+
+                    Digital Portfolio
+
+                </p>
+
+            </div>
+
+            <div class="footer-center">
+
+                <ul>
+
+                    <li>
+
+                        <a href="#home">
+
+                            Trang chủ
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#about">
+
+                            Giới thiệu
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="projects.html">
+
+                            Dự án
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="summary.html">
+
+                            Tổng kết
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-right">
+
+                <p>
+
+                    Thiết kế bằng
+
+                    HTML5 · CSS3 · JavaScript
+
+                </p>
+
+                <p>
+
+                    Responsive Design
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 Đinh Thị Thanh Mai.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =======================================
+            BACK TO TOP
+    ======================================== -->
+
+    <button
+        id="backToTop"
+        title="Back To Top">
+
+        ↑
+
+    </button>
+
+
+
+    <!-- =======================================
+            JAVASCRIPT
+    ======================================== -->
+
+    <script src="js/script.js"></script>
+
+    <script src="js/typing.js"></script>
+
+    <script src="js/particles.js"></script>
+
 </body>
+
 </html>
