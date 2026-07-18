@@ -1,92 +1,51 @@
-<!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<!doctype html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Sinh Viên - Đinh Thị Thanh Mai</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-        }
-        .nav-active { background: linear-gradient(135deg, #3182CE, #4299E1); color: white; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio - Đinh Thị Thanh Mai</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="text-[#1A202C] antialiased pb-20">
-
-    <!-- MENU ĐIỀU HƯỚNG -->
-    <nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-md">
-        <div class="glass-card p-1.5 rounded-full flex justify-between items-center">
-            <a href="#trang-chu" class="nav-active flex-1 text-center py-2.5 rounded-full text-sm font-bold transition-all">Trang chủ</a>
-            <a href="#du-an" class="flex-1 text-center py-2.5 rounded-full text-sm font-semibold text-gray-600 hover:text-[#3182CE] transition-all">Dự án</a>
-            <a href="#tong-ket" class="flex-1 text-center py-2.5 rounded-full text-sm font-semibold text-gray-600 hover:text-[#3182CE] transition-all">Tổng kết</a>
-        </div>
-    </nav>
-
-    <div class="max-w-6xl mx-auto px-4 pt-32">
-        
-        <!-- TRANG CHỦ -->
-        <section id="trang-chu" class="min-h-[80vh] flex flex-col justify-center mb-24">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="w-full aspect-square bg-slate-900 rounded-[2.5rem] flex flex-col items-center justify-center p-10 text-center shadow-2xl relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#3182CE]/20 to-[#00FF41]/10"></div>
-                    <i class="fa-solid fa-laptop-code text-8xl text-blue-400 mb-8 z-10"></i>
-                    <h1 class="text-white text-3xl font-black uppercase tracking-widest z-10">Công Nghệ Số</h1>
-                    <p class="text-[#00FF41] mt-4 font-mono z-10">> system.ready_</p>
-                </div>
-
-                <div class="space-y-6">
-                    <h1 class="text-5xl font-extrabold text-[#2D3748]">Đinh Thị <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3182CE] to-[#00FF41]">Thanh Mai</span></h1>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
-                        <p class="flex items-center gap-3"><i class="fa-solid fa-id-card text-[#3182CE] w-6"></i> MSV: <strong>25040334</strong></p>
-                        <p class="flex items-center gap-3"><i class="fa-solid fa-book-open text-[#3182CE] w-6"></i> Ngành: Tiếng Việt và văn hóa Việt Nam</p>
-                        <p class="flex items-center gap-3"><i class="fa-solid fa-building-columns text-[#3182CE] w-6"></i> Khoa: Việt Nam và Đông Nam Á</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DỰ ÁN -->
-        <section id="du-an" class="mb-24">
-            <h2 class="text-4xl font-extrabold text-center mb-16">Hồ Sơ Dự Án Thực Hành</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card ví dụ -->
-                <div class="glass-card rounded-3xl p-8 hover:scale-105 transition-transform border border-transparent hover:border-[#3182CE]/30">
-                    <div class="w-14 h-14 bg-blue-50 text-[#3182CE] rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-regular fa-folder-open"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Máy tính & Thiết bị</h3>
-                    <p class="text-sm text-gray-600">Quản lý tệp & Thư mục logic</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- TỔNG KẾT -->
-        <section id="tong-ket" class="mb-24">
-            <div class="glass-card rounded-[2.5rem] p-12 text-center">
-                <h2 class="text-4xl font-extrabold mb-6">Tổng Kết & Tầm Nhìn</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    Việc làm chủ các công cụ số và kỹ năng công nghệ hiện đại là bước đệm vững chắc cho kế hoạch học tập và phát triển bản thân của tôi.
-                </p>
-            </div>
-        </section>
-
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <div class="container">
+        <h1>Đinh Thị Thanh Mai</h1>
+        <p class="meta">Mã sinh viên: <strong>25040334</strong> • Ngành: <strong>Tiếng Việt và Văn hóa Việt Nam</strong></p>
+        <p class="hobbies">Sở thích: xem phim; đọc sách; làm nghiên cứu</p>
+        <nav class="nav">
+          <a href="index.html" class="active">Trang chủ</a>
+          <a href="projects.html">Dự án</a>
+          <a href="summary.html">Tổng kết</a>
+        </nav>
+      </div>
     </div>
+  </header>
 
-    <script>
-        // Hiệu ứng menu
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('nav a').forEach(a => a.classList.remove('nav-active'));
-                this.classList.add('nav-active');
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
+  <main class="container content">
+    <section>
+      <h2>Chia sẻ mục tiêu học tập và định hướng cá nhân</h2>
+      <p><strong>Mục tiêu học tập:</strong> Nắm vững kiến thức cơ bản về công nghệ số, rèn luyện kỹ năng sử dụng các công cụ số để hỗ trợ học tập và công việc.</p>
+      <p><strong>Định hướng cá nhân:</strong> Trở thành giáo viên; ứng dụng công nghệ vào giảng dạy để nâng cao chất lượng bài học và tạo môi trường học tập tích cực.</p>
+    </section>
+
+    <section>
+      <h2>Mục tiêu của Portfolio</h2>
+      <p>Portfolio này thể hiện kiến thức và kỹ năng đã học, lưu trữ và chia sẻ các dự án cá nhân, giúp theo dõi sự phát triển và giới thiệu năng lực học tập, nghề nghiệp.</p>
+    </section>
+
+    <section class="quick-score">
+      <h2>Điểm tổng kết</h2>
+      <div id="scoreCard" class="score-card"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Đinh Thị Thanh Mai • Mã SV 25040334</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
