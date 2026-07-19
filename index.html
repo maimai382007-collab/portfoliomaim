@@ -8,6 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+  
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+</style>
     
     <style>
         /* --- ĐỊNH NGHĨA HỆ THỐNG MÀU VÀ BIẾN CAO CẤP --- */
@@ -19,18 +26,15 @@
             --text-main: #2C2A24; 
             --text-muted: #7A776F; 
             --white: #FFFFFF;
-            /* Đổ bóng ma trận đa lớp (Layered Shadows) tạo chiều sâu thực tế */
             --shadow-sm: 0 4px 20px rgba(212, 172, 13, 0.03);
             --shadow-md: 0 12px 35px rgba(212, 172, 13, 0.07); 
             --shadow-lg: 0 24px 60px rgba(212, 172, 13, 0.12);
             --font-main: 'Plus Jakarta Sans', 'Quicksand', sans-serif;
             --transition-smooth: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
         /* --- RESET & ĐỊNH DẠNG CƠ BẢN --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
         body {
             font-family: var(--font-main);
             background-color: var(--bg-body);
@@ -39,7 +43,6 @@
             overflow-x: hidden;
             position: relative;
         }
-
         a { text-decoration: none; color: inherit; }
         
         .container {
@@ -47,7 +50,6 @@
             margin: 0 auto;
             padding: 0 24px;
         }
-
         /* --- ĐỒ HỌA ĐA CHIỀU NỀN TRANG TRÍ (AMBIENT GLOWS) --- */
         .bg-glow-1 {
             position: fixed; top: -15%; left: -15%; width: 60vw; height: 60vw;
@@ -68,12 +70,10 @@
         .p2 { top: 28%; right: 10%; animation-delay: 2.5s; font-size: 1.2rem; }
         .p3 { bottom: 25%; left: 5%; animation-delay: 4.5s; font-size: 1.9rem; }
         .p4 { top: 60%; right: 6%; animation-delay: 1.5s; }
-
         @keyframes floatingPoints {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(20deg); }
         }
-
         /* --- THANH ĐIỀU HƯỚNG HIỆN ĐẠI (GLASSMORPHISM NAV) --- */
         header {
             display: flex; justify-content: center;
@@ -96,7 +96,6 @@
         }
         nav a:hover { color: var(--text-main); background-color: rgba(244, 208, 63, 0.08); }
         nav a.active { background-color: var(--primary); color: var(--text-main); box-shadow: 0 4px 18px rgba(244, 208, 63, 0.3); font-weight: 700; }
-
         /* --- BADGE TAG DESIGN --- */
         .section-tag {
             background-color: var(--primary-light);
@@ -107,11 +106,11 @@
             border: 1px solid rgba(244, 208, 63, 0.25);
             text-transform: uppercase;
         }
-
-        /* --- HERO SECTION --- */
+        
+        /* --- GIỚI THIỆU SECTION (Gộp Hero & About) --- */
         .hero {
             display: flex; align-items: center; justify-content: space-between;
-            min-height: 80vh; padding: 40px 0; gap: 50px;
+            padding: 60px 0 20px; gap: 50px;
         }
         .hero-left { flex: 1.25; }
         .greeting { font-weight: 600; color: var(--text-muted); font-size: 16.5px; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
@@ -126,13 +125,11 @@
             50% { transform: rotate(10.0deg) }
             60% { transform: rotate( 0.0deg) }
         }
-
         .hero-title {
             font-size: 3.8rem; font-weight: 800; color: var(--text-main);
             margin: 10px 0 35px; line-height: 1.15; letter-spacing: -1.5px;
         }
         
-        /* CẬP NHẬT 3 Ô THÔNG TIN TẠI HERO VỚI NỘI DUNG MỚI ĐỒNG BỘ */
         .hero-info-grid {
             display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: 45px;
         }
@@ -141,9 +138,7 @@
             box-shadow: var(--shadow-sm); text-align: center;
             border: 1px solid rgba(244, 208, 63, 0.05);
             transition: var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: flex; flex-direction: column; justify-content: center;
         }
         .hero-info-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(244, 208, 63, 0.35); }
         .hero-info-card p:first-child { font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
@@ -157,7 +152,6 @@
             box-shadow: 0 10px 25px rgba(244, 208, 63, 0.32);
         }
         .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 32px rgba(244, 208, 63, 0.48); }
-
         .hero-right { flex: 0.9; display: flex; justify-content: center; position: relative; }
         .hero-circle {
             width: 350px; height: 350px; border-radius: 50%;
@@ -171,9 +165,8 @@
             animation: float 5.5s ease-in-out infinite;
         }
         @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-18px) scale(1.04); } }
-
-        /* --- ABOUT SECTION --- */
-        .section-wrapper { padding: 85px 0; }
+        
+        .section-wrapper { padding: 60px 0; }
         .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; color: var(--text-main); letter-spacing: -0.8px; }
         
         .about-card {
@@ -184,18 +177,6 @@
         }
         .about-card:hover { box-shadow: var(--shadow-lg); }
         
-        .personal-meta-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px;
-        }
-        .personal-item {
-            background: var(--bg-body); padding: 18px 24px; border-radius: 20px;
-            border: 1px dashed rgba(244, 208, 63, 0.5);
-            transition: var(--transition-smooth);
-        }
-        .personal-item:hover { background: var(--primary-light); border-style: solid; }
-        .personal-item span:first-child { font-size: 11.5px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 4px; letter-spacing: 0.5px; }
-        .personal-item span:last-child { font-size: 15.5px; font-weight: 700; color: var(--text-main); }
-
         .about-card h3 {
             color: var(--text-main); font-size: 1.35rem; margin-bottom: 14px; margin-top: 32px; font-weight: 700;
             display: flex; align-items: center; gap: 12px;
@@ -203,32 +184,28 @@
         .about-card h3:first-of-type { margin-top: 0; }
         .about-card p { margin-bottom: 18px; text-align: justify; }
 
-        /* --- DANH SÁCH BÀI TẬP (ACCORDION) --- */
-        .project-list { display: flex; flex-direction: column; gap: 24px; margin-top: 15px; }
+        /* --- DANH SÁCH BÀI TẬP (SEQUENTIAL VIEW - Không dùng Accordion) --- */
+        .project-list { display: flex; flex-direction: column; gap: 40px; margin-top: 15px; }
         
-        .project-accordion {
+        .project-card {
             background: var(--white); border-radius: 28px;
             box-shadow: var(--shadow-sm); overflow: hidden;
-            transition: var(--transition-smooth);
-            border: 1px solid rgba(244, 208, 63, 0.05);
+            border: 1px solid rgba(244, 208, 63, 0.15);
         }
-        .project-accordion:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(244, 208, 63, 0.25); }
         
-        .accordion-toggle { display: none; }
-
         .project-header {
             padding: 26px 36px; display: flex; align-items: center;
-            justify-content: space-between; cursor: pointer; user-select: none;
+            justify-content: space-between;
+            background: var(--primary-light);
+            border-bottom: 1px solid rgba(244, 208, 63, 0.18);
         }
         .project-left { display: flex; align-items: center; gap: 24px; }
         .project-icon {
             width: 60px; height: 60px; border-radius: 20px;
-            background: var(--primary-light); display: flex;
+            background: var(--white); display: flex;
             align-items: center; justify-content: center; font-size: 28px; min-width: 60px;
-            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
         }
-        .project-accordion:hover .project-icon { transform: scale(1.08) rotate(6deg); background: var(--primary); }
-
         .project-info .heading-title { font-size: 19px; font-weight: 700; color: var(--text-main); margin-bottom: 5px; letter-spacing: -0.3px; }
         .project-info p { font-size: 14px; color: var(--text-muted); font-weight: 500; }
         
@@ -237,28 +214,11 @@
             background: #E8F8F5; color: #117A65;
             padding: 6px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; white-space: nowrap;
         }
-        .arrow-icon {
-            color: var(--primary-dark); font-size: 14px; transition: var(--transition-smooth);
-            width: 34px; height: 34px; background: var(--primary-light);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-        }
-
-        .accordion-content {
-            max-height: 0; overflow: hidden;
-            transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            background: #FEFEFC; border-top: 0 solid rgba(0,0,0,0.02);
+        
+        .project-content {
+            background: #FEFEFC;
         }
         
-        .accordion-toggle:checked ~ .accordion-content {
-            max-height: 4500px; 
-            border-top: 1px solid rgba(244, 208, 63, 0.18);
-        }
-        .accordion-toggle:checked ~ .project-header .arrow-icon {
-            transform: rotate(180deg);
-            background: var(--primary);
-            color: var(--text-main);
-        }
-
         /* METADATA GRID BÀI TẬP */
         .assignment-meta-grid {
             display: grid; grid-template-columns: 1fr 1fr 1fr 1.2fr; gap: 16px; padding: 32px 36px 22px;
@@ -270,7 +230,6 @@
         }
         .meta-item p:first-child { font-size: 11px; text-transform: uppercase; font-weight: 800; color: var(--text-muted); margin-bottom: 5px; letter-spacing: 0.5px; }
         .meta-item p:last-child { font-size: 14.5px; font-weight: 600; color: var(--text-main); }
-
         .btn-pdf-inline {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;
             background-color: var(--white); color: var(--text-main);
@@ -286,7 +245,6 @@
             box-shadow: 0 6px 22px rgba(244, 208, 63, 0.4); 
         }
         .btn-pdf-inline span { font-size: 17px; }
-
         .assignment-body { padding: 10px 36px 40px; }
         
         .step-block {
@@ -344,7 +302,6 @@
         
         .img-cols-2 a { width: calc(50% - 8px); }
         .img-cols-3 a { width: calc(33.33% - 11px); }
-
         /* PHẢN HỒI GIAO DIỆN DI ĐỘNG (RESPONSIVE) */
         @media (max-width: 992px) {
             .assignment-meta-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -353,7 +310,6 @@
             .hero { flex-direction: column; text-align: center; min-height: auto; padding: 60px 0; }
             .hero-title { font-size: 2.6rem; margin-bottom: 25px; }
             .hero-info-grid { grid-template-columns: 1fr; gap: 12px; }
-            .personal-meta-grid { grid-template-columns: 1fr; gap: 14px; }
             .assignment-meta-grid { grid-template-columns: 1fr; gap: 12px; }
             .step-block { flex-direction: column; gap: 16px; }
             .img-cols-2 a, .img-cols-3 a { width: 100%; }
@@ -361,7 +317,6 @@
             .hero-circle { width: 290px; height: 290px; }
             .hero-circle::before { font-size: 7rem; }
         }
-
         /* --- FOOTER --- */
         footer {
             background-color: var(--text-main); color: var(--primary-light);
@@ -371,7 +326,6 @@
     </style>
 </head>
 <body>
-
     <!-- ĐỒ HỌA BACKGROUND ĐA CHIỀU -->
     <div class="bg-glow-1"></div>
     <div class="bg-glow-2"></div>
@@ -381,71 +335,56 @@
         <div class="particle p3">✨</div>
         <div class="particle p4">🔸</div>
     </div>
-
-    <!-- STICKY FLOATING NAV BAR -->
+    
+    <!-- STICKY FLOATING NAV BAR THAY ĐỔI THEO 3 PHẦN -->
     <header>
         <nav>
-            <a href="#home" class="active">Trang chủ</a>
-            <a href="#about">Giới thiệu</a>
-            <a href="#projects">Bài tập thực hành</a>
+            <a href="#about" class="active">Giới thiệu</a>
+            <a href="#projects">Dự án</a>
+            <a href="#summary">Tổng kết</a>
         </nav>
     </header>
-
+    
     <main class="container">
         
-        <!-- HERO SECTION -->
-        <section id="home" class="hero">
-            <div class="hero-left">
-                <div class="greeting">
-                    <span class="greeting-icon">👋</span> Xin chào, tôi là
+        <!-- PHẦN 1: GIỚI THIỆU (Gộp Hero & About) -->
+        <section id="about">
+            <div class="hero">
+                <div class="hero-left">
+                    <div class="greeting">
+                        <span class="greeting-icon">👋</span> Xin chào, tôi là
+                    </div>
+                    <h1 class="hero-title">Đinh Thị Thanh Mai</h1>
+                    
+                    <div class="hero-info-grid">
+                        <div class="hero-info-card">
+                            <p>🎓 Ngành học</p>
+                            <p>Tiếng Việt và văn hóa Việt Nam</p>
+                        </div>
+                        <div class="hero-info-card">
+                            <p>✈️ Sở thích</p>
+                            <p>Xem phim, đi du lịch</p>
+                        </div>
+                        <div class="hero-info-card">
+                            <p>📊 Báo cáo</p>
+                            <p>Portfolio Cá nhân</p>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <a href="#projects" class="btn-primary">
+                            Xem các dự án thực hành <span>👇</span>
+                        </a>
+                    </div>
                 </div>
-                <h1 class="hero-title">Đinh Thị Thanh Mai</h1>
                 
-                <!-- Thay thế cấu trúc cũ bằng 3 ô mới: Ngành học, Sở thích, Báo cáo -->
-                <div class="hero-info-grid">
-                    <div class="hero-info-card">
-                        <p>🎓 Ngành học</p>
-                        <p>Tiếng Việt và văn hóa Việt Nam</p>
-                    </div>
-                    <div class="hero-info-card">
-                        <p>✈️ Sở thích</p>
-                        <p>Xem phim, đi du lịch</p>
-                    </div>
-                    <div class="hero-info-card">
-                        <p>📊 Báo cáo</p>
-                        <p>Portfolio Cá nhân</p>
-                    </div>
-                </div>
-                
-                <div class="btn-group">
-                    <a href="#projects" class="btn-primary">
-                        Xem 6 bài tập thực hành <span>👇</span>
-                    </a>
+                <div class="hero-right">
+                    <div class="hero-circle"></div>
                 </div>
             </div>
-            
-            <div class="hero-right">
-                <div class="hero-circle"></div>
-            </div>
-        </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="section-wrapper">
-            <div class="section-tag">ABOUT ME</div>
-            <h2 class="section-title">Giới thiệu bản thân</h2>
-            <div class="about-card">
-                
-                <div class="personal-meta-grid">
-                    <div class="personal-item">
-                        <span>🎓 Ngành học</span>
-                        <span>Tiếng Việt và Văn hóa Việt Nam</span>
-                    </div>
-                    <div class="personal-item">
-                        <span>✈️ Sở thích</span>
-                        <span>Xem phim, Đi du lịch</span>
-                    </div>
-                </div>
-
+            <!-- Khối nội dung giới thiệu chi tiết -->
+            <div class="about-card" style="margin-bottom: 40px;">
                 <h3>🎯 Mục tiêu học tập và định hướng cá nhân</h3>
                 <p>Mục tiêu học tập của em là nắm vững những kiến thức cơ bản về công nghệ số, rèn luyện kỹ năng sử dụng các công cụ số một cách hiệu quả để hỗ trợ học tập và công việc sau này. Em định hướng trở thành giáo viên, vì vậy em mong muốn ứng dụng công nghệ vào giảng dạy nhằm nâng cao chất lượng bài học và tạo môi trường học tập tích cực cho học sinh.</p>
                 
@@ -454,18 +393,16 @@
             </div>
         </section>
 
-        <!-- ASSIGNMENTS SECTION -->
+        <!-- PHẦN 2: DỰ ÁN (HIỂN THỊ TUẦN TỰ TỪ TRÊN XUỐNG DƯỚI) -->
         <section id="projects" class="section-wrapper">
-            <div class="section-tag">MY WORK</div>
-            <h2 class="section-title">Danh sách bài tập thực hành</h2>
-
+            <div class="section-tag">MY PROJECTS</div>
+            <h2 class="section-title">Các dự án thực hành</h2>
+            
             <div class="project-list">
                 
-                <!-- BÀI 1 ACCORDION -->
-                <div class="project-accordion">
-                    <input type="checkbox" id="toggle-p1" class="accordion-toggle" checked />
-                    
-                    <label for="toggle-p1" class="project-header">
+                <!-- BÀI 1 -->
+                <div class="project-card">
+                    <div class="project-header">
                         <div class="project-left">
                             <div class="project-icon">📂</div>
                             <div class="project-info">
@@ -475,11 +412,10 @@
                         </div>
                         <div class="project-right">
                             <span class="status-pill">Đã hoàn thành</span>
-                            <div class="arrow-icon">▼</div>
                         </div>
-                    </label>
-
-                    <div class="accordion-content">
+                    </div>
+                    
+                    <div class="project-content">
                         <div class="assignment-meta-grid">
                             <div class="meta-item">
                                 <p>Nội dung thực hành</p>
@@ -495,14 +431,12 @@
                             </div>
                             <div class="meta-item-btn">
                                 <a href="tmp7syrrf_25040334_dinhthithanhmai-1.pdf" target="_blank" class="btn-pdf-inline">
-                                    <span>📄</span> Xem báo cáo bản PDF
+                                    <span>📄</span> Xem báo cáo PDF
                                 </a>
                             </div>
                         </div>
-
-                        <!-- Thân nội dung các bước thực hành -->
+                        
                         <div class="assignment-body">
-                            
                             <!-- BƯỚC 1 -->
                             <div class="step-block" id="step-1">
                                 <div class="step-number">01</div>
@@ -517,7 +451,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- BƯỚC 2 -->
                             <div class="step-block" id="step-2">
                                 <div class="step-number">02</div>
@@ -532,7 +465,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- BƯỚC 3 -->
                             <div class="step-block" id="step-3">
                                 <div class="step-number">03</div>
@@ -547,7 +479,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- BƯỚC 4 -->
                             <div class="step-block" id="step-4">
                                 <div class="step-number">04</div>
@@ -562,7 +493,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- BƯỚC 5 -->
                             <div class="step-block" id="step-5">
                                 <div class="step-number">05</div>
@@ -579,7 +509,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- BƯỚC 6 -->
                             <div class="step-block" id="step-6">
                                 <div class="step-number">06</div>
@@ -594,7 +523,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- BƯỚC 7 -->
                             <div class="step-block" id="step-7">
                                 <div class="step-number">07</div>
@@ -610,7 +538,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- BƯỚC 8 -->
                             <div class="step-block" id="step-8">
                                 <div class="step-number">08</div>
@@ -626,665 +553,1431 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- BƯỚC 9 -->
-                            <div class="step-block" id="step-9">
-                                <div class="step-number">09</div>
-                                <div class="step-detail">
-                                    <h4>Di chuyển tệp tin (Cut & Paste)</h4>
-                                    <p>Tạo một tệp mới tên là DiChuyen.txt ở thư mục ngoài. Nhấp chuột phải vào nó &rarr; chọn Cut. Vào thư mục TaiLieu và chọn Paste để chuyển tệp hẳn sang đây.</p>
-                                    <div class="note-box">
-                                        Ghi lại thao tác cắt tệp gốc khỏi vị trí ban đầu và dán cố định sang thư mục lưu trữ mới.
-                                    </div>
-                                    <div class="image-gallery img-cols-3">
-                                        <a href="https://ibb.co/1GVdsn0M" target="_blank"><img src="https://i.ibb.co/QvBC8cJk/1784387026188-855422893640761644-9212239093870015019-df8b5116ecb5802c3b5e56e4a1261371.jpg" alt="Bước 9 ảnh 1"></a>
-                                        <a href="https://ibb.co/qFdDp0FF" target="_blank"><img src="https://i.ibb.co/1JL0TsJJ/1784387040325-855422893640761644-9212239093870015019-4c418ba3b80c28d956f8296dd958d990.jpg" alt="Bước 9 ảnh 2"></a>
-                                        <a href="https://ibb.co/gMDKVSNn" target="_blank"><img src="https://i.ibb.co/27j4Nvxb/1784387056297-855422893640761644-9212239093870015019-86bccf0d07c29aa2b37616f295c599d9.jpg" alt="Bước 9 ảnh 3"></a>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Đinh Thị Thanh Mai. Báo cáo thực hành môn Tin học ứng dụng.</p>
-    </footer>
-    <!DOCTYPE html>
+                <!-- BÀI 2 (Hiển thị tuần tự) -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-left">
+                            <div class="project-icon">💻</div>
+                            <div class="project-info">
+                                <div class="heading-title">Bài 2: Tên bài thực hành số 2</div>
+                                <p>Mô tả ngắn gọn về bài thực hành số 2 của bạn</p>
+                            </div>
+                        </div>
+                        <div class="project-right">
+                            <span class="status-pill">Đã hoàn thành</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="assignment-body">
+                          <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Đinh Thị Thanh Mai</title>
-    <!-- Import font chữ hiện đại, cao cấp -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    
+    <title>TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT</title>
     <style>
-        /* --- ĐỊNH NGHĨA HỆ THỐNG MÀU VÀ BIẾN CAO CẤP --- */
         :root {
-            --bg-body: #FFFCF6; 
-            --primary: #F4D03F; 
-            --primary-light: #FEF9E7; 
-            --primary-dark: #C99A05; 
-            --text-main: #2C2A24; 
-            --text-muted: #7A776F; 
-            --white: #FFFFFF;
-            /* Đổ bóng ma trận đa lớp (Layered Shadows) tạo chiều sâu thực tế */
-            --shadow-sm: 0 4px 20px rgba(212, 172, 13, 0.03);
-            --shadow-md: 0 12px 35px rgba(212, 172, 13, 0.07); 
-            --shadow-lg: 0 24px 60px rgba(212, 172, 13, 0.12);
-            --font-main: 'Plus Jakarta Sans', 'Quicksand', sans-serif;
-            --transition-smooth: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-            --border-color: #EADECC;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --primary-color: #ecc335; /* Màu vàng chủ đạo từ ảnh */
+            --primary-hover: #d4ac29; /* Màu vàng đậm hơn khi di chuột */
+            --bg-light: #fdfaf0; /* Màu nền vàng nhạt/be từ ảnh */
+            --border-color: #eaeaea;
+            --page-bg: #fcfbf8;
         }
-
-        /* --- RESET & ĐỊNH DẠNG CƠ BẢN --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
 
         body {
-            font-family: var(--font-main);
-            background-color: var(--bg-body);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             color: var(--text-main);
-            line-height: 1.7;
-            overflow-x: hidden;
-            position: relative;
-            padding-bottom: 80px;
+            background-color: var(--page-bg);
+            padding: 20px;
+            margin: 0;
         }
 
-        a { text-decoration: none; color: inherit; }
-        
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* --- ĐỒ HỌA ĐA CHIỀU NỀN TRANG TRÍ (AMBIENT GLOWS) --- */
-        .bg-glow-1 {
-            position: fixed; top: -15%; left: -15%; width: 60vw; height: 60vw;
-            background: radial-gradient(circle, rgba(244,208,63,0.18) 0%, rgba(255,255,255,0) 70%);
-            z-index: -2; pointer-events: none; filter: blur(50px);
-        }
-        .bg-glow-2 {
-            position: fixed; bottom: -15%; right: -15%; width: 65vw; height: 65vw;
-            background: radial-gradient(circle, rgba(253,235,208,0.22) 0%, rgba(255,255,255,0) 70%);
-            z-index: -2; pointer-events: none; filter: blur(60px);
-        }
-        .bg-particles {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; pointer-events: none; overflow: hidden;
-        }
-        .particle { position: absolute; font-size: 1.6rem; opacity: 0.35; animation: floatingPoints 9s ease-in-out infinite; }
-        .p1 { top: 12%; left: 7%; animation-delay: 0s; }
-        .p2 { top: 28%; right: 10%; animation-delay: 2.5s; font-size: 1.2rem; }
-        .p3 { bottom: 25%; left: 5%; animation-delay: 4.5s; font-size: 1.9rem; }
-        .p4 { top: 60%; right: 6%; animation-delay: 1.5s; }
-
-        @keyframes floatingPoints {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(20deg); }
-        }
-
-        /* --- THANH ĐIỀU HƯỚNG HIỆN ĐẠI (GLASSMORPHISM NAV) --- */
-        header {
-            display: flex; justify-content: center;
-            padding-top: 25px; position: sticky; top: 0; z-index: 100;
-            margin-bottom: 50px;
-        }
-        nav {
-            background-color: rgba(255, 255, 255, 0.82);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            padding: 8px 12px;
-            border-radius: 50px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(244, 208, 63, 0.18);
-            display: flex; gap: 6px;
-        }
-        nav a {
-            padding: 10px 26px; border-radius: 50px;
-            font-weight: 600; font-size: 14.5px;
-            color: var(--text-muted); transition: var(--transition-smooth);
-        }
-        nav a:hover { color: var(--text-main); background-color: rgba(244, 208, 63, 0.08); }
-        nav a.active { background-color: var(--primary); color: var(--text-main); box-shadow: 0 4px 18px rgba(244, 208, 63, 0.3); font-weight: 700; }
-
-        /* --- BADGE TAG DESIGN --- */
-        .section-tag {
-            background-color: var(--primary-light);
-            color: var(--primary-dark);
-            padding: 6px 22px; border-radius: 50px;
-            font-size: 12px; font-weight: 800; letter-spacing: 0.8px;
-            display: inline-block; margin-bottom: 18px;
-            border: 1px solid rgba(244, 208, 63, 0.25);
-            text-transform: uppercase;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            display: flex; align-items: center; justify-content: space-between;
-            min-height: 40vh; padding: 20px 0; gap: 50px;
-            margin-bottom: 30px;
-        }
-        .hero-left { flex: 1.25; }
-        .greeting { font-weight: 600; color: var(--text-muted); font-size: 16.5px; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-        .greeting-icon { color: var(--primary); font-size: 22px; animation: wave 2.5s infinite; transform-origin: 70% 70%; }
-        
-        @keyframes wave {
-            0%, 100% { transform: rotate( 0.0deg) }
-            10%, 30% { transform: rotate(14.0deg) }
-            20% { transform: rotate(-8.0deg) }
-            40% { transform: rotate(-4.0deg) }
-            50% { transform: rotate(10.0deg) }
-            60% { transform: rotate( 0.0deg) }
-        }
-
-        .hero-title {
-            font-size: 3rem; font-weight: 800; color: var(--text-main);
-            margin: 10px 0 20px; line-height: 1.15; letter-spacing: -1.5px;
-        }
-
-        /* --- DANH SÁCH BÀI TẬP (PROJECTS MATRIX) --- */
-        .assignment-list {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        /* Hộp bọc từng bài học như hình mẫu */
-        .assignment-card {
-            background-color: var(--white);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(244, 208, 63, 0.1);
-            transition: var(--transition-smooth);
-        }
-
-        .assignment-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Phần header chứa icon, tên bài và trạng thái */
-        .card-header-flex {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .card-meta-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .icon-wrapper {
-            width: 64px;
-            height: 64px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-        }
-
-        .icon-folder { background-color: #FFF9E7; color: #F4D03F; }
-        .icon-laptop { background-color: #E8F8F5; color: #1ABC9C; }
-
-        .title-block h3 {
-            font-size: 1.35rem;
-            color: var(--text-main);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .title-block p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Huy hiệu trạng thái bên phải */
-        .status-badge {
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .status-success { background-color: #E8F8F5; color: #117A65; }
-        .status-pending { background-color: #FEF9E7; color: #B7950B; }
-
-        /* --- PHẦN NỘI DUNG CHI TIẾT BÊN TRONG BÀI 2 --- */
         .card-body-content {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #F4F1EA;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .pdf-action-row {
-            display: flex;
-            justify-content: flex-end;
             margin-bottom: 25px;
         }
 
         .btn-pdf {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background-color: var(--text-main);
-            color: var(--white);
-            font-weight: 600;
-            font-size: 13.5px;
+            background-color: var(--primary-color);
+            color: #222222;
             padding: 10px 20px;
-            border-radius: 12px;
-            transition: var(--transition-smooth);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-decoration: none;
+            border-radius: 30px; /* Bo góc tròn hơn giống nút trong ảnh */
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(236, 195, 53, 0.3);
         }
 
         .btn-pdf:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-1px);
+            background-color: var(--primary-hover);
         }
 
         .academic-section-title {
-            font-size: 1.45rem;
             color: var(--text-main);
-            margin: 30px 0 15px;
-            font-weight: 700;
-            border-left: 4px solid var(--primary);
-            padding-left: 12px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 35px;
+            font-size: 1.4rem;
         }
 
         .topic-callout {
-            background-color: var(--primary-light);
-            border-left: 4px solid var(--primary);
-            padding: 18px 24px;
-            border-radius: 0 16px 16px 0;
-            font-style: italic;
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
             font-weight: 600;
-            margin: 15px 0 25px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            color: var(--text-main);
         }
 
         .text-p {
-            font-size: 1.02rem;
-            color: var(--text-main);
+            margin-bottom: 15px;
             text-align: justify;
-            margin-bottom: 16px;
+            font-size: 1rem;
+            color: var(--text-secondary);
         }
 
-        /* Danh sách dấu chấm tròn đồng bộ style */
-        .bullet-list {
-            list-style: none;
-            padding-left: 5px;
-            margin-bottom: 25px;
+        .bullet-list, .harvard-list {
+            margin-bottom: 20px;
+            padding-left: 25px;
+            color: var(--text-secondary);
         }
 
         .bullet-list li {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 10px;
-            font-size: 1.02rem;
-        }
-
-        .bullet-list li::before {
-            content: "•";
-            color: var(--primary-dark);
-            font-size: 1.4rem;
-            position: absolute;
-            left: 4px;
-            top: -4px;
-        }
-
-        /* --- THIẾT KẾ BẢNG TÀI LIỆU HỌC THUẬT --- */
-        .table-scroll-container {
-            width: 100%;
-            overflow-x: auto;
-            margin: 25px 0 35px;
-            border-radius: 16px;
-            border: 1px solid #EADECC;
-            box-shadow: var(--shadow-sm);
-        }
-
-        table.data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.92rem;
-            min-width: 1300px;
-            background-color: var(--white);
-        }
-
-        table.data-table th {
-            background-color: #FAF6EE;
-            color: var(--text-main);
-            font-weight: 700;
-            padding: 14px 16px;
-            text-align: left;
-            border-bottom: 2px solid #EADECC;
-        }
-
-        table.data-table td {
-            padding: 14px 16px;
-            border-bottom: 1px solid #F4F1EA;
-            color: #4A4740;
-            vertical-align: top;
-            line-height: 1.6;
-        }
-
-        table.data-table tr:hover {
-            background-color: #FFFDF9;
-        }
-
-        .center-text { text-align: center !important; }
-        .bold-text { font-weight: 700; color: var(--text-main); }
-
-        /* Danh sách tài liệu thụt lề Harvard */
-        .harvard-list {
-            list-style: none;
-            padding-left: 0;
+            margin-bottom: 8px;
         }
 
         .harvard-list li {
-            padding-left: 30px;
-            text-indent: -30px;
-            margin-bottom: 14px;
-            text-align: justify;
-            font-size: 0.98rem;
+            margin-bottom: 12px;
+            line-height: 1.5;
         }
 
-        /* Hệ thống phụ đang cập nhật ở cuối card */
-        .system-footer-note {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #F4F1EA;
-            color: var(--text-muted);
+        .table-scroll-container {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px;
+            background-color: #fff;
+        }
+
+        .data-table th, .data-table td {
+            border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            padding: 14px 15px;
+            vertical-align: top;
             font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: var(--text-secondary);
+        }
+        
+        .data-table th:last-child, .data-table td:last-child {
+            border-right: none;
         }
 
-        /* Responsive di động */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .card-header-flex { flex-direction: column; align-items: flex-start; }
-            .status-badge { align-self: flex-start; }
-            body { padding: 10px 0 40px; }
+        .data-table th {
+            background-color: var(--bg-light);
+            font-weight: 700;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .data-table tbody tr:hover {
+            background-color: #fdfaf0; /* Hover cùng tone nền nhạt */
+        }
+
+        .center-text {
+            text-align: center !important;
+        }
+
+        .bold-text {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+        
+        .score-text {
+            font-weight: 800;
+            color: #b58c14; /* Vàng sậm đủ đậm để dễ đọc trên nền trắng */
         }
     </style>
 </head>
 <body>
 
-    <!-- HIỆU ỨNG NỀN BACKGROUND -->
-    <div class="bg-glow-1"></div>
-    <div class="bg-glow-2"></div>
-    <div class="bg-particles">
-        <div class="particle p1">✨</div>
-        <div class="particle p2">🔸</div>
-        <div class="particle p3">✨</div>
-        <div class="particle p4">🔸</div>
-    </div>
+    <div class="card-body-content">
         
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-left">
-                <div class="section-tag">Học phần báo cáo</div>
-                <div class="greeting">
-                    <span class="greeting-icon">👋</span> Xin chào, tôi là Sinh viên ngành Ngôn ngữ & Văn hóa Việt Nam
-        </section>
-
-        <!-- DANH SÁCH TOÀN BỘ BÀI TẬP -->
-        <div class="assignment-list">
-            <!-- BÀI TẬP 2 (CHÈN TOÀN BỘ NỘI DUNG TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT) -->
-            <div class="assignment-card" id="bai-2">
-                
-                <!-- Header của bài tập 2 khớp ảnh mẫu -->
-                <div class="card-header-flex">
-                    <div class="card-meta-left">
-                        <div class="icon-wrapper icon-laptop">💻</div>
-                        <div class="title-block">
-                            <h3>Bài 2 đến Bài 6: Các nội dung cấu hình nâng cao</h3>
-                            <p>Tùy biến môi trường làm việc cá nhân hóa trên Windows và quản lý nâng cao</p>
-                        </div>
-                    </div>
-                    <div class="status-badge status-pending">Đang thực hiện ▲</div>
-                </div>
-
-                <!-- VÙNG NỘI DUNG ĐẦY ĐỦ CỦA BÀI 2 -->
-                <div class="card-body-content">
-                    
-                    <!-- Nút xem File PDF như Bài 1 -->
-                    <div class="pdf-action-row">
-                        <a href="TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT.pdf" target="_blank" class="btn-pdf">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                            TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT.pdf
-                        </a>
-                    </div>
-
-                    <h2 style="font-size: 1.8rem; color: var(--text-main); font-weight: 800; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -0.5px;">
-                        TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT
-                    </h2>
-
-                    <!-- I. Giới thiệu chủ đề -->
-                    <h3 class="academic-section-title">I. Giới thiệu chủ đề</h3>
-                    <div class="topic-callout">
-                        Chủ đề lựa chọn: "Sự biến đổi văn hóa của dân tộc Kinh tại khu vực Đồng bằng sông Hồng"
-                    </div>
-                    <p class="text-p">Đây là nội dung thuộc lĩnh vực Văn hóa học và Việt Nam học, phù hợp với ngành Ngôn ngữ và Văn hóa Việt Nam.</p>
-                    <p class="text-p">Đồng bằng sông Hồng là cái nôi của nền văn minh lúa nước và lưu giữ nhiều giá trị văn hóa truyền thống như tín ngưỡng, lễ hội, làng nghề và phong tục cộng đồng. Trong bối cảnh công nghiệp hóa, đô thị hóa và hội nhập quốc tế, nhiều yếu tố văn hóa đang có sự biến đổi.</p>
-                    <p class="text-p">Việc nghiên cứu chủ đề này góp phần nhận diện những thay đổi trong đời sống văn hóa của người Kinh, đồng thời đề xuất các giải pháp bảo tồn và phát huy bản sắc văn hóa dân tộc.</p>
-
-                    <!-- II. Mục tiêu nghiên cứu -->
-                    <h3 class="academic-section-title">II. Mục tiêu nghiên cứu</h3>
-                    <ul class="bullet-list">
-                        <li>Làm rõ đặc điểm văn hóa của người Kinh ở Đồng bằng sông Hồng.</li>
-                        <li>Phân tích các yếu tố tác động đến sự biến đổi văn hóa.</li>
-                        <li>Đánh giá vai trò của cộng đồng trong bảo tồn văn hóa.</li>
-                        <li>Đề xuất giải pháp bảo tồn và phát huy giá trị văn hóa truyền thống.</li>
-                    </ul>
-
-                    <!-- III. Phương pháp tìm kiếm thông tin -->
-                    <h3 class="academic-section-title">III. Phương pháp tìm kiếm thông tin</h3>
-                    <p class="text-p"><strong>Nguồn tài liệu:</strong> Thông tin phục vụ nghiên cứu được tìm kiếm từ bốn nhóm nguồn học thuật chính, gồm: (1) các cơ sở dữ liệu học thuật như Google Scholar và cơ sở dữ liệu của thư viện trường; (2) các tạp chí khoa học chuyên ngành về văn hóa và lịch sử; (3) các sách chuyên khảo của các học giả uy tín về văn hóa Việt Nam; và (4) các nguồn học thuật mở trên Internet như arXiv và một số tạp chí điện tử.</p>
-                    <p class="text-p"><strong>Từ khóa:</strong> Các từ khóa được sử dụng kết hợp bằng tiếng Việt và tiếng Anh, gồm: <em>"Red River Delta culture", "cultural change in Vietnam", "Vietnamese cultural identity", "Đồng bằng sông Hồng văn hóa", "biến đổi văn hóa người Kinh"</em> và <em>"văn hóa truyền thống Việt Nam"</em>.</p>
-                    <p class="text-p"><strong>Tiêu chí lựa chọn:</strong> Tiêu chí lựa chọn tài liệu bao gồm: tác giả và cơ quan xuất bản uy tín, phương pháp nghiên cứu rõ ràng, có hệ thống trích dẫn học thuật, nội dung phù hợp với chủ đề nghiên cứu và ưu tiên các công trình được công bố trong giai đoạn 2015–2025 để đảm bảo tính cập nhật.</p>
-
-                    <!-- IV. Phân tích và đánh giá nguồn thông tin -->
-                    <h3 class="academic-section-title">IV. Phân tích và đánh giá nguồn thông tin</h3>
-                    <div class="table-scroll-container">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 50px;" class="center-text">STT</th>
-                                    <th style="width: 220px;">Tài liệu</th>
-                                    <th style="width: 140px;">Phân loại nguồn</th>
-                                    <th style="width: 120px;">Tác giả</th>
-                                    <th style="width: 180px;">Cơ quan xuất bản</th>
-                                    <th style="width: 150px;">Phương pháp nghiên cứu</th>
-                                    <th style="width: 150px;">Trích dẫn học thuật</th>
-                                    <th style="width: 80px;" class="center-text">Tính cập nhật</th>
-                                    <th style="width: 260px;">Phân tích ưu – nhược điểm</th>
-                                    <th style="width: 90px;" class="center-text">Độ tin cậy</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="center-text">1</td>
-                                    <td class="bold-text">Cultural Ecosystem Services and Local Knowledge in the Red River Delta</td>
-                                    <td>Tạp chí khoa học quốc tế</td>
-                                    <td>Ha & Diep</td>
-                                    <td>Journal of Cultural Analysis and Social Change</td>
-                                    <td>Khảo sát cộng đồng, phân tích xã hội học</td>
-                                    <td>Có hệ thống tài liệu tham khảo quốc tế</td>
-                                    <td class="center-text">2025</td>
-                                    <td>Tác giả có chuyên môn, dữ liệu thực địa, rất cập nhật; số lượng trích dẫn còn hạn chế do nghiên cứu mới.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.8/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">2</td>
-                                    <td class="bold-text">Heritage of Catholic Village Regulations in the Red River Delta</td>
-                                    <td>Tạp chí khoa học quốc tế</td>
-                                    <td>Nguyễn Thị Quế Hương và cộng sự</td>
-                                    <td>International Journal of Religion</td>
-                                    <td>Nghiên cứu trường hợp kết hợp phân tích lịch sử</td>
-                                    <td>Có hệ thống trích dẫn đầy đủ</td>
-                                    <td class="center-text">2024</td>
-                                    <td>Phương pháp rõ ràng, nguồn uy tín; phạm vi nghiên cứu còn hẹp.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.7/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">3</td>
-                                    <td class="bold-text">Protection of River Culture in the Red River Delta</td>
-                                    <td>Tạp chí khoa học</td>
-                                    <td>Nguyễn Hoàng Tiến và cộng sự</td>
-                                    <td>International Journal of Research in Finance and Management</td>
-                                    <td>Tổng hợp tài liệu thứ cấp</td>
-                                    <td>Có trích dẫn nhưng chưa nhiều</td>
-                                    <td class="center-text">2020</td>
-                                    <td>Nghiên cứu cập nhật nhưng tạp chí không chuyên ngành văn hóa.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">3.7/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">4</td>
-                                    <td class="bold-text">Traditional Carpentry Villages in the Red River Delta</td>
-                                    <td>Tạp chí khoa học</td>
-                                    <td>Trần Quang Vinh, Mai Thanh Cúc</td>
-                                    <td>Vietnam Journal of Agricultural Sciences</td>
-                                    <td>Khảo sát thực địa</td>
-                                    <td>Có trích dẫn chuyên ngành</td>
-                                    <td class="center-text">2019</td>
-                                    <td>Có dữ liệu thực tế về làng nghề; nội dung thiên về kinh tế hơn văn hóa.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.1/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">5</td>
-                                    <td class="bold-text">Spiritual Culture Tourism in Ha Nam</td>
-                                    <td>Nguồn mở/Tạp chí trong nước</td>
-                                    <td>Nhiều tác giả</td>
-                                    <td>Tạp chí Công Thương</td>
-                                    <td>Phân tích thực trạng</td>
-                                    <td>Trích dẫn hạn chế</td>
-                                    <td class="center-text">2018–2020</td>
-                                    <td>Thông tin thực tế nhưng tính học thuật chưa cao.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">3.4/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">6</td>
-                                    <td class="bold-text">The Red River Delta during the Lý Dynasty</td>
-                                    <td>Tạp chí khoa học quốc tế</td>
-                                    <td>Yumio Sakurai</td>
-                                    <td>Journal of Southeast Asian Studies</td>
-                                    <td>Phân tích lịch sử</td>
-                                    <td>Được trích dẫn rộng rãi</td>
-                                    <td class="center-text">1980</td>
-                                    <td>Tác giả uy tín, giá trị học thuật cao; dữ liệu khá cũ.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.9/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">7</td>
-                                    <td class="bold-text">The Red River Delta in the Tenth Century</td>
-                                    <td>Tạp chí khoa học quốc tế</td>
-                                    <td>Yumio Sakurai</td>
-                                    <td>Japanese Journal of Southeast Asian Studies</td>
-                                    <td>Nghiên cứu lịch sử</td>
-                                    <td>Được trích dẫn nhiều</td>
-                                    <td class="center-text">1979</td>
-                                    <td>Nguồn lịch sử nền tảng; tính cập nhật thấp.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.8/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">8</td>
-                                    <td class="bold-text">Cơ sở văn hóa Việt Nam</td>
-                                    <td>Sách chuyên khảo</td>
-                                    <td>Trần Quốc Vượng</td>
-                                    <td>NXB Giáo dục</td>
-                                    <td>Phân tích lý thuyết</td>
-                                    <td>Được sử dụng rộng rãi</td>
-                                    <td class="center-text">2006</td>
-                                    <td>Sách nền tảng về văn hóa Việt Nam; cần kết hợp nghiên cứu mới.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">5.0/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">9</td>
-                                    <td class="bold-text">Góp phần nghiên cứu văn hóa và tộc người</td>
-                                    <td>Sách chuyên khảo</td>
-                                    <td>Nguyễn Từ Chi</td>
-                                    <td>NXB Văn hóa Thông tin</td>
-                                    <td>Nghiên cứu dân tộc học</td>
-                                    <td>Được trích dẫn nhiều</td>
-                                    <td class="center-text">2003</td>
-                                    <td>Có dữ liệu thực địa, giá trị học thuật cao; xuất bản đã lâu.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.9/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">10</td>
-                                    <td class="bold-text">Tìm về bản sắc văn hóa Việt Nam</td>
-                                    <td>Sách chuyên khảo</td>
-                                    <td>Trần Ngọc Thêm</td>
-                                    <td>NXB Tổng hợp TP.HCM</td>
-                                    <td>Phân tích lý thuyết</td>
-                                    <td>Được trích dẫn rộng rãi</td>
-                                    <td class="center-text">1996</td>
-                                    <td>Khung lý thuyết quan trọng; một số quan điểm còn nhiều tranh luận.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.6/5.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text">11</td>
-                                    <td class="bold-text">Cultural Evolution in Vietnam in the Early Twentieth Century</td>
-                                    <td>Nguồn học thuật mở</td>
-                                    <td>Vuong và cộng sự</td>
-                                    <td>arXiv</td>
-                                    <td>Phân tích định lượng</td>
-                                    <td>Có trích dẫn quốc tế</td>
-                                    <td class="center-text">2019</td>
-                                    <td>Nghiên cứu liên ngành; là preprint nên chưa phản biện học thuật hoàn chỉnh.</td>
-                                    <td class="center-text bold-text" style="color: var(--primary-dark)">4.0/5.0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- VI. Kết luận -->
-                    <h3 class="academic-section-title">VI. Kết luận</h3>
-                    <p class="text-p">Qua quá trình tìm kiếm và đánh giá, có thể thấy chủ đề "Sự biến đổi văn hóa của dân tộc Kinh tại khu vực Đồng bằng sông Hồng" đã được nghiên cứu từ nhiều góc độ khác nhau. Các nguồn tài liệu được lựa chọn, gồm bài báo khoa học, sách chuyên khảo và nguồn học thuật mở, đều có độ tin cậy và phù hợp với mục tiêu nghiên cứu. Quá trình thực hiện bài tập giúp nâng cao kỹ năng tìm kiếm, đánh giá và khai thác thông tin học thuật phục vụ nghiên cứu văn hóa Việt Nam.</p>
-
-                    <!-- VII. Danh mục tài liệu tham khảo -->
-                    <h3 class="academic-section-title">VII. Danh mục tài liệu tham khảo (Harvard Style)</h3>
-                    <ul class="harvard-list">
-                        <li>Ha, H.T.T. and Tran, T.D. (2025) Cultural ecosystem services and the role of local knowledge in shaping Vietnam's coastal cultural industries: Insights from Red River Delta communities. <em>Journal of Cultural Analysis and Social Change</em>, 11(1), pp. 1–11.</li>
-                        <li>Nguyen, H.T. et al. (2020) Protection of river culture in the Red River Delta. <em>International Journal of Research in Finance and Management</em>, 3(2), pp. 45–50.</li>
-                        <li>Nguyen, H.T.Q., Nguyen, N.Q., Nguyen, T.T.T., Nguyen, T.T.H., Bui, T.A.V. and Vu, L. (2024) The heritage of Catholic village regulations in the Red River Delta: Characteristics and values. <em>International Journal of Religion</em>, 5(7), pp. 1104–1119.</li>
-                        <li>Nguyen, T.C. (2003) <em>Góp phần nghiên cứu văn hóa và tộc người</em>. Hà Nội: Nhà xuất bản Văn hóa Thông tin.</li>
-                        <li>Sakurai, Y. (1979) The Red River Delta in the Tenth Century. <em>Japanese Journal of Southeast Asian Studies</em>, 17(2), pp. 234–260.</li>
-                        <li>Sakurai, Y. (1980) The Red River Delta during the Lý Dynasty. <em>Journal of Southeast Asian Studies</em>, 11(1), pp. 1–21.</li>
-                        <li>Spiritual Culture Tourism in Ha Nam (2018) <em>Tạp chí Công Thương</em>, 12(4), pp. 55–60.</li>
-                        <li>Tran, N.T. (1996) <em>Tìm về bản sắc văn hóa Việt Nam</em>. Thành phố Hồ Chí Minh: Nhà xuất bản Tổng hợp TP. Hồ Chí Minh.</li>
-                        <li>Tran, Q.V. (2006) <em>Cơ sở văn hóa Việt Nam</em>. Hà Nội: Nhà xuất bản Giáo dục.</li>
-                        <li>Tran, Q.V. and Mai, T.C. (2019) Traditional carpentry villages in the Red River Delta. <em>Vietnam Journal of Agricultural Sciences</em>, 17(4), pp. 345–356.</li>
-                        <li>Vuong, Q.H. et al. (2019) Cultural evolution in Vietnam in the early twentieth century. <em>arXiv Preprint</em>, arXiv:1903.00070</li>
-                    </ul>
-
-                </div>
+        <div class="pdf-action-row">
+            <a href="TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT.pdf" target="_blank" class="btn-pdf">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:8px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT.pdf
+            </a>
         </div>
+
+        <h2 style="font-size: 1.8rem; color: var(--text-main); font-weight: 800; margin-bottom: 25px; text-transform: uppercase; letter-spacing: -0.5px; text-align: center;">
+            TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT
+        </h2>
+
+        <h3 class="academic-section-title">I. Giới thiệu chủ đề</h3>
+        <div class="topic-callout">
+            Chủ đề lựa chọn: "Sự biến đổi văn hóa của dân tộc Kinh tại khu vực Đồng bằng sông Hồng"
+        </div>
+        <p class="text-p">Đây là nội dung thuộc lĩnh vực Văn hóa học và Việt Nam học, phù hợp với ngành Ngôn ngữ và Văn hóa Việt Nam.</p>
+        <p class="text-p">Đồng bằng sông Hồng là cái nôi của nền văn minh lúa nước và lưu giữ nhiều giá trị văn hóa truyền thống như tín ngưỡng, lễ hội, làng nghề và phong tục cộng đồng. Trong bối cảnh công nghiệp hóa, đô thị hóa và hội nhập quốc tế, nhiều yếu tố văn hóa đang có sự biến đổi.</p>
+        <p class="text-p">Việc nghiên cứu chủ đề này góp phần nhận diện những thay đổi trong đời sống văn hóa của người Kinh, đồng thời đề xuất các giải pháp bảo tồn và phát huy bản sắc văn hóa dân tộc.</p>
+
+        <h3 class="academic-section-title">II. Mục tiêu nghiên cứu</h3>
+        <ul class="bullet-list">
+            <li>Làm rõ đặc điểm văn hóa của người Kinh ở Đồng bằng sông Hồng.</li>
+            <li>Phân tích các yếu tố tác động đến sự biến đổi văn hóa.</li>
+            <li>Đánh giá vai trò của cộng đồng trong bảo tồn văn hóa.</li>
+            <li>Đề xuất giải pháp bảo tồn và phát huy giá trị văn hóa truyền thống.</li>
+        </ul>
+
+        <h3 class="academic-section-title">III. Phương pháp tìm kiếm thông tin</h3>
+        <p class="text-p"><strong class="bold-text">Nguồn tài liệu:</strong> Thông tin phục vụ nghiên cứu được tìm kiếm từ bốn nhóm nguồn học thuật chính, gồm: (1) các cơ sở dữ liệu học thuật như Google Scholar và cơ sở dữ liệu của thư viện trường; (2) các tạp chí khoa học chuyên ngành về văn hóa và lịch sử; (3) các sách chuyên khảo của các học giả uy tín về văn hóa Việt Nam; và (4) các nguồn học thuật mở trên Internet như arXiv và một số tạp chí điện tử.</p>
+        <p class="text-p"><strong class="bold-text">Từ khóa:</strong> Các từ khóa được sử dụng kết hợp bằng tiếng Việt và tiếng Anh, gồm: <em>"Red River Delta culture", "cultural change in Vietnam", "Vietnamese cultural identity", "Đồng bằng sông Hồng văn hóa", "biến đổi văn hóa người Kinh"</em> và <em>"văn hóa truyền thống Việt Nam"</em>.</p>
+        <p class="text-p"><strong class="bold-text">Tiêu chí lựa chọn:</strong> Tiêu chí lựa chọn tài liệu bao gồm: tác giả và cơ quan xuất bản uy tín, phương pháp nghiên cứu rõ ràng, có hệ thống trích dẫn học thuật, nội dung phù hợp với chủ đề nghiên cứu và ưu tiên các công trình được công bố trong giai đoạn 2015–2025 để đảm bảo tính cập nhật.</p>
+
+        <h3 class="academic-section-title">IV. Phân tích và đánh giá nguồn thông tin</h3>
+        <div class="table-scroll-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;" class="center-text">STT</th>
+                        <th style="width: 220px;">Tài liệu</th>
+                        <th style="width: 140px;">Phân loại nguồn</th>
+                        <th style="width: 120px;">Tác giả</th>
+                        <th style="width: 180px;">Cơ quan xuất bản</th>
+                        <th style="width: 150px;">Phương pháp nghiên cứu</th>
+                        <th style="width: 150px;">Trích dẫn học thuật</th>
+                        <th style="width: 80px;" class="center-text">Tính cập nhật</th>
+                        <th style="width: 260px;">Phân tích ưu – nhược điểm</th>
+                        <th style="width: 90px;" class="center-text">Độ tin cậy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center-text">1</td>
+                        <td class="bold-text">Cultural Ecosystem Services and Local Knowledge in the Red River Delta</td>
+                        <td>Tạp chí khoa học quốc tế</td>
+                        <td>Ha & Diep</td>
+                        <td>Journal of Cultural Analysis and Social Change</td>
+                        <td>Khảo sát cộng đồng, phân tích xã hội học</td>
+                        <td>Có hệ thống tài liệu tham khảo quốc tế</td>
+                        <td class="center-text">2025</td>
+                        <td>Tác giả có chuyên môn, dữ liệu thực địa, rất cập nhật; số lượng trích dẫn còn hạn chế do nghiên cứu mới.</td>
+                        <td class="center-text score-text">4.8/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">2</td>
+                        <td class="bold-text">Heritage of Catholic Village Regulations in the Red River Delta</td>
+                        <td>Tạp chí khoa học quốc tế</td>
+                        <td>Nguyễn Thị Quế Hương và cộng sự</td>
+                        <td>International Journal of Religion</td>
+                        <td>Nghiên cứu trường hợp kết hợp phân tích lịch sử</td>
+                        <td>Có hệ thống trích dẫn đầy đủ</td>
+                        <td class="center-text">2024</td>
+                        <td>Phương pháp rõ ràng, nguồn uy tín; phạm vi nghiên cứu còn hẹp.</td>
+                        <td class="center-text score-text">4.7/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">3</td>
+                        <td class="bold-text">Protection of River Culture in the Red River Delta</td>
+                        <td>Tạp chí khoa học</td>
+                        <td>Nguyễn Hoàng Tiến và cộng sự</td>
+                        <td>International Journal of Research in Finance and Management</td>
+                        <td>Tổng hợp tài liệu thứ cấp</td>
+                        <td>Có trích dẫn nhưng chưa nhiều</td>
+                        <td class="center-text">2020</td>
+                        <td>Nghiên cứu cập nhật nhưng tạp chí không chuyên ngành văn hóa.</td>
+                        <td class="center-text score-text">3.7/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">4</td>
+                        <td class="bold-text">Traditional Carpentry Villages in the Red River Delta</td>
+                        <td>Tạp chí khoa học</td>
+                        <td>Trần Quang Vinh, Mai Thanh Cúc</td>
+                        <td>Vietnam Journal of Agricultural Sciences</td>
+                        <td>Khảo sát thực địa</td>
+                        <td>Có trích dẫn chuyên ngành</td>
+                        <td class="center-text">2019</td>
+                        <td>Có dữ liệu thực tế về làng nghề; nội dung thiên về kinh tế hơn văn hóa.</td>
+                        <td class="center-text score-text">4.1/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">5</td>
+                        <td class="bold-text">Spiritual Culture Tourism in Ha Nam</td>
+                        <td>Nguồn mở/Tạp chí trong nước</td>
+                        <td>Nhiều tác giả</td>
+                        <td>Tạp chí Công Thương</td>
+                        <td>Phân tích thực trạng</td>
+                        <td>Trích dẫn hạn chế</td>
+                        <td class="center-text">2018–2020</td>
+                        <td>Thông tin thực tế nhưng tính học thuật chưa cao.</td>
+                        <td class="center-text score-text">3.4/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">6</td>
+                        <td class="bold-text">The Red River Delta during the Lý Dynasty</td>
+                        <td>Tạp chí khoa học quốc tế</td>
+                        <td>Yumio Sakurai</td>
+                        <td>Journal of Southeast Asian Studies</td>
+                        <td>Phân tích lịch sử</td>
+                        <td>Được trích dẫn rộng rãi</td>
+                        <td class="center-text">1980</td>
+                        <td>Tác giả uy tín, giá trị học thuật cao; dữ liệu khá cũ.</td>
+                        <td class="center-text score-text">4.9/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">7</td>
+                        <td class="bold-text">The Red River Delta in the Tenth Century</td>
+                        <td>Tạp chí khoa học quốc tế</td>
+                        <td>Yumio Sakurai</td>
+                        <td>Japanese Journal of Southeast Asian Studies</td>
+                        <td>Nghiên cứu lịch sử</td>
+                        <td>Được trích dẫn nhiều</td>
+                        <td class="center-text">1979</td>
+                        <td>Nguồn lịch sử nền tảng; tính cập nhật thấp.</td>
+                        <td class="center-text score-text">4.8/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">8</td>
+                        <td class="bold-text">Cơ sở văn hóa Việt Nam</td>
+                        <td>Sách chuyên khảo</td>
+                        <td>Trần Quốc Vượng</td>
+                        <td>NXB Giáo dục</td>
+                        <td>Phân tích lý thuyết</td>
+                        <td>Được sử dụng rộng rãi</td>
+                        <td class="center-text">2006</td>
+                        <td>Sách nền tảng về văn hóa Việt Nam; cần kết hợp nghiên cứu mới.</td>
+                        <td class="center-text score-text">5.0/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">9</td>
+                        <td class="bold-text">Góp phần nghiên cứu văn hóa và tộc người</td>
+                        <td>Sách chuyên khảo</td>
+                        <td>Nguyễn Từ Chi</td>
+                        <td>NXB Văn hóa Thông tin</td>
+                        <td>Nghiên cứu dân tộc học</td>
+                        <td>Được trích dẫn nhiều</td>
+                        <td class="center-text">2003</td>
+                        <td>Có dữ liệu thực địa, giá trị học thuật cao; xuất bản đã lâu.</td>
+                        <td class="center-text score-text">4.9/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">10</td>
+                        <td class="bold-text">Tìm về bản sắc văn hóa Việt Nam</td>
+                        <td>Sách chuyên khảo</td>
+                        <td>Trần Ngọc Thêm</td>
+                        <td>NXB Tổng hợp TP.HCM</td>
+                        <td>Phân tích lý thuyết</td>
+                        <td>Được trích dẫn rộng rãi</td>
+                        <td class="center-text">1996</td>
+                        <td>Khung lý thuyết quan trọng; một số quan điểm còn nhiều tranh luận.</td>
+                        <td class="center-text score-text">4.6/5.0</td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">11</td>
+                        <td class="bold-text">Cultural Evolution in Vietnam in the Early Twentieth Century</td>
+                        <td>Nguồn học thuật mở</td>
+                        <td>Vuong và cộng sự</td>
+                        <td>arXiv</td>
+                        <td>Phân tích định lượng</td>
+                        <td>Có trích dẫn quốc tế</td>
+                        <td class="center-text">2019</td>
+                        <td>Nghiên cứu liên ngành; là preprint nên chưa phản biện học thuật hoàn chỉnh.</td>
+                        <td class="center-text score-text">4.0/5.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="academic-section-title">VI. Kết luận</h3>
+        <p class="text-p">Qua quá trình tìm kiếm và đánh giá, có thể thấy chủ đề "Sự biến đổi văn hóa của dân tộc Kinh tại khu vực Đồng bằng sông Hồng" đã được nghiên cứu từ nhiều góc độ khác nhau. Các nguồn tài liệu được lựa chọn, gồm bài báo khoa học, sách chuyên khảo và nguồn học thuật mở, đều có độ tin cậy và phù hợp với mục tiêu nghiên cứu. Quá trình thực hiện bài tập giúp nâng cao kỹ năng tìm kiếm, đánh giá và khai thác thông tin học thuật phục vụ nghiên cứu văn hóa Việt Nam.</p>
+
+        <h3 class="academic-section-title">VII. Danh mục tài liệu tham khảo (Harvard Style)</h3>
+        <ul class="harvard-list">
+            <li>Ha, H.T.T. and Tran, T.D. (2025) Cultural ecosystem services and the role of local knowledge in shaping Vietnam's coastal cultural industries: Insights from Red River Delta communities. <em>Journal of Cultural Analysis and Social Change</em>, 11(1), pp. 1–11.</li>
+            <li>Nguyen, H.T. et al. (2020) Protection of river culture in the Red River Delta. <em>International Journal of Research in Finance and Management</em>, 3(2), pp. 45–50.</li>
+            <li>Nguyen, H.T.Q., Nguyen, N.Q., Nguyen, T.T.T., Nguyen, T.T.H., Bui, T.A.V. and Vu, L. (2024) The heritage of Catholic village regulations in the Red River Delta: Characteristics and values. <em>International Journal of Religion</em>, 5(7), pp. 1104–1119.</li>
+            <li>Nguyen, T.C. (2003) <em>Góp phần nghiên cứu văn hóa và tộc người</em>. Hà Nội: Nhà xuất bản Văn hóa Thông tin.</li>
+            <li>Sakurai, Y. (1979) The Red River Delta in the Tenth Century. <em>Japanese Journal of Southeast Asian Studies</em>, 17(2), pp. 234–260.</li>
+            <li>Sakurai, Y. (1980) The Red River Delta during the Lý Dynasty. <em>Journal of Southeast Asian Studies</em>, 11(1), pp. 1–21.</li>
+            <li>Spiritual Culture Tourism in Ha Nam (2018) <em>Tạp chí Công Thương</em>, 12(4), pp. 55–60.</li>
+            <li>Tran, N.T. (1996) <em>Tìm về bản sắc văn hóa Việt Nam</em>. Thành phố Hồ Chí Minh: Nhà xuất bản Tổng hợp TP. Hồ Chí Minh.</li>
+            <li>Tran, Q.V. (2006) <em>Cơ sở văn hóa Việt Nam</em>. Hà Nội: Nhà xuất bản Giáo dục.</li>
+            <li>Tran, Q.V. and Mai, T.C. (2019) Traditional carpentry villages in the Red River Delta. <em>Vietnam Journal of Agricultural Sciences</em>, 17(4), pp. 345–356.</li>
+            <li>Vuong, Q.H. et al. (2019) Cultural evolution in Vietnam in the early twentieth century. <em>arXiv Preprint</em>, arXiv:1903.00070</li>
+        </ul>
+
     </div>
 
 </body>
-</html>
+</html> 
+                        </div>
+                    </div>
+                </div>
 
+                <!-- BÀI 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-left">
+                            <div class="project-icon">⚙️</div>
+                            <div class="project-info">
+                                <div class="heading-title">Bài 3: Tên bài thực hành số 3</div>
+                                <p>Mô tả ngắn gọn về bài thực hành số 3 của bạn</p>
+                            </div>
+                        </div>
+                        <div class="project-right">
+                            <span class="status-pill">Đã hoàn thành</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="assignment-body">
+                            import or
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phân Tích Báo Cáo Kỹ Thuật Prompt Kỹ Năng Kỹ Thuật Số</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm 12mm;
+            background-color: #ffffff;
+            @bottom-right {
+                content: "Trang " counter(page) " / " counter(pages);
+                font-size: 9pt;
+                font-family: 'Arial', sans-serif;
+                color: #7f8c8d;
+            }
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50;
+            line-height: 1.5;
+            font-size: 10.5pt;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 18pt;
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 10px;
+        }
+
+        /* --- THÊM CSS CHO THANH THÔNG TIN VÀ NÚT PDF --- */
+        .info-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: stretch;
+        }
+
+        .info-card {
+            flex: 1;
+            background-color: #fffaf0; /* Màu nền vàng nhạt */
+            border-radius: 12px;
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-label {
+            font-size: 8pt;
+            color: #718096;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 11pt;
+            color: #2d3748;
+            font-weight: bold;
+        }
+
+        .pdf-button {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #ffffff;
+            border: 2px solid #d69e2e; /* Viền vàng đậm */
+            border-radius: 12px;
+            color: #2d3748;
+            font-weight: bold;
+            font-size: 11pt;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .pdf-button:hover {
+            background-color: #fffaf0;
+            border-color: #b7791f;
+        }
+        /* ----------------------------------------------- */
+
+        h2 {
+            font-size: 13.5pt;
+            color: #2b6cb0;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 8px;
+            border-left: 4px solid #2b6cb0;
+            page-break-after: avoid;
+        }
+
+        h3 {
+            font-size: 11.5pt;
+            color: #4a5568;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            page-break-after: avoid;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 25px 0;
+            font-size: 10pt;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #2b6cb0;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        .prompt-container {
+            display: table;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            background-color: #fff;
+            border-radius: 4px;
+            page-break-inside: avoid;
+        }
+
+        .prompt-row {
+            display: table-row;
+        }
+
+        .prompt-column {
+            display: table-cell;
+            width: 50%;
+            padding: 15px;
+            border-right: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .prompt-column:last-child {
+            border-right: none;
+        }
+
+        .prompt-title-bar {
+            background-color: #edf2f7;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 10pt;
+            border-bottom: 1px solid #e2e8f0;
+            color: #2b6cb0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .badge-basic { background-color: #feebc8; color: #c05621; }
+        .badge-improved { background-color: #bee3f8; color: #2b6cb0; }
+        .badge-advanced { background-color: #c6f6d5; color: #22543d; }
+
+        .image-container img {
+            width: auto;           
+            max-width: 95%;        
+            max-height: 300px;     
+            height: auto;          
+            border: 1px solid #cbd5e0;
+            margin: 10px auto;     
+            display: block;        
+            border-radius: 4px;
+        }
+
+        .missing-img {
+            background-color: #f7fafc; 
+            border: 1px dashed #cbd5e0; 
+            padding: 20px; 
+            text-align: center; 
+            color: #718096; 
+            font-size: 9pt; 
+            margin-top: 10px; 
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Báo Cáo Đánh Giá & Tối Ưu Hóa Kỹ Thuật Viết Prompt</h1>
+
+    <!-- --- THANH THÔNG TIN CHỨA NÚT PDF NẰM GÓC PHẢI --- -->
+    <div class="info-bar">
+        <div class="info-card">
+            <span class="info-label">Nội dung thực hành</span>
+            <span class="info-value">Kỹ thuật viết Prompt</span>
+        </div>
+        <div class="info-card">
+            <span class="info-label">Môi trường hệ thống</span>
+            <span class="info-value">Các AI Chatbot</span>
+        </div>
+        <div class="info-card">
+            <span class="info-label">Tổng số bước</span>
+            <span class="info-value">3 Phiên bản</span>
+        </div>
+        <!-- Nút PDF -->
+        <a href="1 (2).pdf" target="_blank" class="pdf-button">
+            📄 Xem báo cáo PDF
+        </a>
+    </div>
+    <!-- ------------------------------------------------ -->
+
+    <h2>1. Phân Tích Tổng Quan</h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 20%;">Tiêu chí</th>
+                <th style="width: 26%;">Tóm tắt tài liệu</th>
+                <th style="width: 27%;">Giải thích khái niệm</th>
+                <th style="width: 27%;">Tạo câu hỏi ôn tập</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Mục tiêu</strong></td>
+                <td>Hiểu nội dung và rút gọn ý chính</td>
+                <td>Hiểu sâu và diễn giải dễ hiểu</td>
+                <td>Củng cố, kiểm tra kiến thức</td>
+            </tr>
+            <tr>
+                <td><strong>Kỹ năng phát triển</strong></td>
+                <td>Đọc hiểu, phân tích, tổng hợp</td>
+                <td>Tư duy khái niệm diễn đạt</td>
+                <td>Phân loại, vận dụng</td>
+            </tr>
+            <tr>
+                <td><strong>Thách thức chính</strong></td>
+                <td>Lọc thông tin, diễn đạt ngắn gọn</td>
+                <td>Đơn giản hóa mà chính xác</td>
+                <td>Thiết kế câu hỏi phù hợp</td>
+            </tr>
+            <tr>
+                <td><strong>Vai trò của Prompt</strong></td>
+                <td>Giới hạn phạm vi tóm tắt</td>
+                <td>Xác định đối tượng, phong cách</td>
+                <td>Hướng dẫn cấu trúc và mức độ câu hỏi</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Viết 3 Phiên Bản Prompt Khác Nhau</h2>
+    
+    <h3>2.1. Tóm tắt tài liệu</h3>
+    <div class="prompt-container">
+        <div class="prompt-title-bar">So sánh Prompt Cơ bản vs Prompt Cải tiến</div>
+        <div class="prompt-row">
+            <div class="prompt-column">
+                <span class="badge badge-basic">a, Prompt Cơ bản (Đơn giản)</span>
+                <p><em>"Tóm tắt bài viết về tác động của trí tuệ nhân tạo trong giáo dục sau..."</em></p>
+                <div class="image-container">
+                    <img src="https://i.ibb.co/gLMt5ZMv/1784410152235-855422893640761644-9212239093870015019-f3ff9247ab7514c9049018e33e8288f2.jpg" alt="Prompt Cơ bản">
+                </div>
+            </div>
+            <div class="prompt-column">
+                <span class="badge badge-improved">b, Prompt Cải tiến (Chi tiết, có cấu trúc)</span>
+                <p><em>"Hãy đọc bài viết và tóm tắt trong khoảng 200 từ. Trình bày gồm: Chủ đề chính, Ba luận điểm..."</em></p>
+                <div class="image-container">
+                    <img src="https://i.ibb.co/p6By4hms/1784410178094-855422893640761644-9212239093870015019-ef59dedf04f1c1b282cd83780e60c784.jpg" alt="Prompt Cải tiến 1">
+                    <img src="https://i.ibb.co/Swp09Tdf/1784410167289-855422893640761644-9212239093870015019-e5bae0a749c2785a3e3f3118ecde1274.jpg" alt="Prompt Cải tiến 2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="prompt-container" style="margin-top: -10px;">
+        <div class="prompt-row">
+            <div class="prompt-column" style="width: 100%;">
+                <span class="badge badge-advanced">c, Prompt Nâng cao</span>
+                <p><em>"Bạn là một trợ giảng đại học... Bước 1: Xác định chủ đề; Bước 2: Tóm tắt mục tiêu..."</em></p>
+                <div class="image-container">
+                    <img src="https://i.ibb.co/wjmhL7w/1784410201371-855422893640761644-9212239093870015019-cb61038f04f370dc17ff1ca40e17d5a7.jpg" alt="Prompt Nâng cao 1">
+                    <img src="https://i.ibb.co/99DCTzjZ/1784410190266-855422893640761644-9212239093870015019-646e1704b94d31e06dde1f7e19e3b837.jpg" alt="Prompt Nâng cao 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>2.2. Giải thích khái niệm (Điện toán đám mây)</h3>
+    <div class="prompt-container">
+        <div class="prompt-title-bar">So sánh phương pháp giải thích khái niệm</div>
+        <div class="prompt-row">
+            <div class="prompt-column">
+                <span class="badge badge-basic">a, Prompt Cơ bản</span>
+                <p><em>"Giải thích Cloud Computing."</em></p>
+                <div class="image-container">
+                    <img src="https://i.ibb.co/WNXYYFj2/1784410215557-855422893640761644-9212239093870015019-9d5ec248efae1c9b3ecc1be562085636.jpg" alt="Giải thích cơ bản">
+                </div>
+            </div>
+            <div class="prompt-column">
+                <span class="badge badge-improved">b, Prompt Cải tiến</span>
+                <p><em>"Hãy giải thích Cloud Computing bằng ngôn ngữ đơn giản, có ví dụ thực tế..."</em></p>
+                <div class="image-container">
+                    <img src="https://i.ibb.co/bMQP9jr2/1784410236429-855422893640761644-9212239093870015019-452c58a70fcac17d9e5cbe3e4c972777.jpg" alt="Giải thích cải tiến 1">
+                    <img src="https://i.ibb.co/9HjpfW67/1784410227515-855422893640761644-9212239093870015019-dd00f19898764c96b0783771e2c78411.jpg" alt="Giải thích cải tiến 2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="prompt-container" style="margin-top: -10px;">
+        <div class="prompt-row">
+            <div class="prompt-column" style="width: 100%;">
+                <span class="badge badge-advanced">c, Prompt Nâng cao</span>
+                <p><em>"Bạn là giảng viên môn CNTT... Trình tự: Khái niệm, Nguyên lý, Ví dụ gần gũi..."</em></p>
+                <div class="image-container">
+                    <img src="https://i.ibb.co/7x1xHrGX/1784410267815-855422893640761644-9212239093870015019-b6b656d7d86f145047ace476755fd613.jpg" alt="Giải thích nâng cao 1">
+                    <img src="https://i.ibb.co/ks6CfhLG/1784410257667-855422893640761644-9212239093870015019-fc043a35b43f48add9b7bceddd64d203.jpg" alt="Giải thích nâng cao 2">
+                    <img src="https://i.ibb.co/Xx2vbSRV/1784410246999-855422893640761644-9212239093870015019-082cc3dd9730b1b7852cea9c0cff09f9.jpg" alt="Giải thích nâng cao 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>2.3. Tạo câu hỏi ôn tập (An toàn thông tin)</h3>
+    <div class="prompt-container">
+        <div class="prompt-title-bar">So sánh kết quả tạo bộ câu hỏi</div>
+        <div class="prompt-row">
+            <div class="prompt-column">
+                <span class="badge badge-basic">a, Prompt Cơ bản</span>
+                <p><em>"Tạo câu hỏi ôn tập về an toàn thông tin."</em></p>
+                <div class="image-container">
+                    <img src="https://i.ibb.co/99m1V48N/1784410288370-855422893640761644-9212239093870015019-c9a2b3181f47fe49953591d3b86dcb73.jpg" alt="Câu hỏi cơ bản 1">
+                    <img src="https://i.ibb.co/4Z9rfzrX/1784410278876-855422893640761644-9212239093870015019-26ce70d819d492491ebd4dfedd064674.jpg" alt="Câu hỏi cơ bản 2">
+                </div>
+            </div>
+            <div class="prompt-column">
+                <span class="badge badge-improved">b, Prompt Cải tiến</span>
+                <p><em>"Hãy tạo 5 câu hỏi ôn tập gồm: 3 câu trắc nghiệm, 2 câu tự luận. Có đáp án."</em></p>
+                <div class="missing-img">[Ảnh phần 2.3.b chưa được cung cấp]</div>
+            </div>
+        </div>
+    </div>
+    <div class="prompt-container" style="margin-top: -10px;">
+        <div class="prompt-row">
+            <div class="prompt-column" style="width: 100%;">
+                <span class="badge badge-advanced">c, Prompt Nâng cao</span>
+                <p><em>"Tạo bộ đề thi chuẩn hóa dựa trên mô hình định chuẩn..."</em></p>
+                <div class="image-container">
+                    <img src="https://i.ibb.co/99q6KRvt/1784410490013-855422893640761644-9212239093870015019-e462b19fa737a6edb003aa77e7c78215.jpg" alt="Câu hỏi nâng cao 1">
+                    <img src="https://i.ibb.co/W4R7mBkb/1784410478299-855422893640761644-9212239093870015019-420dc180123910542e41c963b90a3f8f.jpg" alt="Câu hỏi nâng cao 2">
+                    <img src="https://i.ibb.co/9kpS6R0b/1784410441745-855422893640761644-9212239093870015019-8022cd2f00f2ef7b7cfe6d51b24c5a79.jpg" alt="Câu hỏi nâng cao 3">
+                    <img src="https://i.ibb.co/BKB6Shck/1784410390915-855422893640761644-9212239093870015019-b079fd4dfd379001ea81298dc66cb827.jpg" alt="Câu hỏi nâng cao 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>3. So Sánh Kết Quả Bằng Bảng Định Lượng</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tiêu chí đánh giá</th>
+                <th style="text-align: center;">Cơ bản</th>
+                <th style="text-align: center;">Cải tiến</th>
+                <th style="text-align: center;">Nâng cao</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Đúng nhiệm vụ</strong></td>
+                <td style="text-align: center;">6/10</td>
+                <td style="text-align: center;">8/10</td>
+                <td style="text-align: center; color: #38a169; font-weight: bold;">10/10</td>
+            </tr>
+            <tr>
+                <td><strong>Phù hợp ngành học</strong></td>
+                <td style="text-align: center;">5/10</td>
+                <td style="text-align: center;">8/10</td>
+                <td style="text-align: center; color: #38a169; font-weight: bold;">10/10</td>
+            </tr>
+            <tr>
+                <td><strong>Cấu trúc rõ ràng</strong></td>
+                <td style="text-align: center;">4/10</td>
+                <td style="text-align: center;">8/10</td>
+                <td style="text-align: center; color: #38a169; font-weight: bold;">10/10</td>
+            </tr>
+            <tr>
+                <td><strong>Hạn chế định kiến</strong></td>
+                <td style="text-align: center;">3/10</td>
+                <td style="text-align: center;">6/10</td>
+                <td style="text-align: center; color: #38a169; font-weight: bold;">9/10</td>
+            </tr>
+            <tr>
+                <td><strong>Có thể sử dụng ngay</strong></td>
+                <td style="text-align: center;">5/10</td>
+                <td style="text-align: center;">8/10</td>
+                <td style="text-align: center; color: #38a169; font-weight: bold;">9/10</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><em>* Nhận xét tổng quan: Prompt nâng cao cho kết quả tốt hơn vượt trội vì xác định rõ vai trò, đối tượng, cấu trúc cụ thể và đặt ra các giới hạn chặt chẽ cho AI.</em></p>
+    
+ </body>
+ </html>           
+ <!-- BÀI 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-left">
+                            <div class="project-icon">📈</div>
+                            <div class="project-info">
+                                <div class="heading-title">Bài 4: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</div>
+                                <p>Mô tả ngắn gọn về bài thực hành số 4 của bạn</p>
+                            </div>
+                        </div>
+                        <div class="project-right">
+                            <span class="status-pill">Đã hoàn thành</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="assignment-body">
+
+                                                                                                            
+                            <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Thực Hành</title>
+    <style>
+        /* Thiết lập phông chữ và màu nền cơ bản */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #ffffff;
+        }
+
+        /* Tiêu đề chính với viền xanh dương */
+        .main-title {
+            font-size: 26px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #333333;
+            border-left: 6px solid #005eb8; 
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Thanh chứa thẻ trạng thái và nút PDF */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Thẻ trạng thái bo tròn */
+        .status-badge {
+            background-color: #e0f2f1;
+            color: #00796b;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Nút tải/xem PDF đưa lên trên */
+        .pdf-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #ffffff;
+            border: 2px solid #e5b33a; 
+            border-radius: 30px; 
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333333;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-button:hover {
+            background-color: #fdfbf5;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .pdf-icon {
+            margin-right: 8px;
+            font-size: 18px;
+            color: #999;
+        }
+
+        /* Tiêu đề phụ với gạch chân màu vàng */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333333;
+            border-bottom: 2px solid #e5b33a; 
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* Khối highlight vàng nhạt */
+        .highlight-box {
+            background-color: #fdfbf5;
+            border-left: 6px solid #e5b33a; 
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: #444444;
+        }
+
+        /* Đoạn văn bản */
+        .content-paragraph {
+            color: #555555;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .bold-text {
+            font-weight: 600;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="main-title">PHÂN TÍCH HIỆU QUẢ CỦA CÔNG CỤ, THÁCH THỨC VÀ CÁCH GIẢI QUYẾT</h1>
+
+    <!-- Thanh công cụ chứa nút PDF và trạng thái được đưa lên trên -->
+    <div class="top-bar">
+        <a href="BÁO CÁO THỰC HÀNH (1).pdf" target="_blank" class="pdf-button">
+            <span class="pdf-icon">📄</span> Xem báo cáo PDF
+        </a>
+    </div>
+
+    <div class="highlight-box">
+        Trong quá trình thực hiện dự án nhóm với chủ đề “AI trong ngoại ngữ và giáo dục”, nhóm chúng em đã ứng dụng nhiều công cụ số nhằm hỗ trợ quản lý công việc, giao tiếp và cộng tác trực tuyến.
+    </div>
+
+    <p class="content-paragraph">Việc sử dụng các công cụ này không chỉ giúp nâng cao hiệu quả làm việc nhóm mà còn giúp mỗi thành viên rèn luyện kỹ năng làm việc trong môi trường số – một kỹ năng rất quan trọng trong thời đại công nghệ hiện nay.</p>
+
+    <!-- Microsoft Planner -->
+    <h2 class="section-title">I. Microsoft Planner – Hỗ trợ quản lý nhiệm vụ cá nhân</h2>
+    <p class="content-paragraph"><span class="bold-text">Hiệu quả:</span> Microsoft Planner giúp em quản lý tiến độ công việc một cách rõ ràng và khoa học hơn. Thông qua công cụ này, mỗi nhiệm vụ đều được phân chia cụ thể theo từng thành viên, có thời hạn hoàn thành và trạng thái thực hiện. Điều này giúp em dễ dàng xác định phần việc mình phụ trách, tránh tình trạng quên nhiệm vụ hoặc làm việc chồng chéo với các thành viên khác. Bên cạnh đó, việc theo dõi tiến độ trên Planner cũng tạo cho em ý thức chủ động và trách nhiệm hơn trong quá trình làm việc.</p>
+    <p class="content-paragraph"><span class="bold-text">Thách thức:</span> Tuy nhiên, trong giai đoạn đầu, em gặp khó khăn trong việc làm quen với cách tạo và cập nhật nhiệm vụ trên Planner vì chưa từng sử dụng công cụ quản lý dự án trước đó.</p>
+    <p class="content-paragraph"><span class="bold-text">Giải quyết:</span> Để giải quyết vấn đề này, em chủ động tìm hiểu thông qua video hướng dẫn và trao đổi với các thành viên đã quen sử dụng công cụ. Sau một thời gian, việc sử dụng Planner trở nên thuận tiện hơn và giúp nâng cao kỹ năng quản lý công việc cá nhân của em.</p>
+
+    <!-- Microsoft Office Online -->
+    <h2 class="section-title">II. Microsoft Office Online – Hỗ trợ cộng tác và chỉnh sửa nội dung trực tiếp</h2>
+    <p class="content-paragraph"><span class="bold-text">Hiệu quả:</span> Microsoft Office Online giúp nhóm có thể cùng chỉnh sửa tài liệu trong thời gian thực mà không cần gửi file qua lại nhiều lần. Đối với cá nhân em, công cụ này giúp tiết kiệm đáng kể thời gian chỉnh sửa và tổng hợp nội dung. Trong quá trình viết phần nội dung được phân công, em có thể trực tiếp bổ sung thông tin, theo dõi nhận xét của các thành viên khác và chỉnh sửa ngay trên cùng một tài liệu. Đồng thời, tính năng lưu tự động giúp hạn chế nguy cơ mất dữ liệu khi đang làm việc.</p>
+    <p class="content-paragraph"><span class="bold-text">Thách thức:</span> Tuy nhiên, một số khó khăn đã xuất hiện khi nhiều thành viên chỉnh sửa cùng lúc khiến bố cục tài liệu đôi khi bị thay đổi hoặc nội dung bị trùng lặp.</p>
+    <p class="content-paragraph"><span class="bold-text">Giải quyết:</span> Để khắc phục, nhóm đã thống nhất phân chia rõ từng mục nội dung và sử dụng phần bình luận để trao đổi trước khi chỉnh sửa các phần liên quan đến người khác. Điều này giúp hạn chế xung đột trong quá trình biên tập tài liệu.</p>
+
+    <!-- Google Drive -->
+    <h2 class="section-title">III. Google Drive – Hỗ trợ lưu trữ và chia sẻ tài liệu</h2>
+    <p class="content-paragraph"><span class="bold-text">Hiệu quả:</span> Gg drive đóng vai trò quan trọng trong việc tổ chức và lưu trữ tài liệu của em, giúp em lưu giữ các file học tập, hình ảnh, tài liệu tham khảo và nội dung dự án một cách khoa học hơn thay vì lưu trữ rời rạc trên thiết bị cá nhân. Việc lưu trữ trên nền tảng đám mây giúp em có thể truy cập tài liệu ở nhiều thiết bị khác nhau mà không lo mất dữ liệu.</p>
+    <p class="content-paragraph"><span class="bold-text">Thách thức:</span> Tuy nhiên, trong quá trình sử dụng, đôi lúc em gặp khó khăn do tốc độ đồng bộ file chậm, nhầm lẫn giữa các thư mục tài liệu hoặc không thể truy cập khi không có internet.</p>
+    <p class="content-paragraph"><span class="bold-text">Giải quyết:</span> Để giải quyết, em đã thống nhất quy tắc đặt tên file và phân chia thư mục theo từng nội dung cụ thể nhằm giúp việc tìm kiếm và quản lý dữ liệu hiệu quả hơn.</p>
+
+    <!-- Microsoft Teams -->
+    <h2 class="section-title">IV. Microsoft Teams – Hỗ trợ giao tiếp và tương tác nhóm</h2>
+    <p class="content-paragraph"><span class="bold-text">Hiệu quả:</span> Microsoft Teams là công cụ hỗ trợ giao tiếp chính của nhóm trong suốt quá trình thực hiện dự án. Công cụ này giúp các thành viên có thể trao đổi thông tin nhanh chóng, tổ chức họp trực tuyến và cập nhật tiến độ công việc thường xuyên. Các cuộc họp online giúp tôi rèn luyện kỹ năng trình bày ý kiến, lắng nghe phản hồi và phối hợp với các thành viên khác trong môi trường số.</p>
+    <p class="content-paragraph"><span class="bold-text">Thách thức:</span> Khó khăn lớn nhất trong quá trình giao tiếp nhóm là sự khác biệt về thời gian hoạt động và tốc độ phản hồi của từng thành viên. Có những thời điểm việc trao đổi bị gián đoạn do một số thành viên bận lịch học hoặc chưa theo dõi tin nhắn kịp thời.</p>
+    <p class="content-paragraph"><span class="bold-text">Giải quyết:</span> Nhóm đã thống nhất thời gian họp cố định và sử dụng tính năng thông báo để cập nhật thông tin quan trọng. Các nhiệm vụ và thời hạn đều được nhắc lại rõ ràng sau mỗi buổi thảo luận nhằm tránh hiểu nhầm hoặc bỏ sót công việc.</p>
+
+    <!-- Tổng kết -->
+    <h2 class="section-title">V. Tổng kết</h2>
+    <p class="content-paragraph">Thông qua bài tập thực hành này, em nhận thấy rằng kỹ năng sử dụng công nghệ số không chỉ đơn thuần là biết sử dụng công cụ mà còn bao gồm khả năng phối hợp, giao tiếp và thích nghi trong môi trường làm việc số. Qua quá trình làm việc nhóm, em đã học được cách ứng dụng các công cụ số để góp phần nâng cao hiệu quả phối hợp giữa các thành viên và hỗ trợ hoàn thành dự án. Bên cạnh đó, một điều em rất trân quý là đã học được tinh thần chủ động, trách nhiệm và kỹ năng cộng tác trực tuyến.</p>
+
+</body>
+</html>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- BÀI 5 -->
+<div class="project-card">
+    <div class="project-header">
+        <div class="project-left">
+            <div class="project-icon">🚀</div>
+            <div class="project-info">
+                <div class="heading-title">Bài 5: Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</div>
+                <p>Mô tả ngắn gọn về bài thực hành số 5 của bạn</p>
+            </div>
+        </div>
+        <div class="project-right">
+            <span class="status-pill">Đã hoàn thành</span>
+        </div>
+    </div>
+    <div class="project-content">
+        <div class="assignment-body">
+            <style>
+                .section-wrapper { font-family: 'Plus Jakarta Sans', sans-serif; color: #2d3748; line-height: 1.6; }
+                .section-header { color: #975a16; border-bottom: 2px solid #d69e2e; padding-bottom: 10px; margin-top: 25px; font-size: 1.3em; }
+                .card { background: #fffaf0; border: 1px solid #fbd38d; padding: 20px; border-radius: 10px; margin-bottom: 15px; }
+                .highlight { font-weight: bold; color: #975a16; }
+                table { width: 100%; border-collapse: collapse; margin: 15px 0; background: white; }
+                th { background: #d69e2e; color: white; padding: 10px; }
+                td { border: 1px solid #fbd38d; padding: 10px; }
+                
+                /* CSS cho hình ảnh */
+                .image-grid { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px; justify-content: center; }
+                .image-item { flex: 1 1 45%; text-align: center; }
+                .image-caption { font-size: 0.9em; color: #718096; margin-bottom: 8px; font-style: italic; }
+                .image-preview { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #cbd5e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+                /* CSS cho nút xem PDF */
+                .pdf-btn-container { margin: 15px 0 25px 0; display: flex; align-items: center; }
+                .btn-pdf {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    background-color: #ffffff;
+                    border: 2px solid #d69e2e; /* Viền vàng/nâu tương đồng ảnh */
+                    color: #2d3748; /* Màu chữ tối */
+                    padding: 12px 24px;
+                    border-radius: 8px; /* Bo góc */
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 1em;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+                    transition: all 0.3s ease;
+                }
+                .btn-pdf:hover {
+                    background-color: #fffaf0;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+                    transform: translateY(-1px);
+                }
+                .btn-pdf .icon { font-size: 1.2em; opacity: 0.8; }
+            </style>
+
+            <div class="section-wrapper">
+                <!-- Nút Xem báo cáo PDF -->
+                <div class="pdf-btn-container">
+                    <a href="bài 5 (1).pdf" target="_blank" class="btn-pdf">
+                        <span class="icon">📄</span> Xem báo cáo PDF
+                    </a>
+                </div>
+
+                <h2 class="section-header">1. Giới thiệu</h2>
+                <p>Dự án thực hiện sản phẩm infographic với chủ đề <strong>"AI ảnh hưởng đến cuộc sống hiện đại"</strong> nhằm làm rõ sự tác động sâu rộng của trí tuệ nhân tạo.</p>
+
+                <h2 class="section-header">2. Quá trình sử dụng AI</h2>
+                
+                <div class="card">
+                    <h3>2.1. Sử dụng AI tạo nội dung</h3>
+                    <p><strong>Prompt:</strong> <em>"Hãy viết nội dung cho một infographic về chủ đề: AI ảnh hưởng đến cuộc sống hiện đại..."</em></p>
+                    <p>Công cụ sử dụng là <strong>ChatGPT</strong> và <strong>Google Gemini</strong> để tổng hợp, chỉnh sửa và hoàn thiện nội dung với 5 ý chính:</p>
+                    <ul>
+                        <li><strong>Nâng cao hiệu quả:</strong> Tự động hóa công việc lặp lại.</li>
+                        <li><strong>Hỗ trợ học tập:</strong> Tìm kiếm thông tin và cá nhân hóa lộ trình học.</li>
+                        <li><strong>Giao tiếp & Giải trí:</strong> Trải nghiệm công nghệ thuận tiện hơn qua chatbot.</li>
+                        <li><strong>Thách thức:</strong> Các vấn đề về đạo đức và rò rỉ dữ liệu.</li>
+                    </ul>
+                    <p><em>Thông điệp cốt lõi:</em> AI là công cụ giúp con người làm việc thông minh hơn.</p>
+                    
+                    <div class="image-grid">
+                        <div class="image-item">
+                            <div class="image-caption">Giao diện sử dụng ChatGPT</div>
+                            <a href="https://ibb.co/0jPGTbw7" target="_blank"><img class="image-preview" src="https://i.ibb.co/Y7vLmsrC/1784467006794-855422893640761644-9212239093870015019-b73688da9c54af12f434bd3a9dc548ed.jpg" alt="Giao diện ChatGPT" border="0"></a>
+                        </div>
+                        <div class="image-item">
+                            <div class="image-caption">Giao diện sử dụng Google Gemini</div>
+                            <a href="https://ibb.co/qYbjR3mJ" target="_blank"><img class="image-preview" src="https://i.ibb.co/QvsQ63YD/1784467093782-855422893640761644-9212239093870015019-27ef884401c7d5f8f82ed68016bb7abc.jpg" alt="Giao diện Gemini" border="0"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>2.2. Tạo hình ảnh</h3>
+                    <p>Công cụ sử dụng: <strong>DALL·E</strong> và <strong>Stable Diffusion</strong>.</p>
+                    <p><strong>Prompt:</strong> <em>"A modern flat design illustration showing artificial intelligence transforming modern life..."</em></p>
+                    
+                    <div class="image-grid">
+                        <div class="image-item">
+                            <div class="image-caption">Kết quả tạo ảnh từ DALL·E</div>
+                            <a href="https://ibb.co/rGNpYw3w" target="_blank"><img class="image-preview" src="https://i.ibb.co/QFtHLKkK/1784467120027-855422893640761644-9212239093870015019-5517a5004f3816116ca5abf07dea276d.jpg" alt="Ảnh DALL-E" border="0"></a>
+                        </div>
+                        <div class="image-item">
+                            <div class="image-caption">Kết quả tạo ảnh từ Stable Diffusion</div>
+                            <a href="https://ibb.co/RTm9Ltwf" target="_blank"><img class="image-preview" src="https://i.ibb.co/Xxgbm6R1/1784467133992-855422893640761644-9212239093870015019-dfc6b162aff7b55136d77608bda177ac.jpg" alt="Ảnh Stable Diffusion" border="0"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>2.3. Hỗ trợ thiết kế bằng Canva AI</h3>
+                    <p>Canva giúp tạo bố cục nhanh. <em>Nhận xét:</em> AI hỗ trợ tốt nhưng cần tinh chỉnh thủ công về bố cục và biểu tượng để đạt chất lượng sản phẩm cuối tốt nhất.</p>
+                    
+                    <div class="image-grid">
+                        <div class="image-item" style="flex: 1 1 100%;">
+                            <div class="image-caption">Quá trình thiết kế với Canva AI</div>
+                            <a href="https://ibb.co/bgTPXsXJ" target="_blank"><img class="image-preview" src="https://i.ibb.co/PZKNgcgQ/1784467174154-855422893640761644-9212239093870015019-f4fcfa53fb08e95d03cf8e015966549d.jpg" alt="Thiết kế Canva AI" border="0" style="max-width: 80%;"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-header">3. So sánh công cụ AI</h2>
+                <table>
+                    <tr><th>Công cụ văn bản</th><th>Ưu điểm</th><th>Nhược điểm</th></tr>
+                    <tr><td>ChatGPT</td><td>Súc tích, dễ chỉnh sửa</td><td>Đôi khi thiếu chi tiết</td></tr>
+                    <tr><td>Gemini</td><td>Phân tích đầy đủ</td><td>Cần rút gọn nội dung</td></tr>
+                </table>
+                <table>
+                    <tr><th>Công cụ hình ảnh</th><th>Ưu điểm</th><th>Nhược điểm</th></tr>
+                    <tr><td>DALL·E</td><td>Ảnh đẹp, hài hòa</td><td>Khó kiểm soát chi tiết</td></tr>
+                    <tr><td>Stable Diffusion</td><td>Tùy chỉnh linh hoạt</td><td>Cần tinh chỉnh nhiều</td></tr>
+                </table>
+
+                <h2 class="section-header">4. Vai trò và Nguyên tắc đạo đức</h2>
+                <p>AI là trợ lý đắc lực trong sáng tạo nội dung nhưng vẫn tồn tại những hạn chế về độ chính xác. Khi sử dụng, người dùng cần:</p>
+                <ul>
+                    <li><strong>Kiểm chứng thông tin:</strong> Luôn xác thực kết quả do AI tạo ra.</li>
+                    <li><strong>Tư duy sáng tạo:</strong> AI chưa thay thế được cảm xúc và kinh nghiệm con người.</li>
+                    <li><strong>Đạo đức:</strong> Sử dụng có trách nhiệm, không sao chép máy móc và tôn trọng bản quyền.</li>
+                </ul>
+
+                <h2 class="section-header">5. Kết luận</h2>
+                <p>AI là công cụ hỗ trợ mạnh mẽ giúp tiết kiệm thời gian và nâng cao hiệu quả. Tuy nhiên, sự kết hợp giữa công nghệ và tư duy sáng tạo cá nhân mới là chìa khóa tạo nên các sản phẩm chất lượng.</p>
+
+                <h2 class="section-header">6. Sản phẩm cuối cùng</h2>
+                <div class="image-grid">
+                    <div class="image-item" style="flex: 1 1 100%;">
+                        <div class="image-caption">Infographic: AI ảnh hưởng đến cuộc sống hiện đại</div>
+                        <a href="https://ibb.co/RZLXMLZ" target="_blank"><img class="image-preview" src="https://i.ibb.co/MWqzjqW/AI-s-Impact-on-Modern-Life-Infographic.jpg" alt="AI's Impact on Modern Life Infographic" border="0"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                 </div>
+                    </div>
+                </div>
+               <!-- BÀI 6 -->
+<div class="project-card">
+    <div class="project-header">
+        <div class="project-left">
+            <div class="project-icon">📚</div>
+            <div class="project-info">
+                <div class="heading-title">Bài 6: Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</div>
+                <p>Mô tả ngắn gọn về bài thực hành số 6 của bạn</p>
+            </div>
+        </div>
+        <div class="project-right">
+            <span class="status-pill">Đã hoàn thành</span>
+        </div>
+    </div>
+    <div class="project-content">
+        <div class="assignment-body">
+            <style>
+                .section-wrapper { font-family: 'Plus Jakarta Sans', sans-serif; color: #2d3748; line-height: 1.6; }
+                .section-header { color: #975a16; border-bottom: 2px solid #d69e2e; padding-bottom: 10px; margin-top: 25px; font-size: 1.3em; }
+                .card { background: #fffaf0; border: 1px solid #fbd38d; padding: 20px; border-radius: 10px; margin-bottom: 15px; }
+                .highlight { font-weight: bold; color: #975a16; }
+                table { width: 100%; border-collapse: collapse; margin: 15px 0; background: white; }
+                th { background: #d69e2e; color: white; padding: 10px; text-align: left; }
+                td { border: 1px solid #fbd38d; padding: 10px; vertical-align: top; }
+                ul, ol { margin-top: 10px; padding-left: 20px; }
+                li { margin-bottom: 8px; }
+                
+                /* CSS cho phần thông tin và nút PDF ở đầu bài giống ảnh mẫu */
+                .info-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 15px;
+                    margin: 20px 0 30px 0;
+                }
+                .info-box {
+                    background-color: #fffaf0; /* Nền vàng nhạt */
+                    border-radius: 8px;
+                    padding: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .info-label {
+                    font-size: 0.75em;
+                    color: #718096;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+                .info-value {
+                    font-size: 1em;
+                    color: #2d3748;
+                    font-weight: bold;
+                }
+                .btn-pdf-box {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    background-color: #ffffff;
+                    border: 2px solid #d69e2e; /* Viền vàng */
+                    border-radius: 8px;
+                    text-decoration: none;
+                    color: #2d3748;
+                    font-weight: 600;
+                    padding: 15px;
+                    transition: all 0.3s ease;
+                }
+                .btn-pdf-box:hover {
+                    background-color: #fffaf0;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+                    transform: translateY(-1px);
+                }
+
+                /* Class định dạng cho ảnh chèn vào cân đối */
+                .custom-img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    display: block;
+                    margin: 20px auto;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    border: 1px solid #fbd38d;
+                }
+                .img-container {
+                    text-align: center;
+                    margin: 20px 0;
+                }
+                .img-caption {
+                    font-size: 0.9em;
+                    color: #b7791f;
+                    font-style: italic;
+                    margin-top: 10px;
+                }
+            </style>
+
+            <div class="section-wrapper">
+                
+                <!-- Bố cục lưới thông tin chứa nút PDF -->
+                <div class="info-grid">
+                    <div class="info-box">
+                        <span class="info-label">NỘI DUNG THỰC HÀNH</span>
+                        <span class="info-value">Dùng AI có trách nhiệm</span>
+                    </div>
+                    <div class="info-box">
+                        <span class="info-label">CÔNG CỤ SỬ DỤNG</span>
+                        <span class="info-value">Các AI Chatbot</span>
+                    </div>
+                    <div class="info-box">
+                        <span class="info-label">KẾT QUẢ ĐẦU RA</span>
+                        <span class="info-value">Bộ 7 nguyên tắc</span>
+                    </div>
+                    <!-- Nút Xem báo cáo PDF -->
+                    <a href="bai 6.pdf" target="_blank" class="btn-pdf-box">
+                        📄 Xem báo cáo PDF
+                    </a>
+                </div>
+
+                <h2 class="section-header">1. Mở đầu</h2>
+                <p>Trí tuệ nhân tạo (AI), đặc biệt là các công cụ tạo sinh (Generative AI) như ChatGPT, đang trở thành “bộ trợ lý học tập” phổ biến: gợi ý dàn ý, giải thích khái niệm, hỗ trợ tìm tài liệu và cải thiện cách diễn đạt. Tuy nhiên, trong môi trường học thuật, việc dùng AI đặt ra nhiều câu hỏi đạo đức: ranh giới giữa hỗ trợ hợp lý và gian lận; trách nhiệm về độ chính xác; quyền sở hữu trí tuệ; và nguy cơ phụ thuộc làm suy giảm kỹ năng tự học.</p>
+                <p>Báo cáo này nhằm: (i) phân tích một chính sách/quy định học thuật của một trường đại học lớn tại Việt Nam; (ii) thực hiện một nhiệm vụ học tập có dùng AI kèm nhật ký minh bạch; (iii) phân tích các vấn đề đạo đức chính; (iv) xây dựng bộ nguyên tắc cá nhân; và (v) tạo infographic minh hoạ thực hành dùng AI có trách nhiệm.</p>
+
+                <h2 class="section-header">2. Nghiên cứu chính sách của trường và liên hệ với việc sử dụng AI</h2>
+                <div class="card">
+                    <p>Đối với sinh viên Trường Đại học Ngoại ngữ – ĐHQGHN (ULIS), việc sử dụng AI trong học tập cần tuân thủ các nguyên tắc về liêm chính học thuật của nhà trường và của Đại học Quốc gia Hà Nội.</p>
+                    <p><strong>Những nội dung chính liên quan đến AI:</strong></p>
+                    <ul>
+                        <li><strong>Chịu trách nhiệm về sản phẩm:</strong> AI có thể hỗ trợ tìm ý tưởng, nhưng sinh viên vẫn phải là người đánh giá, lựa chọn và chịu trách nhiệm cuối cùng. Nếu sao chép toàn bộ do ChatGPT tạo ra sẽ vi phạm nguyên tắc trung thực.</li>
+                        <li><strong>Trích dẫn phù hợp:</strong> Mọi nguồn thông tin cần được ghi nhận rõ ràng, ngay cả khi dùng AI để tóm tắt hoặc diễn đạt lại tài liệu.</li>
+                        <li><strong>Kiểm chứng thông tin:</strong> AI có thể tạo ra thông tin không chính xác; sinh viên cần đối chiếu với giáo trình, bài báo khoa học trước khi sử dụng.</li>
+                    </ul>
+                </div>
+
+                <h2 class="section-header">3. Thực hiện nhiệm vụ học tập với sự hỗ trợ của AI</h2>
+                <p><strong>Nhiệm vụ:</strong> Viết phần "Phân tích đạo đức" và "Bộ nguyên tắc cá nhân".</p>
+                
+                <div class="img-container">
+                    <a href="https://ibb.co/pj86mRzq" target="_blank">
+                        <img class="custom-img" src="https://i.ibb.co/fd5VcnpJ/1784470067762-855422893640761644-9212239093870015019-ecb21840d4613a04b9d0b5d86731287b.jpg" alt="Quy trình làm bài với AI có trách nhiệm">
+                    </a>
+                    <p class="img-caption">Quy trình: 1. Xác định nhiệm vụ -> 2. Thiết kế prompt -> 3. Chạy AI -> 4. Kiểm chứng -> 5. Viết lại -> 6. Minh bạch</p>
+                </div>
+
+                <h3>Nhật ký prompt và đầu ra AI (Bảng 1)</h3>
+                <table>
+                    <tr>
+                        <th>Lần</th>
+                        <th>Mục tiêu</th>
+                        <th>Prompt đã dùng</th>
+                        <th>Tôi đánh giá & chỉnh sửa</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Lập khung 3 vấn đề đạo đức</td>
+                        <td>"Gợi ý 3 vấn đề đạo đức khi SV dùng GenAI..."</td>
+                        <td>Thêm liên hệ quy định đạo văn; bổ sung rủi ro rò rỉ dữ liệu.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Viết nháp đoạn "ranh giới"</td>
+                        <td>"Viết 180-220 từ, có ví dụ lớp học."</td>
+                        <td>Thay bằng tình huống cụ thể (AI gợi ý dàn ý vs AI viết trọn bài).</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Soạn 7 nguyên tắc cá nhân</td>
+                        <td>"Đề xuất 7 nguyên tắc dùng AI có trách nhiệm cho SV..."</td>
+                        <td>Chuẩn hoá thành câu “tôi...”, liên kết nguyên tắc với rủi ro.</td>
+                    </tr>
+                </table>
+
+                <h2 class="section-header">4. Phân tích các vấn đề đạo đức khi dùng AI</h2>
+                <div class="card">
+                    <h3 class="highlight">4.1. Ranh giới giữa hỗ trợ hợp lý và gian lận học thuật</h3>
+                    <p>GenAI tạo văn bản mạch lạc rất nhanh, khiến người học dễ vượt qua “điểm gãy” đạo đức: từ tham khảo sang sao chép nguyên mẫu. <strong>Giảm rủi ro:</strong> Đặt nguyên tắc “AI chỉ hỗ trợ sau khi tôi đã có bản nháp/luận điểm”, và mọi kết luận đều dựa trên nguồn kiểm chứng.</p>
+                    
+                    <div class="img-container">
+                        <a href="https://ibb.co/SXggpJP6" target="_blank">
+                            <img class="custom-img" src="https://i.ibb.co/Lzyyfv80/1784470096432-855422893640761644-9212239093870015019-fad3a50ec2a451e02fed060172703edc.jpg" alt="Các nguyên tắc sử dụng AI trong UNESCO / Xử lý lỗi đạo văn UEH">
+                        </a>
+                        <p class="img-caption">Các nguyên tắc sử dụng AI trong UNESCO / Xử lý lỗi đạo văn</p>
+                    </div>
+
+                    <h3 class="highlight">4.2. Quyền sở hữu trí tuệ, trích dẫn và nguy cơ “đạo văn kiểu mới”</h3>
+                    <p>GenAI có thể “viết lại” khiến người học tưởng là không đạo văn, nhưng ý tưởng vẫn thuộc về nguồn gốc ban đầu. <strong>Giảm rủi ro:</strong> Không dùng AI như một nguồn học thuật, chỉ dùng để soạn thảo và phải rà soát mọi trích dẫn.</p>
+
+                    <h3 class="highlight">4.3. Tác động đến quá trình học tập (phụ thuộc, thiên lệch, dữ liệu)</h3>
+                    <p>Dùng AI liên tục tạo sự phụ thuộc, giảm khả năng tự phản biện và tiềm ẩn rủi ro rò rỉ dữ liệu cá nhân. <strong>Giảm rủi ro:</strong> Tuyệt đối không đưa dữ liệu cá nhân lên công cụ AI và giới hạn AI ở vai trò "gia sư".</p>
+                </div>
+
+                <h2 class="section-header">5. Bộ nguyên tắc cá nhân (7 nguyên tắc)</h2>
+                <ul>
+                    <li><strong>1. Tôi chịu trách nhiệm cuối cùng:</strong> cho mọi nội dung nộp, kể cả khi AI gợi ý.</li>
+                    <li><strong>2. Minh bạch việc dùng AI:</strong> ghi công cụ, mục đích, và phần có dùng AI.</li>
+                    <li><strong>3. Không dùng AI để gian lận:</strong> không nhờ AI viết trọn bài nộp/giải bài kiểm tra.</li>
+                    <li><strong>4. Kiểm chứng trước khi tin:</strong> mọi khẳng định quan trọng phải có nguồn đáng tin.</li>
+                    <li><strong>5. Tôn trọng bản quyền:</strong> trích dẫn nguồn gốc ý tưởng, tránh đạo văn.</li>
+                    <li><strong>6. Bảo mật dữ liệu:</strong> không nhập thông tin cá nhân, đề thi, tài khoản vào AI.</li>
+                    <li><strong>7. Dùng AI để học sâu:</strong> luôn tự viết nháp trước; dùng AI để phản biện, luyện kỹ năng.</li>
+                </ul>
+
+                <h2 class="section-header">6. Infographic minh hoạ</h2>
+                <div class="img-container">
+                    <a href="https://ibb.co/ycQ5V3Kn" target="_blank">
+                        <img class="custom-img" src="https://i.ibb.co/B5Cjw1vV/1784470164926-855422893640761644-9212239093870015019-525dda134e3072df0f1d26c3425d66f2.jpg" alt="Infographic 7 nguyên tắc sử dụng AI có trách nhiệm trong học thuật">
+                    </a>
+                </div>
+
+                <h2 class="section-header">7. Minh bạch sử dụng AI & Kết luận</h2>
+                <p><strong>Minh bạch:</strong> Tôi sử dụng AI để gợi ý khung phân tích, gợi ý nguyên tắc, và rà soát diễn đạt. Mọi nội dung đưa vào bài đều được tôi kiểm chứng bằng nguồn chính thống và viết lại bằng lời của mình.</p>
+                <p><strong>Kết luận:</strong> Cách tiếp cận phù hợp nhất với sinh viên là: minh bạch – kiểm chứng – tự chịu trách nhiệm – bảo vệ dữ liệu – dùng AI như công cụ học sâu chứ không phải “người làm hộ”.</p>
+                
+                <div class="card" style="margin-top: 20px; font-size: 0.9em;">
+                    <strong>Tài liệu tham khảo:</strong><br>
+                    - UNESCO. (2023). Guidance for generative AI in education and research.<br>
+                    - European Commission. (2024). Guidelines on the responsible use of generative AI in research.<br>
+                    - Turnitin. (2023). Understanding false positives within our AI writing detection capabilities.<br>
+                    - Tuổi Trẻ Cuối Tuần. (2024); Học viện Cảnh sát nhân dân. (2025).
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                       </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+<!-- PHẦN 3: TỔNG KẾT -->
+        <section id="summary" class="section-wrapper">
+            <div class="section-tag">SUMMARY</div>
+            <h2 class="section-title">Tổng kết đánh giá</h2>
+            
+            <div class="about-card">
+                <h3>💡 1. Cảm nhận và trải nghiệm</h3>
+                <p>Quá trình xây dựng Portfolio là cơ hội để em hệ thống hóa những kiến thức đã học và vận dụng vào việc tạo ra một sản phẩm mang tính thực tiễn. Thông qua hoạt động này, em nhận thức rõ hơn về tầm quan trọng của việc ứng dụng công nghệ số trong học tập, đồng thời rèn luyện tính chủ động và tinh thần học hỏi trong quá trình hoàn thiện sản phẩm.</p>
+                
+                <h3>🎓 2. Kiến thức và kỹ năng đạt được</h3>
+                <p>Việc thực hiện Portfolio giúp em củng cố các kiến thức nền tảng về công nghệ số, đồng thời phát triển các kỹ năng như tổ chức và trình bày nội dung, quản lý thông tin, thiết kế bố cục hợp lý, tìm kiếm và xử lý dữ liệu, cũng như nâng cao khả năng tự học và giải quyết vấn đề. Đây là những kỹ năng cần thiết cho quá trình học tập và công việc trong tương lai.</p>
+                
+                <h3>🌟 3. Điều tâm đắc</h3>
+                <p>Điều em tâm đắc nhất là có thể xây dựng một Portfolio mang dấu ấn cá nhân, phản ánh quá trình học tập và sự tiến bộ của bản thân một cách hệ thống và trực quan. Đây không chỉ là nơi lưu giữ các kết quả học tập mà còn là động lực để em tiếp tục hoàn thiện kiến thức, kỹ năng và phát triển bản thân trong thời gian tới.</p>
+                
+                <h3>🧗 4. Thách thức</h3>
+                <p>Trong quá trình thực hiện Portfolio, em gặp một số khó khăn như lựa chọn nội dung phù hợp, sắp xếp bố cục khoa học và đảm bảo tính thống nhất trong cách trình bày. Tuy nhiên, những thách thức này đã giúp em rèn luyện tư duy logic, tính kiên trì và khả năng thích ứng khi giải quyết các vấn đề phát sinh trong quá trình thực hiện.</p>
+            </div>
+        </section>    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Đinh Thị Thanh Mai. Bản quyền thuộc về tác giả.</p>
+    </footer>
 
 </body>
 </html>
